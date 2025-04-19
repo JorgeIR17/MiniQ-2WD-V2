@@ -7,7 +7,7 @@
 #include <avr/interrupt.h>
 #include "../Peripherals/TMR0.h"
 #include "../Peripherals/TMR1.h"
-#include "../Peripherals/OC.h"
+#include "../Peripherals/GPIO.h"
 
 #define STARTING_SOUND 62
 #define STARTING_SOUND_DURATION 1000 // 1000 ms

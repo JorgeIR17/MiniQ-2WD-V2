@@ -19,8 +19,8 @@
 #define DERECHA_CENTRO 3
 #define DERECHA 4
 
-#define WHITE 900
-#define BLACK 600
+#define WHITE_SENSOR 900
+#define BLACK_SENSOR 600
 
 volatile uint16_t blanco;
 volatile uint16_t negro;
@@ -28,8 +28,8 @@ volatile uint16_t negro;
 static inline void sensores_init()
 {
     ADC_init();
-	blanco = WHITE;
-	negro = BLACK;
+	blanco = WHITE_SENSOR;
+	negro = BLACK_SENSOR;
 }
 
 uint16_t sensores_leer(uint8_t sensor);

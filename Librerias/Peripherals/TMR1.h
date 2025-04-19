@@ -2,6 +2,9 @@
 #define TMR1_H_
 
 #include <avr/io.h>
+#include <avr/interrupt.h>
+#include "MACROS.h"
+#include "TMR0.h"
 
 #define DIV_CLK_1       1
 #define DIV_CLK_8       2

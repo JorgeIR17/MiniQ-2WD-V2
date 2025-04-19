@@ -1,10 +1,4 @@
-#include "OC.h"
-
-// ISR para Timer 0
-ISR(TIMER0_COMPA_vect)
-{
-    TOGGLEBIT(PORTB, PORTB2);
-}
+#include "TMR1.h"
 
 // ISR para Timer 1
 ISR(TIMER1_COMPA_vect)

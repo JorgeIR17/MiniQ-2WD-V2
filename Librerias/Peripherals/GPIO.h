@@ -4,6 +4,11 @@
 #include <avr/io.h>
 #include "PWM.h"
 
+static inline void OC_init()
+{
+    DDRB |= (1 << DDB2); // Pin MOSI (PB2) as output
+}
+
 static inline void puenteH_init()
 {
 	DDRE |= (1<<EN2);
@@ -17,6 +22,12 @@ static inline void encoderpins_init()
 
     EICRA |= (1 << ISC20) | (1 << ISC30); // Flanco de subida
     EIMSK |= (1 << INT2) | (1 << INT3);   // Habilitar INT2 y INT3
+}
+
+static inline void rgb_pin_init()
+{
+	DDRB |= (1 << PB6);   // Configura el pin como salida
+	PORTB &= ~(1 << PB6); // Pone en bajo inicialmente
 }
 
 #endif /* GPIO_H_ */

@@ -12,6 +12,7 @@ static inline void motores_init()
 {
 	puenteH_init();
     PWM_Init();
+	PWM_Stop();
 }
 
 void motor_set_speed(uint8_t motor, int16_t velocidad);
