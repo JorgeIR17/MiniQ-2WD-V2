@@ -1,3 +1,14 @@
+/**
+ * @file SENSORES.c
+ * @author Jorge Ibáñez
+ * @brief Definición de los drivers de bajo nivel para el uso de los sensores infrarrojos.
+ * @version 0.1
+ * @date 2025-05-06
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "SENSORES.h"
 
 uint16_t sensores_leer(uint8_t sensor)

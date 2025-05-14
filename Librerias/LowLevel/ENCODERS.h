@@ -1,3 +1,14 @@
+/**
+ * @file ENCODERS.h
+ * @author Jorge Ibáñez
+ * @brief Declaración de los drivers de bajo nivel para el uso de los encoders.
+ * @version 0.1
+ * @date 2025-05-06
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef ENCODERS_H_
 #define ENCODERS_H_
 
@@ -8,6 +19,10 @@
 #define ENCODER_IZQUIERDO 0
 #define ENCODER_DERECHO 1
 
+/**
+ * @brief Inicializa los encoders.
+ * 
+ */
 static inline void encoders_init()
 {
     encoderpins_init();
@@ -23,10 +38,27 @@ static inline void encoders_init()
 	rpm_der = 0;
 }
 
+/**
+ * @brief Lee los pulsos de un encoder.
+ * 
+ * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
+ * @return uint16_t Número de pulsos acumulados por el encoder.
+ */
 uint16_t encoder_leer(uint8_t encoder);
 
+/**
+ * @brief Calcula la velocidad de una rueda.
+ * 
+ * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
+ * @return uint16_t Velocidad de la rueda en RPM.
+ */
 uint16_t encoder_get_speed(uint8_t encoder);
 
+/**
+ * @brief Reinicia el contador de pulsos de un encoder.
+ * 
+ * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
+ */
 void encoder_reset(uint8_t encoder);
 
 #endif /* ENCODERS_H_ */

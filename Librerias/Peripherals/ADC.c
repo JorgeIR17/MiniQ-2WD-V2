@@ -1,3 +1,14 @@
+/**
+ * @file ADC.c
+ * @author Jorge Ibáñez
+ * @brief Definición de los drivers de bajo nivel para el uso del ADC.
+ * @version 0.1
+ * @date 2025-05-14
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #define  F_CPU 16000000UL
 #include <avr/io.h>
 #include "ADC.h"
@@ -7,7 +18,20 @@ uint16_t ADC_Read_Single_Poll(uint8_t channel)
 {
 	ADCSRA |= (1<<ADIF); // Clear ADC interrupt flag
 	ADMUX = (ADMUX & 0b11100000); // Clear channel selection bits
-	ADMUX |= (channel<<MUX0); // Set channel
+	ADCSRB = (ADCSRB & 0b11011111);
+	if(channel == ADC8) // Lectura pulsadores
+	{
+		ADCSRB |= (1 << MUX5);
+	}
+	else if(channel == ADC12) // Lectura medidor bateria
+	{
+		ADCSRB |= (1 << MUX5);
+		ADMUX |= (4 << MUX0); // 100
+	}
+	else
+	{
+		ADMUX |= (channel<<MUX0); // Set channel
+	}
 	ADCSRA |= (1<<ADSC); // Start conversion
 
 	while(!(ADCSRA & (1<<ADIF))){} // Wait for conversion to complete

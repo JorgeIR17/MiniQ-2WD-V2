@@ -1,13 +1,22 @@
+/**
+ * @file ENCODERS.c
+ * @author Jorge Ibáñez
+ * @brief Definición de los drivers de bajo nivel para el uso de los encoders.
+ * @version 0.1
+ * @date 2025-05-06
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "ENCODERS.h"
 
-//Devuelve los pulsos acumulados del encoder seleccionado
 uint16_t encoder_leer(uint8_t encoder) 
 {
     if (encoder == ENCODER_IZQUIERDO) return pulsos_izq;  // Encoder izquierdo
     else return pulsos_der;               // Encoder derecho
 }
 
-//Devuelve la velocidad en RPM del encoder seleccionado
 uint16_t encoder_get_speed(uint8_t encoder) 
 {
     if (encoder == ENCODER_IZQUIERDO) return rpm_izq;  // Encoder izquierdo

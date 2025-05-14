@@ -1,9 +1,22 @@
+/**
+ * @file TMR3.h
+ * @author Jorge Ibáñez
+ * @brief Definición de los drivers de bajo nivel para el uso del Timer 3 del ATMega32U4.
+ * @version 0.1
+ * @date 2025-05-14
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef TMR3_H_
 #define TMR3_H_
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 
+// Divisores de frecuencia de reloj
 #define DIV_CLK_1       1
 #define DIV_CLK_8       2
 #define DIV_CLK_64      3
@@ -18,7 +31,12 @@ volatile uint16_t interval_izq;
 volatile uint16_t interval_der;
 volatile uint16_t rpm_izq;
 volatile uint16_t rpm_der;
+volatile bool blink;
 
+/**
+ * @brief Inicializa el Timer 3 en modo CTC.
+ * 
+ */
 static inline void TMR3_CTC_Init()
 {
     TCCR3A &= ~(1<<WGM31);
@@ -27,16 +45,29 @@ static inline void TMR3_CTC_Init()
     TCCR3B &= ~(1<<WGM33);
 }
 
+/**
+ * @brief Activa las interrupciones del Timer 3 en modo CTC.
+ * 
+ */
 static inline void TMR3_CTC_enaInterrupt()
 {
     TIMSK3 |= (1<<OCIE3A);
 }
 
+/**
+ * @brief Desactiva las interrupciones del Timer 3 en modo CTC.
+ * 
+ */
 static inline void TMR3_CTC_disInterrupt()
 {
     TIMSK3 &= ~(1<<OCIE3A);
 }
 
+/**
+ * @brief Inicia el Timer 3 en modo CTC.
+ * 
+ * @param divClock Divisor de frecuencia. Es necesario hacer uso de las macros proporcionadas.
+ */
 static inline void TMR3_CTC_Start(uint8_t divClock)
 {
     TCNT3H = 0;
@@ -45,20 +76,23 @@ static inline void TMR3_CTC_Start(uint8_t divClock)
     TCCR3B |= (divClock << CS30);
 }
 
+/**
+ * @brief Detiene el funcionamiento del Timer 3 en modo CTC.
+ * 
+ */
 static inline void TMR3_CTC_Stop()
 {
     TCCR3B &= 0b11111000;
 }
 
+/**
+ * @brief Establece el valor de contador del Timer 3 en modo CTC.
+ * 
+ * @param valueCounterA Valor de contador.
+ */
 static inline void TMR3_CTC_Set(uint16_t valueCounterA)
 {
-    OCR3A = valueCounterA; //15624 para 100 ms
-}
-
-static inline void TMR3_HW_toggleOC3A()
-{
-    TCCR3A &= ~(1<<COM3A1);
-    TCCR3A |= (1 << COM3A0);
+    OCR3A = valueCounterA; //15624 para 100 ms con prescaler 64
 }
 
 #endif /* TMR3_H_ */

@@ -1,3 +1,14 @@
+/**
+ * @file BUZZER.h
+ * @author Jorge Ibáñez
+ * @brief Declaración de los drivers de bajo nivel para el uso del zumbador.
+ * @version 0.1
+ * @date 2025-05-06
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef BUZZER_H_
 #define BUZZER_H_
 
@@ -18,7 +29,10 @@
 #define FAIL_SOUND 125
 #define FAIL_SOUND_DURATION 1000 // 1000 ms
 
-// Function to set buzzer pin as output
+/**
+ * @brief Inicializa el zumbador.
+ * 
+ */
 static inline void buzzer_init()
 {
 	OC_init();
@@ -31,8 +45,18 @@ static inline void buzzer_init()
 	sei();
 }
 
+/**
+ * @brief Emite un sonido dadas una frecuencia y una duración.
+ * 
+ * @param nTicks_beepFreq Frecuencia del sonido.
+ * @param nTicks_beepDuration Duración del sonido en milisegundos.
+ */
 void buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration);
 
+/**
+ * @brief Detiene cualquier sonido emitido por el zumbador.
+ * 
+ */
 void buzzer_stop();
 
 #endif

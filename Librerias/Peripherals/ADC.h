@@ -1,3 +1,14 @@
+/**
+ * @file ADC.h
+ * @author Jorge Ibáñez
+ * @brief Declaración de los drivers de bajo nivel para el uso del ADC.
+ * @version 0.1
+ * @date 2025-05-14
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef ADC_H_
 #define ADC_H_
 
@@ -16,7 +27,13 @@
 #define ADC5	5
 #define ADC6	6
 #define ADC7	7
+#define ADC8	8
+#define ADC12   12
 
+/**
+ * @brief Inicializa el ADC.
+ * 
+ */
 static inline void ADC_init()
 {
     //Delete previous configuration
@@ -30,29 +47,21 @@ static inline void ADC_init()
     ADCSRA &= ~(1 << ADATE); // Single mode
 }
 
-static inline void ADC_select_channel(uint16_t channel)
-{
-    ADMUX = (ADMUX & 0b11100000); // Clear channel selection bits
-    ADMUX |= (channel << MUX0); // Set channel
-}
-
-static inline void ADC_enableInt()
-{
-    ADCSRA |= (1<<ADIE); // Enable ADC interrupt
-}
-
-static inline void ADC_disableInt()
-{
-    ADCSRA &= ~(1<<ADIE); // Disable ADC interrupt
-}
-
-static inline void ADC_START()
-{
-    ADCSRA |= (1<<ADSC); // Start conversion
-}
-
+/**
+ * @brief Realiza una lectura de un canal ADC mediante polling.
+ * 
+ * @param channel Canal ADC seleccionado.
+ * @return uint16_t Valor obtenido por el ADC.
+ */
 uint16_t ADC_Read_Single_Poll(uint8_t channel);
 
+/**
+ * @brief Realiza múltiples lecturas determinadas de un canal de un canal ADC mediante polling.
+ * 
+ * @param channel Canal ADC seleccionado.
+ * @param times Número de lecturas realizadas.
+ * @return uint16_t Valor medio obtenido por el ADC.
+ */
 uint16_t ADC_Read_Multiple_Poll(uint8_t channel, uint8_t times);
 
 #endif /* ADC_H_ */

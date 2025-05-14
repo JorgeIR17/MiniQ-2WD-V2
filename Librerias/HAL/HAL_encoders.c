@@ -1,3 +1,14 @@
+/**
+ * @file HAL_encoders.c
+ * @author Jorge Ibáñez
+ * @brief Definición de la capa HAL para el uso de los encoders
+ * @version 0.1
+ * @date 2025-05-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "HAL_encoders.h"
 
 uint16_t HAL_encoders_get_speed(uint8_t encoder)

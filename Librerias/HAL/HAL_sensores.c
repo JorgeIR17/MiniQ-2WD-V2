@@ -1,3 +1,14 @@
+/**
+ * @file HAL_sensores.c
+ * @author Jorge Ibáñez
+ * @brief Definición de la capa HAL para el uso de los sensores IR
+ * @version 0.1
+ * @date 2025-05-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "HAL_sensores.h"
 
 int8_t HAL_sensores_obtener_posicion()

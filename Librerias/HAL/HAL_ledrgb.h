@@ -1,9 +1,20 @@
+/**
+ * @file HAL_ledrgb.h
+ * @author Jorge Ibáñez
+ * @brief Declaración de la capa HAL para el uso del led RGB
+ * @version 0.1
+ * @date 2025-05-03
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #ifndef HAL_LEDRGB_H_
 #define HAL_LEDRGB_H_
 
 #include "../LowLevel/LED_RGB.h"
 
-// Definicion de colores (Ingl�s y Espa�ol)
+
 
 #define WHITE 0
 #define RED 1
@@ -48,19 +59,50 @@
 #define ANIL INDIGO
 #define GRIS GRAY
 
+/**
+ * @brief Inicializa el led RGB.
+ * 
+ */
 static inline void HAL_ledrgb_init()
 {
 	led_rgb_init();
 }
 
+/**
+ * @brief Ilumina el led RGB con el color indicado.
+ * 
+ * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ */
 void HAL_ledrgb_color(uint8_t color);
 
+/**
+ * @brief Realiza un efecto de parpadeo del led de un color durante un tiempo dado.
+ * 
+ * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ * @param duracion Duración en milisegundos.
+ */
 void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion);
 
-void HAL_ledrgb_efecto_breathing(uint8_t r_base, uint8_t g_base, uint8_t b_base, uint16_t pasos, uint16_t duracion);
+/**
+ * @brief Realiza un efecto de respiración del led de un color durante un tiempo dado.
+ * 
+ * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ * @param pasos Indica el número de pasos del efecto. A mayor número de pasos, la intensidad aumentará de forma más progresiva.
+ * @param duracion Duración en milisegundos.
+ */
+void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracion);
 
+/**
+ * @brief Realiza un efecto de arcoiris del led durante un tiempo dado.
+ * 
+ * @param duracion Duración en milisegundos.
+ */
 void HAL_ledrgb_efecto_arcoiris(uint16_t duracion);
 
+/**
+ * @brief Apaga el led.
+ * 
+ */
 void HAL_ledrgb_apagar();
 
 #endif /* HAL_LEDRGB_H_ */

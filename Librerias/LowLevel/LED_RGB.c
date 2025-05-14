@@ -1,22 +1,19 @@
+/**
+ * @file LED_RGB.c
+ * @author Jorge Ib√°√±ez
+ * @brief Definici√≥n de los drivers de bajo nivel para el uso del led RGB.
+ * @version 0.1
+ * @date 2025-05-06
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
 #include "LED_RGB.h"
 
-void led_rgb_enviar_bit(uint8_t bit_value)
+void led_rgb_enviar_bit(uint8_t bit)
 {
-	if (bit_value)
-	{
-		PORTB |= (1 << PB6);
-		_delay_us(0.7);
-		PORTB &= ~(1 << PB6);
-		_delay_us(0.6);
-	}
-	else
-	{
-		PORTB |= (1 << PB6);
-		_delay_us(0.35);
-		PORTB &= ~(1 << PB6);
-		_delay_us(0.8);
-	}
-
+	rgb_send_bit(bit);
 }
 
 
@@ -24,16 +21,16 @@ void led_rgb_enviar_byte(uint8_t byte)
 {
 	for (uint8_t i = 0; i < 8; i++) // Se recorre el byte desde el MSB (7) hasta el LSB (0)
 	{
-		led_rgb_enviar_bit(byte & (1 << (7 - i))); // El bit actual se eval˙a con un AND bit a bit y se envÌa
+		led_rgb_enviar_bit(byte & (1 << (7 - i))); // El bit actual se evalua con un AND bit a bit y se envia
 	}
 }
 
 void led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue)
 {
 	cli();  // Desactiva interrupciones temporalmente
-	led_rgb_enviar_byte(green);
-	led_rgb_enviar_byte(red);
-	led_rgb_enviar_byte(blue);
+	led_rgb_enviar_byte(green/10);
+	led_rgb_enviar_byte(red/10);
+	led_rgb_enviar_byte(blue/10);
 	sei();  // Reactiva interrupciones
 	_delay_us(50);  // Reset
 }
