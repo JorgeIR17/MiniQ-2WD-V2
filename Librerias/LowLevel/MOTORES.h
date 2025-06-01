@@ -25,9 +25,11 @@
  */
 static inline void motores_init()
 {
-	puenteH_init();
+	GPIO_Init(&MOTOR_EN1_DDR, MOTOR_EN1_PIN, OUTPUT);
+    GPIO_Init(&MOTOR_EN2_DDR, MOTOR_EN2_PIN, OUTPUT);
+	
     TMR4_PWM_Init();
-	TMR4_PWM_Stop();
+	TMR4_PWM_Stop(); // Asegurar que al inicio los motores esten parados
 }
 
 /**

@@ -9,8 +9,8 @@ var searchData=
   ['battery_5fmax_6',['BATTERY_MAX',['../_b_a_t_e_r_i_a_8h.html#ad1cc5f0ce9cd8cdc55c634127e92ec45',1,'BATERIA.h']]],
   ['battery_5fmin_7',['BATTERY_MIN',['../_b_a_t_e_r_i_a_8h.html#a947c0b4c1947192c03212f2d9be3d27c',1,'BATERIA.h']]],
   ['buzzer_2ec_8',['BUZZER.c',['../_b_u_z_z_e_r_8c.html',1,'']]],
-  ['buzzer_2eh_9',['BUZZER.h',['../_b_u_z_z_e_r_8h.html',1,'']]],
-  ['buzzer_5finit_10',['buzzer_init',['../_b_u_z_z_e_r_8h.html#aaefef572438292e8be236dbc15746753',1,'BUZZER.h']]],
-  ['buzzer_5fstop_11',['buzzer_stop',['../_b_u_z_z_e_r_8c.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;BUZZER.c'],['../_b_u_z_z_e_r_8h.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;BUZZER.c']]],
-  ['buzzer_5ftone_12',['buzzer_tone',['../_b_u_z_z_e_r_8c.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;BUZZER.c'],['../_b_u_z_z_e_r_8h.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;BUZZER.c']]]
+  ['buzzer_2eh_9',['buzzer.h',['../buzzer_8h.html',1,'']]],
+  ['buzzer_5finit_10',['buzzer_init',['../buzzer_8h.html#aaefef572438292e8be236dbc15746753',1,'buzzer.h']]],
+  ['buzzer_5fstop_11',['buzzer_stop',['../_b_u_z_z_e_r_8c.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;BUZZER.c'],['../buzzer_8h.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;BUZZER.c']]],
+  ['buzzer_5ftone_12',['buzzer_tone',['../_b_u_z_z_e_r_8c.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;BUZZER.c'],['../buzzer_8h.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;BUZZER.c']]]
 ];

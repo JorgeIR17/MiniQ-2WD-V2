@@ -95,6 +95,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a1b9b0d3eab86bfe30056696581bf3240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un color al led según su código RGB.  <br /></td></tr>
 <tr class="separator:a1b9b0d3eab86bfe30056696581bf3240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f5bcfbf87e540b14d8555acb5cb5880" id="r_a9f5bcfbf87e540b14d8555acb5cb5880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_e_d___r_g_b_8c.html#a9f5bcfbf87e540b14d8555acb5cb5880">led_rgb_hue_a_rgb</a> (uint8_t hue, uint8_t *r, uint8_t *g, uint8_t *b)</td></tr>
+<tr class="memdesc:a9f5bcfbf87e540b14d8555acb5cb5880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte un valor de matiz (hue) a valores RGB.  <br /></td></tr>
 <tr class="separator:a9f5bcfbf87e540b14d8555acb5cb5880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a290c28a37d7537f75e0a4f44b6380453" id="r_a290c28a37d7537f75e0a4f44b6380453"><td class="memItemLeft" align="right" valign="top"><a id="a290c28a37d7537f75e0a4f44b6380453" name="a290c28a37d7537f75e0a4f44b6380453"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>led_rgb_apagar</b> ()</td></tr>
@@ -240,12 +241,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>led_rgb_apagar</b> ()
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Convierte un valor de matiz (hue) a valores RGB. </p>
+<p>Esta función transforma un valor de hue (0-255) en su representación RGB correspondiente. Divide el espectro de color en 6 regiones, cada una abarcando ~43 unidades de hue, e interpola los valores de los componentes rojo, verde y azul según la región correspondiente.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hue</td><td></td></tr>
-    <tr><td class="paramname">r</td><td></td></tr>
-    <tr><td class="paramname">g</td><td></td></tr>
-    <tr><td class="paramname">b</td><td></td></tr>
+    <tr><td class="paramname">hue</td><td>Valor del matiz que representa la posición en el círculo cromático. </td></tr>
+    <tr><td class="paramname">r</td><td>Puntero a la variable donde se almacenará el valor del canal rojo. </td></tr>
+    <tr><td class="paramname">g</td><td>Puntero a la variable donde se almacenará el valor del canal verde. </td></tr>
+    <tr><td class="paramname">b</td><td>Puntero a la variable donde se almacenará el valor del canal azul. </td></tr>
   </table>
   </dd>
 </dl>

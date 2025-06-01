@@ -20,12 +20,12 @@ void motor_set_speed(uint8_t motor, int16_t velocidad)
     if(motor == MOTOR_IZQUIERDO)
     {
         TMR4_PWM_Start(TMR4_PWM_DIV_CLK_64);
-        if(velocidad >= 0)
+        if(velocidad >= 0) // Hacia delante
 		{
             TMR4_PWM_set_direction(MOTOR_IZQUIERDO, FORWARD);
 			TMR4_PWM_set_duty_cycle(MOTOR_IZQUIERDO, velocidad);
 		}
-        else
+        else // Hacia atras
 		{
             TMR4_PWM_set_direction(MOTOR_IZQUIERDO, BACKWARD);
 			TMR4_PWM_set_duty_cycle(MOTOR_IZQUIERDO, abs(velocidad));
@@ -35,12 +35,12 @@ void motor_set_speed(uint8_t motor, int16_t velocidad)
     else
     {
         TMR4_PWM_Start(TMR4_PWM_DIV_CLK_64);
-        if(velocidad >= 0)
+        if(velocidad >= 0) // Hacia delante
         {
 	        TMR4_PWM_set_direction(MOTOR_DERECHO, FORWARD);
 	        TMR4_PWM_set_duty_cycle(MOTOR_DERECHO, velocidad);
         }
-        else
+        else // Hacia atras
         {
 	        TMR4_PWM_set_direction(MOTOR_DERECHO, BACKWARD);
 	        TMR4_PWM_set_duty_cycle(MOTOR_DERECHO, abs(velocidad));

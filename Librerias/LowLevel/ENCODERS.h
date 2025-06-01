@@ -25,10 +25,19 @@
  */
 static inline void encoders_init()
 {
-    encoderpins_init();
+    // Encoder 1 - PD2 (INT2)
+    GPIO_Init(&ENCODER_DDR, ENCODER1_PIN, INPUT);
+    GPIO_Pullup(&ENCODER_PORT, ENCODER1_PIN, ON);
+    GPIO_Interrupt_Init(2, RISING_EDGE); // pull-up ya está activado manualmente
+
+    // Encoder 2 - PD3 (INT3)
+    GPIO_Init(&ENCODER_DDR, ENCODER2_PIN, INPUT);
+    GPIO_Pullup(&ENCODER_PORT, ENCODER2_PIN, ON);
+    GPIO_Interrupt_Init(3, RISING_EDGE); // pull-up ya está activado manualmente
+	
     TMR3_CTC_Init();        // Configurar Timer 3 en modo CTC
     TMR3_CTC_Set(15624);    // Configurar OCR3A para 100 ms (con prescaler 64)
-    TMR3_CTC_enaInterrupt(); // Habilitar interrupción
+    TMR3_CTC_enaInterrupt(); // Habilitar interrupcion
     TMR3_CTC_Start(DIV_CLK_64); // Iniciar con prescaler 64
 	pulsos_izq = 0;
 	pulsos_der = 0;

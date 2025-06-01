@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['motor_5fgirar_0',['motor_girar',['../_m_o_t_o_r_e_s_8c.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;MOTORES.c'],['../_m_o_t_o_r_e_s_8h.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;MOTORES.c']]],
-  ['motor_5fset_5fspeed_1',['motor_set_speed',['../_m_o_t_o_r_e_s_8c.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;MOTORES.c'],['../_m_o_t_o_r_e_s_8h.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;MOTORES.c']]],
-  ['motor_5fstop_2',['motor_stop',['../_m_o_t_o_r_e_s_8c.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;MOTORES.c'],['../_m_o_t_o_r_e_s_8h.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;MOTORES.c']]],
-  ['motores_5finit_3',['motores_init',['../_m_o_t_o_r_e_s_8h.html#a2b4603b827ca2d9d6dd1dda1c36f1a12',1,'MOTORES.h']]]
+  ['led_5frgb_5fenviar_5fbit_0',['led_rgb_enviar_bit',['../_l_e_d___r_g_b_8c.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;LED_RGB.c'],['../_l_e_d___r_g_b_8h.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;LED_RGB.c']]],
+  ['led_5frgb_5fenviar_5fbyte_1',['led_rgb_enviar_byte',['../_l_e_d___r_g_b_8c.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;LED_RGB.c'],['../_l_e_d___r_g_b_8h.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;LED_RGB.c']]],
+  ['led_5frgb_5fenviar_5fcolor_2',['led_rgb_enviar_color',['../_l_e_d___r_g_b_8c.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;LED_RGB.c'],['../_l_e_d___r_g_b_8h.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;LED_RGB.c']]],
+  ['led_5frgb_5fhue_5fa_5frgb_3',['led_rgb_hue_a_rgb',['../_l_e_d___r_g_b_8c.html#a9f5bcfbf87e540b14d8555acb5cb5880',1,'led_rgb_hue_a_rgb(uint8_t hue, uint8_t *r, uint8_t *g, uint8_t *b):&#160;LED_RGB.c'],['../_l_e_d___r_g_b_8h.html#a9f5bcfbf87e540b14d8555acb5cb5880',1,'led_rgb_hue_a_rgb(uint8_t hue, uint8_t *r, uint8_t *g, uint8_t *b):&#160;LED_RGB.c']]],
+  ['led_5frgb_5finit_4',['led_rgb_init',['../_l_e_d___r_g_b_8h.html#a22a13cdfa2b46be0b5edccfa6742ea90',1,'LED_RGB.h']]]
 ];

@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['sensores_2ec_0',['SENSORES.c',['../_s_e_n_s_o_r_e_s_8c.html',1,'']]],
-  ['sensores_2eh_1',['SENSORES.h',['../_s_e_n_s_o_r_e_s_8h.html',1,'']]],
-  ['sensores_5fcalibrar_2',['sensores_calibrar',['../_s_e_n_s_o_r_e_s_8c.html#a980c044a8788a768df3da7f9658f72b1',1,'sensores_calibrar():&#160;SENSORES.c'],['../_s_e_n_s_o_r_e_s_8h.html#a980c044a8788a768df3da7f9658f72b1',1,'sensores_calibrar():&#160;SENSORES.c']]],
-  ['sensores_5finit_3',['sensores_init',['../_s_e_n_s_o_r_e_s_8h.html#a1776fb13ae10e796373e1dd2f0589dd6',1,'SENSORES.h']]],
-  ['sensores_5fleer_4',['sensores_leer',['../_s_e_n_s_o_r_e_s_8c.html#a7dc5c5602efe5ce14c898558ee0685e5',1,'sensores_leer(uint8_t sensor):&#160;SENSORES.c'],['../_s_e_n_s_o_r_e_s_8h.html#a7dc5c5602efe5ce14c898558ee0685e5',1,'sensores_leer(uint8_t sensor):&#160;SENSORES.c']]]
+  ['vref_0',['VREF',['../_b_a_t_e_r_i_a_8h.html#a2c9e85d22a9ba37ea589b1747af46307',1,'BATERIA.h']]]
 ];

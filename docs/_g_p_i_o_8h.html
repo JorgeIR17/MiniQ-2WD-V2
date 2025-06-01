@@ -83,8 +83,7 @@ $(function() {
 <p>Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
-<code>#include &lt;util/delay.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="_t_m_r4_8h_source.html">TMR4.h</a>&quot;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
 </div>
 <p><a href="_g_p_i_o_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,28 +92,102 @@ Macros</h2></td></tr>
 <tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft" align="right" valign="top"><a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>F_CPU</b>&#160;&#160;&#160;16000000UL</td></tr>
 <tr class="separator:a43bafb28b29491ec7f871319b5a3b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb283bd7893b9855e2f23013891fc82" id="r_a1bb283bd7893b9855e2f23013891fc82"><td class="memItemLeft" align="right" valign="top"><a id="a1bb283bd7893b9855e2f23013891fc82" name="a1bb283bd7893b9855e2f23013891fc82"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a1bb283bd7893b9855e2f23013891fc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a3c9a18380aafb6e430e79bf596557" id="r_a61a3c9a18380aafb6e430e79bf596557"><td class="memItemLeft" align="right" valign="top"><a id="a61a3c9a18380aafb6e430e79bf596557" name="a61a3c9a18380aafb6e430e79bf596557"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OUTPUT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a61a3c9a18380aafb6e430e79bf596557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab811d8c6ff3a505312d3276590444289" id="r_ab811d8c6ff3a505312d3276590444289"><td class="memItemLeft" align="right" valign="top"><a id="ab811d8c6ff3a505312d3276590444289" name="ab811d8c6ff3a505312d3276590444289"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOW</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ab811d8c6ff3a505312d3276590444289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb885982ff66a2e0a0a45a8ee9c35e2" id="r_a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memItemLeft" align="right" valign="top"><a id="a5bb885982ff66a2e0a0a45a8ee9c35e2" name="a5bb885982ff66a2e0a0a45a8ee9c35e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HIGH</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5bb885982ff66a2e0a0a45a8ee9c35e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e413f6725b2ba32d165ffaa35b01e5" id="r_a29e413f6725b2ba32d165ffaa35b01e5"><td class="memItemLeft" align="right" valign="top"><a id="a29e413f6725b2ba32d165ffaa35b01e5" name="a29e413f6725b2ba32d165ffaa35b01e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>OFF</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a29e413f6725b2ba32d165ffaa35b01e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad76d1750a6cdeebd506bfcd6752554d2" id="r_ad76d1750a6cdeebd506bfcd6752554d2"><td class="memItemLeft" align="right" valign="top"><a id="ad76d1750a6cdeebd506bfcd6752554d2" name="ad76d1750a6cdeebd506bfcd6752554d2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ON</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ad76d1750a6cdeebd506bfcd6752554d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8627448cfc263e8181093cc87d84dd4" id="r_aa8627448cfc263e8181093cc87d84dd4"><td class="memItemLeft" align="right" valign="top"><a id="aa8627448cfc263e8181093cc87d84dd4" name="aa8627448cfc263e8181093cc87d84dd4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOW_LEVEL</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa8627448cfc263e8181093cc87d84dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54ee1014e568f54919c75a7d1953308e" id="r_a54ee1014e568f54919c75a7d1953308e"><td class="memItemLeft" align="right" valign="top"><a id="a54ee1014e568f54919c75a7d1953308e" name="a54ee1014e568f54919c75a7d1953308e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ANY_CHANGE</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a54ee1014e568f54919c75a7d1953308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159ba045d627097f4f2d351bec51afe1" id="r_a159ba045d627097f4f2d351bec51afe1"><td class="memItemLeft" align="right" valign="top"><a id="a159ba045d627097f4f2d351bec51afe1" name="a159ba045d627097f4f2d351bec51afe1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FALLING_EDGE</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a159ba045d627097f4f2d351bec51afe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13ff90bb3a97b9d46ae59f02c515b67" id="r_af13ff90bb3a97b9d46ae59f02c515b67"><td class="memItemLeft" align="right" valign="top"><a id="af13ff90bb3a97b9d46ae59f02c515b67" name="af13ff90bb3a97b9d46ae59f02c515b67"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RISING_EDGE</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:af13ff90bb3a97b9d46ae59f02c515b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dd69773eeadd5bd64c4342bb9501bf" id="r_a72dd69773eeadd5bd64c4342bb9501bf"><td class="memItemLeft" align="right" valign="top"><a id="a72dd69773eeadd5bd64c4342bb9501bf" name="a72dd69773eeadd5bd64c4342bb9501bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUZZER_DDR</b>&#160;&#160;&#160;DDRB</td></tr>
+<tr class="separator:a72dd69773eeadd5bd64c4342bb9501bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0d28f731e836936a87086ea8b798da" id="r_abf0d28f731e836936a87086ea8b798da"><td class="memItemLeft" align="right" valign="top"><a id="abf0d28f731e836936a87086ea8b798da" name="abf0d28f731e836936a87086ea8b798da"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUZZER_PORT</b>&#160;&#160;&#160;PORTB</td></tr>
+<tr class="separator:abf0d28f731e836936a87086ea8b798da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab61d0981ed42df9e18211b273d22cfcd" id="r_ab61d0981ed42df9e18211b273d22cfcd"><td class="memItemLeft" align="right" valign="top"><a id="ab61d0981ed42df9e18211b273d22cfcd" name="ab61d0981ed42df9e18211b273d22cfcd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUZZER_PIN</b>&#160;&#160;&#160;DDB2</td></tr>
+<tr class="separator:ab61d0981ed42df9e18211b273d22cfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4c740d8c092ac32688637f781bf0345" id="r_ac4c740d8c092ac32688637f781bf0345"><td class="memItemLeft" align="right" valign="top"><a id="ac4c740d8c092ac32688637f781bf0345" name="ac4c740d8c092ac32688637f781bf0345"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN1_DDR</b>&#160;&#160;&#160;DDRD</td></tr>
+<tr class="separator:ac4c740d8c092ac32688637f781bf0345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3f29355fa354505524822146f0ef3f" id="r_a8f3f29355fa354505524822146f0ef3f"><td class="memItemLeft" align="right" valign="top"><a id="a8f3f29355fa354505524822146f0ef3f" name="a8f3f29355fa354505524822146f0ef3f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN1_PORT</b>&#160;&#160;&#160;PORTD</td></tr>
+<tr class="separator:a8f3f29355fa354505524822146f0ef3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43b3c4673e3014058bb7044396820c67" id="r_a43b3c4673e3014058bb7044396820c67"><td class="memItemLeft" align="right" valign="top"><a id="a43b3c4673e3014058bb7044396820c67" name="a43b3c4673e3014058bb7044396820c67"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN1_PIN</b>&#160;&#160;&#160;DDD6</td></tr>
+<tr class="separator:a43b3c4673e3014058bb7044396820c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab959cee4e8fe727048c115f0005602d7" id="r_ab959cee4e8fe727048c115f0005602d7"><td class="memItemLeft" align="right" valign="top"><a id="ab959cee4e8fe727048c115f0005602d7" name="ab959cee4e8fe727048c115f0005602d7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN2_DDR</b>&#160;&#160;&#160;DDRE</td></tr>
+<tr class="separator:ab959cee4e8fe727048c115f0005602d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39f77ee098bfc94ca61962f07233e11e" id="r_a39f77ee098bfc94ca61962f07233e11e"><td class="memItemLeft" align="right" valign="top"><a id="a39f77ee098bfc94ca61962f07233e11e" name="a39f77ee098bfc94ca61962f07233e11e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN2_PORT</b>&#160;&#160;&#160;PORTE</td></tr>
+<tr class="separator:a39f77ee098bfc94ca61962f07233e11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc0a5198dab5ab829afab5d54b78fd8" id="r_a6fc0a5198dab5ab829afab5d54b78fd8"><td class="memItemLeft" align="right" valign="top"><a id="a6fc0a5198dab5ab829afab5d54b78fd8" name="a6fc0a5198dab5ab829afab5d54b78fd8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOTOR_EN2_PIN</b>&#160;&#160;&#160;DDE6</td></tr>
+<tr class="separator:a6fc0a5198dab5ab829afab5d54b78fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac9dc54aff7e3a16dedd403a866814e" id="r_a0ac9dc54aff7e3a16dedd403a866814e"><td class="memItemLeft" align="right" valign="top"><a id="a0ac9dc54aff7e3a16dedd403a866814e" name="a0ac9dc54aff7e3a16dedd403a866814e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER_DDR</b>&#160;&#160;&#160;DDRD</td></tr>
+<tr class="separator:a0ac9dc54aff7e3a16dedd403a866814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b4a04943a47be37b1ed8a7c0204bf4" id="r_a15b4a04943a47be37b1ed8a7c0204bf4"><td class="memItemLeft" align="right" valign="top"><a id="a15b4a04943a47be37b1ed8a7c0204bf4" name="a15b4a04943a47be37b1ed8a7c0204bf4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER_PORT</b>&#160;&#160;&#160;PORTD</td></tr>
+<tr class="separator:a15b4a04943a47be37b1ed8a7c0204bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8487d5416cdbcd45d66d8cfd6a62df78" id="r_a8487d5416cdbcd45d66d8cfd6a62df78"><td class="memItemLeft" align="right" valign="top"><a id="a8487d5416cdbcd45d66d8cfd6a62df78" name="a8487d5416cdbcd45d66d8cfd6a62df78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER1_PIN</b>&#160;&#160;&#160;DDD2</td></tr>
+<tr class="separator:a8487d5416cdbcd45d66d8cfd6a62df78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92771b46b59d4f902e68a9149937cd7" id="r_ab92771b46b59d4f902e68a9149937cd7"><td class="memItemLeft" align="right" valign="top"><a id="ab92771b46b59d4f902e68a9149937cd7" name="ab92771b46b59d4f902e68a9149937cd7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER2_PIN</b>&#160;&#160;&#160;DDD3</td></tr>
+<tr class="separator:ab92771b46b59d4f902e68a9149937cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599330806fc7daf299682677d1ddda0e" id="r_a599330806fc7daf299682677d1ddda0e"><td class="memItemLeft" align="right" valign="top"><a id="a599330806fc7daf299682677d1ddda0e" name="a599330806fc7daf299682677d1ddda0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RGB_DDR</b>&#160;&#160;&#160;DDRB</td></tr>
+<tr class="separator:a599330806fc7daf299682677d1ddda0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab2d1e5ebf9be57b17825daf533bbe70" id="r_aab2d1e5ebf9be57b17825daf533bbe70"><td class="memItemLeft" align="right" valign="top"><a id="aab2d1e5ebf9be57b17825daf533bbe70" name="aab2d1e5ebf9be57b17825daf533bbe70"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RGB_PORT</b>&#160;&#160;&#160;PORTB</td></tr>
+<tr class="separator:aab2d1e5ebf9be57b17825daf533bbe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa73d13caaf79ae7fe6f932c81455221" id="r_aaa73d13caaf79ae7fe6f932c81455221"><td class="memItemLeft" align="right" valign="top"><a id="aaa73d13caaf79ae7fe6f932c81455221" name="aaa73d13caaf79ae7fe6f932c81455221"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RGB_PIN</b>&#160;&#160;&#160;DDB6</td></tr>
+<tr class="separator:aaa73d13caaf79ae7fe6f932c81455221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8844a813eed255f577b100c7350cea83" id="r_a8844a813eed255f577b100c7350cea83"><td class="memItemLeft" align="right" valign="top"><a id="a8844a813eed255f577b100c7350cea83" name="a8844a813eed255f577b100c7350cea83"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>OC_init</b> ()</td></tr>
-<tr class="memdesc:a8844a813eed255f577b100c7350cea83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el pin de la salida OC para usar el zumbador. <br /></td></tr>
-<tr class="separator:a8844a813eed255f577b100c7350cea83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b27728698644158e74b7c615ce3fea9" id="r_a7b27728698644158e74b7c615ce3fea9"><td class="memItemLeft" align="right" valign="top"><a id="a7b27728698644158e74b7c615ce3fea9" name="a7b27728698644158e74b7c615ce3fea9"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>puenteH_init</b> ()</td></tr>
-<tr class="memdesc:a7b27728698644158e74b7c615ce3fea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa los pines del puente H para usar los motores. <br /></td></tr>
-<tr class="separator:a7b27728698644158e74b7c615ce3fea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad192a2a4b7311904b67b0b8a7b1b0b7d" id="r_ad192a2a4b7311904b67b0b8a7b1b0b7d"><td class="memItemLeft" align="right" valign="top"><a id="ad192a2a4b7311904b67b0b8a7b1b0b7d" name="ad192a2a4b7311904b67b0b8a7b1b0b7d"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>encoderpins_init</b> ()</td></tr>
-<tr class="memdesc:ad192a2a4b7311904b67b0b8a7b1b0b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa los pines de los encoders. <br /></td></tr>
-<tr class="separator:ad192a2a4b7311904b67b0b8a7b1b0b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f5c80f6e748979262add9eb554d9e0" id="r_a26f5c80f6e748979262add9eb554d9e0"><td class="memItemLeft" align="right" valign="top"><a id="a26f5c80f6e748979262add9eb554d9e0" name="a26f5c80f6e748979262add9eb554d9e0"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>rgb_pin_init</b> ()</td></tr>
-<tr class="memdesc:a26f5c80f6e748979262add9eb554d9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el pin conectado al led RGB. <br /></td></tr>
-<tr class="separator:a26f5c80f6e748979262add9eb554d9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61329a9b19283f377074a2dfd0cce5e7" id="r_a61329a9b19283f377074a2dfd0cce5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#a61329a9b19283f377074a2dfd0cce5e7">rgb_send_bit</a> (uint8_t bit_value)</td></tr>
-<tr class="memdesc:a61329a9b19283f377074a2dfd0cce5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un bit al led RGB.  <br /></td></tr>
-<tr class="separator:a61329a9b19283f377074a2dfd0cce5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3b9eadc6166ce42eaa2dba50fcb157" id="r_acd3b9eadc6166ce42eaa2dba50fcb157"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a> (volatile uint8_t *ddr, uint8_t pin, uint8_t direction)</td></tr>
+<tr class="memdesc:acd3b9eadc6166ce42eaa2dba50fcb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura la dirección de un pin (entrada o salida).  <br /></td></tr>
+<tr class="separator:acd3b9eadc6166ce42eaa2dba50fcb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72bef811f8b6ee233a691183085aedf7" id="r_a72bef811f8b6ee233a691183085aedf7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#a72bef811f8b6ee233a691183085aedf7">GPIO_Write</a> (volatile uint8_t *port, uint8_t pin, uint8_t value)</td></tr>
+<tr class="memdesc:a72bef811f8b6ee233a691183085aedf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe un valor lógico en un pin de salida.  <br /></td></tr>
+<tr class="separator:a72bef811f8b6ee233a691183085aedf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36c0cb8a481e89d700eda8973b1545d" id="r_ab36c0cb8a481e89d700eda8973b1545d"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#ab36c0cb8a481e89d700eda8973b1545d">GPIO_Read</a> (volatile uint8_t *pin_reg, uint8_t pin)</td></tr>
+<tr class="memdesc:ab36c0cb8a481e89d700eda8973b1545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee el valor lógico actual de un pin.  <br /></td></tr>
+<tr class="separator:ab36c0cb8a481e89d700eda8973b1545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f8fd7cdccc215ef4f78bd08a1ff3d6" id="r_a55f8fd7cdccc215ef4f78bd08a1ff3d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a> (volatile uint8_t *port, uint8_t pin, uint8_t state)</td></tr>
+<tr class="memdesc:a55f8fd7cdccc215ef4f78bd08a1ff3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada.  <br /></td></tr>
+<tr class="separator:a55f8fd7cdccc215ef4f78bd08a1ff3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892ce642edd8a73d11d47e88aa7a11c5" id="r_a892ce642edd8a73d11d47e88aa7a11c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_g_p_i_o_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a> (uint8_t int_num, uint8_t mode)</td></tr>
+<tr class="memdesc:a892ce642edd8a73d11d47e88aa7a11c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura una interrupción externa (INTx) en el ATmega32U4.  <br /></td></tr>
+<tr class="separator:a892ce642edd8a73d11d47e88aa7a11c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4. </p>
@@ -123,26 +196,255 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>rgb_pin_init</
 <dl class="section date"><dt>Date</dt><dd>2025-05-14</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a61329a9b19283f377074a2dfd0cce5e7" name="a61329a9b19283f377074a2dfd0cce5e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61329a9b19283f377074a2dfd0cce5e7">&#9670;&#160;</a></span>rgb_send_bit()</h2>
+<a id="acd3b9eadc6166ce42eaa2dba50fcb157" name="acd3b9eadc6166ce42eaa2dba50fcb157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3b9eadc6166ce42eaa2dba50fcb157">&#9670;&#160;</a></span>GPIO_Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void rgb_send_bit </td>
+          <td class="memname">static void GPIO_Init </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>bit_value</em></td><td>)</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>ddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Envía un bit al led RGB. </p>
+<p>Configura la dirección de un pin (entrada o salida). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">bit_value</td><td>Valor del bit. </td></tr>
+    <tr><td class="paramname">ddr</td><td>Puntero al registro DDRx (por ejemplo &amp;DDRB) </td></tr>
+    <tr><td class="paramname">pin</td><td>Número de pin (0–7) </td></tr>
+    <tr><td class="paramname">direction</td><td>Configuración como entrada o salida. Es necesario hacer uso de las macros proporcionadas </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a892ce642edd8a73d11d47e88aa7a11c5" name="a892ce642edd8a73d11d47e88aa7a11c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892ce642edd8a73d11d47e88aa7a11c5">&#9670;&#160;</a></span>GPIO_Interrupt_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GPIO_Interrupt_Init </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>int_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configura una interrupción externa (INTx) en el ATmega32U4. </p>
+<p>Esta función permite activar una interrupción externa en uno de los pines INT0, INT1, INT2 o INT3, definiendo el tipo de evento que la activa (nivel bajo, cambio, flanco de bajada o subida) y si se desea habilitar la resistencia pull-up interna del pin correspondiente.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int_num</td><td>Número de interrupción externa (válido: 0, 1, 2, 3). </td></tr>
+    <tr><td class="paramname">mode</td><td>Modo de disparo de la interrupción. Puede ser:<ul>
+<li>LOW_LEVEL: Nivel bajo constante</li>
+<li>ANY_CHANGE: Cualquier cambio de nivel</li>
+<li>FALLING_EDGE: Flanco de bajada</li>
+<li>RISING_EDGE: Flanco de subida </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">enable_pullup</td><td>Habilita (ON) o deshabilita (OFF) la resistencia pull-up interna. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55f8fd7cdccc215ef4f78bd08a1ff3d6" name="a55f8fd7cdccc215ef4f78bd08a1ff3d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f8fd7cdccc215ef4f78bd08a1ff3d6">&#9670;&#160;</a></span>GPIO_Pullup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GPIO_Pullup </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Puntero al registro PORTx (por ejemplo &amp;PORTB) </td></tr>
+    <tr><td class="paramname">pin</td><td>Número de pin (0–7) </td></tr>
+    <tr><td class="paramname">state</td><td>Estado del pullup. Es necesario hacer uso de las macros proporcionadas, o usar exclusivamente los valores 0 o 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab36c0cb8a481e89d700eda8973b1545d" name="ab36c0cb8a481e89d700eda8973b1545d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36c0cb8a481e89d700eda8973b1545d">&#9670;&#160;</a></span>GPIO_Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t GPIO_Read </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>pin_reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lee el valor lógico actual de un pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin_reg</td><td>Puntero al registro PINx (por ejemplo &amp;PINB) </td></tr>
+    <tr><td class="paramname">pin</td><td>Número de pin (0–7) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 o HIGH si el pin está en HIGH, 0 o LOW si está en LOW </dd></dl>
+
+</div>
+</div>
+<a id="a72bef811f8b6ee233a691183085aedf7" name="a72bef811f8b6ee233a691183085aedf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72bef811f8b6ee233a691183085aedf7">&#9670;&#160;</a></span>GPIO_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GPIO_Write </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Escribe un valor lógico en un pin de salida. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>Puntero al registro PORTx (por ejemplo &amp;PORTB) </td></tr>
+    <tr><td class="paramname">pin</td><td>Número de pin (0–7) </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a escribir. Es necesario hacer uso de las macros proporcionadas, o usar exclusivamente los valores 0 o 1 </td></tr>
   </table>
   </dd>
 </dl>

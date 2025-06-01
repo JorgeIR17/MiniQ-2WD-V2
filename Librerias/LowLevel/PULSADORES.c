@@ -14,8 +14,8 @@
 uint16_t pulsadores_leer()
 {
 	uint16_t valor = ADC_Read_Single_Poll(ADC8);
-	if(valor > 130 && valor < 570)			return 1;
-	else if(valor >= 570 && valor < 720)	return 2;
-	else if(valor >= 720 && valor < 1023)	return 3;
-	else									return 0; // No se detecta ningun pulsador pulsado
+	if(valor > 130 && valor < 570)			return 1; // Pulsador KEY1 presionado
+	else if(valor >= 570 && valor < 720)	return 2; // Pulsador KEY2 presionado
+	else if(valor >= 720 && valor < 1023)	return 3; // Pulsador KEY3 presionado
+	else									return 0; // No se detecta ningun pulsador presionado
 }

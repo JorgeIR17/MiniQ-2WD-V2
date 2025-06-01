@@ -48,13 +48,11 @@ void sensores_calibrar()
 		for(uint8_t i = IZQUIERDA; i < DERECHA; i++)
 		{
 			lectura = sensores_leer(i);
-			if(lectura > valor_max) valor_max = lectura;
-			if(lectura < valor_min) valor_min = lectura;
+			if(lectura > valor_max) valor_max = lectura; // ALmacena el valor leido mas alto (blanco)
+			if(lectura < valor_min) valor_min = lectura; // Almacena el valor leido mas bajo (negro)
 		}
 		_delay_ms(100);
 	}
-	
-	
 	
 	if((valor_max - valor_min) > 100) // asegurar que se hayan leido valores correspondientes a blanco y negro
 	{

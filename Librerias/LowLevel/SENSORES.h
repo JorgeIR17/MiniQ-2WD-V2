@@ -67,8 +67,8 @@ volatile uint16_t negro;
 static inline void sensores_init()
 {
     ADC_init();
-	blanco = WHITE_SENSOR;
-	negro = BLACK_SENSOR;
+	blanco = WHITE_SENSOR; // Valor base de blanco
+	negro = BLACK_SENSOR; // Valor base de negro
 }
 
 /**
