@@ -1,5 +1,5 @@
 /**
- * @file LED_RGB.c
+ * @file led_rgb.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del led RGB.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "LED_RGB.h"
+#include "led_rgb.h"
 
 void led_rgb_enviar_bit(uint8_t bit)
 {

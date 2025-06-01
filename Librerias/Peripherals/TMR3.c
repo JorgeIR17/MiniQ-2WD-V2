@@ -1,5 +1,5 @@
 /**
- * @file TMR3.c
+ * @file tmr3.c
  * @author Jorge Ibáñez
  * @brief Definición de las interrupciones ejecutadas por el Timer 3 del ATMega32U4.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "TMR3.h"
+#include "tmr3.h"
 
 /**
  * @brief Interrupción del encoder izquierdo.
@@ -40,5 +40,5 @@ ISR(TIMER3_COMPA_vect)
 	interval_izq++;
 	interval_der++;
 	
-	blink = !(blink);
+	blink = !(blink); // Alterna parpadeo del led
 }

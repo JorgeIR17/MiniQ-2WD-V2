@@ -1,5 +1,5 @@
 /**
- * @file TMR0.c
+ * @file tmr0.c
  * @author Jorge Ibáñez
  * @brief Definición de la interrupción ejecutada por el Timer 0 del ATMega32U4.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "TMR0.h"
+#include "tmr0.h"
 
 /**
  * @brief Interrupción del Timer 0.
@@ -19,5 +19,5 @@
  */
 ISR(TIMER0_COMPA_vect)
 {
-	PORTB ^= (1<<PORTB2);
+	PORTB ^= (1<<BUZZER_PIN);
 }

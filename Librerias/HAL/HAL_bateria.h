@@ -1,5 +1,5 @@
 /**
- * @file HAL_bateria.h
+ * @file hal_bateria.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso del medidor de batería
  * @version 0.1
@@ -12,8 +12,8 @@
 #ifndef HAL_BATERIA_H_
 #define HAL_BATERIA_H_
 
-#include "../LowLevel/BATERIA.h"
-#include "HAL_ledrgb.h" // Para mostrar nivel de bateria
+#include "../LowLevel/bateria.h"
+#include "hal_ledrgb.h" // Para mostrar nivel de bateria
 
 /**
  * @brief Inicializa el medidor de batería del robot.

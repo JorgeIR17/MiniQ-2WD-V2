@@ -1,5 +1,5 @@
 /**
- * @file MOTORES.h
+ * @file motores.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de los motores.
  * @version 0.1
@@ -13,8 +13,8 @@
 #define MOTORES_H_
 
 #include <avr/io.h>
-#include "../Peripherals/TMR4.h"
-#include "../Peripherals/GPIO.h"
+#include "../Peripherals/tmr4.h"
+#include "../Peripherals/gpio.h"
 
 #define MOTOR_IZQUIERDO 0
 #define MOTOR_DERECHO   1

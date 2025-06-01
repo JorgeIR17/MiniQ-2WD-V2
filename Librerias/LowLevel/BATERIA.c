@@ -1,5 +1,5 @@
 /**
- * @file BATERIA.c
+ * @file bateria.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del medidor de batería.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "BATERIA.h"
+#include "bateria.h"
 
 float bateria_get_voltage()
 {

@@ -1,5 +1,5 @@
 /**
- * @file FOTODIODOS.h
+ * @file fotodiodos.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de diodos fotosensibles.
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef FOTODIODOS_H_
 #define FOTODIODOS_H_
 
-#include "../Peripherals/ADC.h"
+#include "../Peripherals/adc.h"
 
 /**
  * @brief Canal de ADC de los fotodiodos.

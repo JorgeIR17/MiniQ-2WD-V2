@@ -1,5 +1,5 @@
 /**
- * @file HAL_sensores.h
+ * @file hal_sensores.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los sensores IR
  * @version 0.1
@@ -13,7 +13,7 @@
 #define HAL_SENSORES_H_
 
 #include <avr/io.h>
-#include "../LowLevel/SENSORES.h"
+#include "../LowLevel/sensores.h"
 
 /**
  * @brief No se detecta la línea por ninguno de los sensores.

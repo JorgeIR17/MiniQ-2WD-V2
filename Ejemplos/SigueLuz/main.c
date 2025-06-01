@@ -2,14 +2,14 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "m_usb.h"
-#include "Librerias/HAL/HAL_motores.h"
-#include "Librerias/HAL/HAL_sensores.h"
-#include "Librerias/HAL/HAL_zumbador.h"
-#include "Librerias/HAL/HAL_encoders.h"
-#include "Librerias/HAL/HAL_ledrgb.h"
-#include "Librerias/HAL/HAL_pulsadores.h"
-#include "Librerias/HAL/HAL_bateria.h"
-#include "Librerias/HAL/HAL_fotodiodos.h"
+#include "Librerias/HAL/hal_motores.h"
+#include "Librerias/HAL/hal_sensores.h"
+#include "Librerias/HAL/hal_zumbador.h"
+#include "Librerias/HAL/hal_encoders.h"
+#include "Librerias/HAL/hal_ledrgb.h"
+#include "Librerias/HAL/hal_pulsadores.h"
+#include "Librerias/HAL/hal_bateria.h"
+#include "Librerias/HAL/hal_fotodiodos.h"
 
 
 int main(void)

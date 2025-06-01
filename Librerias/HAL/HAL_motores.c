@@ -1,5 +1,5 @@
 /**
- * @file HAL_motores.c
+ * @file hal_motores.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso de los motores
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "HAL_motores.h"
+#include "hal_motores.h"
 
 void HAL_motores_avanzar(int16_t velocidad)
 {

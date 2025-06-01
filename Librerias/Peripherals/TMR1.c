@@ -1,5 +1,5 @@
 /**
- * @file TMR1.c
+ * @file tmr1.c
  * @author Jorge Ibáñez
  * @brief Definición de la interrupción ejecutada por el Timer 1 del ATMega32U4.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "TMR1.h"
+#include "tmr1.h"
 
 /**
  * @brief Interrupción del Timer 1.
@@ -19,7 +19,7 @@
  */
 ISR(TIMER1_COMPA_vect)
 {
-    PORTB &= ~(1<<PORTB2);
+    PORTB &= ~(1<<BUZZER_PIN);
     TMR0_CTC_Stop();
     TMR1_CTC_Stop();
 }

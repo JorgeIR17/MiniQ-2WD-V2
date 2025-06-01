@@ -1,5 +1,5 @@
 /**
- * @file FOTODIODOS.c
+ * @file fotodiodos.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de diodos fotosensibles.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "FOTODIODOS.h"
+#include "fotodiodos.h"
 
 
 uint8_t fotodiodos_obtener_posicion()

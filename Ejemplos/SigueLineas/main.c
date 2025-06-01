@@ -1,10 +1,10 @@
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
-#include "Librerias/HAL/HAL_motores.h"
-#include "Librerias/HAL/HAL_sensores.h"
-#include "Librerias/HAL/HAL_zumbador.h"
-#include "Librerias/HAL/HAL_encoders.h"
+#include "Librerias/HAL/hal_motores.h"
+#include "Librerias/HAL/hal_sensores.h"
+#include "Librerias/HAL/hal_zumbador.h"
+#include "Librerias/HAL/hal_encoders.h"
 
 
 //SIGUE-LINEAS

@@ -1,5 +1,5 @@
 /**
- * @file PULSADORES.h
+ * @file pulsadores.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de los pulsadores.
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef PULSADORES_H_
 #define PULSADORES_H_
 
-#include "../Peripherals/ADC.h"
+#include "../Peripherals/adc.h"
 
 /**
  * @brief Inicializa los pulsadores.

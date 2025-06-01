@@ -1,5 +1,5 @@
 /**
- * @file PULSADORES.c
+ * @file pulsadores.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los pulsadores.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "PULSADORES.h"
+#include "pulsadores.h"
 
 uint16_t pulsadores_leer()
 {

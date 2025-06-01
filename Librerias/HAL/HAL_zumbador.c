@@ -1,5 +1,5 @@
 /**
- * @file HAL_zumbador.c
+ * @file hal_zumbador.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso del zumbador.
  * @version 0.1
@@ -10,7 +10,7 @@
  */
 
 #include <avr/io.h>
-#include "HAL_zumbador.h"
+#include "hal_zumbador.h"
 
 void HAL_zumbador_alerta(uint8_t tipo)
 {

@@ -1,5 +1,5 @@
 /**
- * @file HAL_pulsadores.h
+ * @file hal_pulsadores.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los pulsadores
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef HAL_PULSADORES_H_
 #define HAL_PULSADORES_H_
 
-#include "../LowLevel/PULSADORES.h"
+#include "../LowLevel/pulsadores.h"
 #include <stdbool.h>
 
 /**

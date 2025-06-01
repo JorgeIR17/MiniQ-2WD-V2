@@ -1,5 +1,5 @@
 /**
- * @file HAL_pulsadores.c
+ * @file hal_pulsadores.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso de los pulsadores
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "HAL_pulsadores.h"
+#include "hal_pulsadores.h"
 
 bool HAL_pulsadores_key_1()
 {
@@ -17,13 +17,13 @@ bool HAL_pulsadores_key_1()
 	return (valor == 1);
 }
 
-bool HAL_pulsadornes_key_2()
+bool HAL_pulsadores_key_2()
 {
 	uint16_t valor = pulsadores_leer();
 	return (valor == 2);
 }
 
-bool HAL_botones_key_3()
+bool HAL_pulsadores_key_3()
 {
 	uint16_t valor = pulsadores_leer();
 	return (valor == 3);

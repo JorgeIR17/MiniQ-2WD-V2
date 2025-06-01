@@ -1,5 +1,5 @@
 /**
- * @file ENCODERS.h
+ * @file encoders.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de los encoders.
  * @version 0.1
@@ -13,8 +13,8 @@
 #define ENCODERS_H_
 
 #include <avr/io.h>
-#include "../Peripherals/GPIO.h"
-#include "../Peripherals/TMR3.h"
+#include "../Peripherals/gpio.h"
+#include "../Peripherals/tmr3.h"
 
 #define ENCODER_IZQUIERDO 0
 #define ENCODER_DERECHO 1

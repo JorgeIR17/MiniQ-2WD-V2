@@ -1,5 +1,5 @@
 /**
- * @file BUZZER.c
+ * @file buzzer.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del zumbador.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "BUZZER.h"
+#include "buzzer.h"
 
 
 void buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration)

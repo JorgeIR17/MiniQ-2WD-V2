@@ -1,5 +1,5 @@
 /**
- * @file TMR1.h
+ * @file tmr1.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 1 del ATMega32U4.
  * @version 0.1
@@ -14,7 +14,8 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "TMR0.h"
+#include "gpio.h"
+#include "tmr0.h"
 
 // Divisores de frecuencia de reloj
 #define DIV_CLK_1       1
@@ -29,6 +30,7 @@
  */
 static inline void TMR1_CTC_Init()
 {
+	// Set CTC Mode
 	TCCR1A &= ~(1<<WGM11);
 	TCCR1A &= ~(1<<WGM10);
 	TCCR1B |= (1<<WGM12);
@@ -60,10 +62,12 @@ static inline void TMR1_CTC_disInterrupt()
  */
 static inline void TMR1_CTC_Start(uint8_t divClock)
 {
+	// Reset counter
 	TCNT1H = 0;
 	TCNT1L = 0;
-	TCCR1B &= 0b11111000;
-	TCCR1B |= (divClock << CS10);
+
+	TCCR1B &= 0b11111000; // Clear CS10, CS11, CS12
+	TCCR1B |= (divClock << CS10); // Set prescaler
 }
 
 /**
@@ -72,7 +76,7 @@ static inline void TMR1_CTC_Start(uint8_t divClock)
  */
 static inline void TMR1_CTC_Stop()
 {
-	TCCR1B &= 0b11111000;
+	TCCR1B &= 0b11111000; // Clear CS10, CS11, CS12
 }
 
 /**

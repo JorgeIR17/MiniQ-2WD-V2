@@ -1,5 +1,5 @@
 /**
- * @file HAL_encoders.h
+ * @file hal_encoders.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los encoders
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef HAL_ENCODERS_H_
 #define HAL_ENCODERS_H_
 
-#include "../LowLevel/ENCODERS.h"
+#include "../LowLevel/encoders.h"
 
 #define DIAMETRO_RUEDA_MM 42.0
 #define PI 3.1416               // Valor de pi

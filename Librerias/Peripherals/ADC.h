@@ -1,5 +1,5 @@
 /**
- * @file ADC.h
+ * @file adc.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso del ADC.
  * @version 0.1

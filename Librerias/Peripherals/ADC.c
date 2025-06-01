@@ -1,5 +1,5 @@
 /**
- * @file ADC.c
+ * @file adc.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del ADC.
  * @version 0.1
@@ -11,7 +11,7 @@
 
 #define  F_CPU 16000000UL
 #include <avr/io.h>
-#include "ADC.h"
+#include "adc.h"
 
 
 uint16_t ADC_Read_Single_Poll(uint8_t channel)

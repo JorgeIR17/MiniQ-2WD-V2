@@ -1,5 +1,5 @@
 /**
- * @file TMR0.h
+ * @file tmr0.h
  * @author Jorge Ibáñez
  * @brief Definición de funciones para usar el Timer 0 del ATMega32U4.
  * @version 0.1
@@ -14,6 +14,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "gpio.h"
 
 // Divisores de frecuencia de reloj
 #define DIV_CLK_1       1
@@ -28,6 +29,7 @@
  */
 static inline void TMR0_CTC_Init()
 {
+	// Set CTC Mode
 	TCCR0B &= ~(1<<WGM02);
 	TCCR0A |= (1<<WGM01);
 	TCCR0A &= (~(1<<WGM00));
@@ -58,9 +60,9 @@ static inline void TMR0_CTC_disInterrupt()
  */
 static inline void TMR0_CTC_Start(uint8_t divClock)
 {
-	TCNT0 = 0;
-	TCCR0B &= 0b11111000;
-	TCCR0B |= (divClock << CS00);
+	TCNT0 = 0; // Reset counter
+	TCCR0B &= 0b11111000; // Clear CS00, CS01, CS02
+	TCCR0B |= (divClock << CS00); // Set prescaler
 }
 
 /**
@@ -69,7 +71,7 @@ static inline void TMR0_CTC_Start(uint8_t divClock)
  */
 static inline void TMR0_CTC_Stop()
 {
-	TCCR0B &= 0b11111000;
+	TCCR0B &= 0b11111000; // Clear CS00, CS01, CS02
 }
 
 /**

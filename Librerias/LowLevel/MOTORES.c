@@ -1,5 +1,5 @@
 /**
- * @file MOTORES.c
+ * @file motores.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los motores.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "MOTORES.h"
+#include "motores.h"
 #include <stdlib.h>
 
 void motor_set_speed(uint8_t motor, int16_t velocidad)

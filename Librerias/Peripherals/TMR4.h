@@ -1,5 +1,5 @@
 /**
- * @file TMR4.h
+ * @file tmr4.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 4 del ATMega32U4.
  * @version 0.1
@@ -13,6 +13,7 @@
 #define TMR4_H_
 
 #include <avr/io.h>
+#include "gpio.h"
 
 #define TMR4_PWM_DIV_CLK_1	    1
 #define TMR4_PWM_DIV_CLK_2	    2
@@ -30,10 +31,6 @@
 #define TMR4_PWM_DIV_CLK_8192   14
 #define TMR4_PWM_DIV_CLK_16384  15
 
-// Pines del puente H
-#define EN1 DDD6
-#define EN2 DDE6
-
 // Sentido de las ruedas
 #define FORWARD 0
 #define BACKWARD 1
@@ -47,6 +44,7 @@ static inline void TMR4_PWM_Init()
 	DDRC |= (1<<DDC6); // Set OC4A (PC6) as output
 	DDRD |= (1<<DDD7); // Set OC4D (PD7) as output
 
+	//Set PWM Phase Correct Mode
 	TCCR4A |= (1<<COM4A0) | (1<<PWM4A);
 	TCCR4A &= ~(1<<COM4A1);
 
@@ -67,21 +65,21 @@ inline void TMR4_PWM_Start(uint8_t divClock)
 	TCNT4 = 0; // Reset counter
 
 	TCCR4B &= 0b11110000; // Clear CS40, CS41, CS42
-	TCCR4B |= (divClock<<CS40);
+	TCCR4B |= (divClock<<CS40); // Set prescaler
 }
 
 
 /**
  * @brief Ajusta el ciclo de trabajo del PWM.
  * 
- * @param motor Motor izquierdo o derecho.
+ * @param motor Motor izquierdo o derecho. 
  * @param value Valor de ciclo de trabajo.
  */
 inline void TMR4_PWM_set_duty_cycle(uint8_t motor, uint8_t value)
 {
-	if(motor == 0) // Motor izquierdo
+	if(motor == 0) 	// Motor izquierdo
 		OCR4A = ~(value);
-	else // Motor derecho
+	else 			// Motor derecho
 		OCR4D = value;
 }
 
@@ -96,16 +94,16 @@ inline void TMR4_PWM_set_direction(uint8_t motor, uint8_t direction)
 	if(motor == 0) // Motor izquierdo
 	{
 		if(direction == FORWARD)
-			PORTD &= ~(1<<EN1);
+			PORTD &= ~(1<<MOTOR_EN1_PIN);
 		if(direction == BACKWARD)
-			PORTD |= (1<<EN1);
+			PORTD |= (1<<MOTOR_EN1_PIN);
 	}
 	else // Motor derecho
 	{	
 		if(direction == FORWARD)
-			PORTE &= ~(1<<EN2);
+			PORTE &= ~(1<<MOTOR_EN2_PIN);
 		if(direction == BACKWARD)
-			PORTE |= (1<<EN2);
+			PORTE |= (1<<MOTOR_EN2_PIN);
 	}
 }
 
@@ -115,7 +113,7 @@ inline void TMR4_PWM_set_direction(uint8_t motor, uint8_t direction)
  */
 inline void TMR4_PWM_Stop()
 {
-	TCCR4B &= 0b11110000;
+	TCCR4B &= 0b11110000; // Clear CS40, CS41, CS42
 
 	TMR4_PWM_set_duty_cycle(0, 0);
 	TMR4_PWM_set_duty_cycle(1, 0);

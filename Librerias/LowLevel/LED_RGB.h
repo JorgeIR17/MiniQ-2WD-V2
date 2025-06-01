@@ -1,5 +1,5 @@
 /**
- * @file LED_RGB.h
+ * @file led_rgb.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso del led RGB.
  * @version 0.1
@@ -15,8 +15,8 @@
 #define F_CPU 16000000UL
 #include <avr/interrupt.h>
 #include <util/delay.h>
-#include "../Peripherals/GPIO.h"
-#include "../Peripherals/TMR3.h"
+#include "../Peripherals/gpio.h"
+#include "../Peripherals/tmr3.h"
 
 /**
  * @brief Inicializa el led RGB.

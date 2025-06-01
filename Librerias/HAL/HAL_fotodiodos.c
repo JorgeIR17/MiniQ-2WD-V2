@@ -1,5 +1,5 @@
 /**
- * @file HAL_fotodiodos.c
+ * @file hal_fotodiodos.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso de los diodos fotosensibles.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "HAL_fotodiodos.h"
+#include "hal_fotodiodos.h"
 
 uint8_t HAL_fotodiodos_posicion()
 {

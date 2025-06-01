@@ -1,5 +1,5 @@
 /**
- * @file HAL_fotodiodos.h
+ * @file hal_fotodiodos.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los diodos fotosensibles.
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef HAL_FOTODIODOS_H_
 #define HAL_FOTODIODOS_H_
 
-#include "../LowLevel/FOTODIODOS.h"
+#include "../LowLevel/fotodiodos.h"
 
 #define LUZ_ERROR		0
 #define LUZ_DERECHA		1

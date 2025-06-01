@@ -1,5 +1,5 @@
 /**
- * @file TMR3.h
+ * @file tmr3.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 3 del ATMega32U4.
  * @version 0.1
@@ -39,6 +39,7 @@ volatile bool blink;
  */
 static inline void TMR3_CTC_Init()
 {
+    //Set CTC Mode
     TCCR3A &= ~(1<<WGM31);
     TCCR3A &= ~(1<<WGM30);
     TCCR3B |= (1<<WGM32);
@@ -70,10 +71,12 @@ static inline void TMR3_CTC_disInterrupt()
  */
 static inline void TMR3_CTC_Start(uint8_t divClock)
 {
+    //Reset counter
     TCNT3H = 0;
     TCNT3L = 0;
-    TCCR3B &= 0b11111000;
-    TCCR3B |= (divClock << CS30);
+
+    TCCR3B &= 0b11111000; // Clear CS30, CS31, CS32
+    TCCR3B |= (divClock << CS30); // Set prescaler
 }
 
 /**
@@ -82,7 +85,7 @@ static inline void TMR3_CTC_Start(uint8_t divClock)
  */
 static inline void TMR3_CTC_Stop()
 {
-    TCCR3B &= 0b11111000;
+    TCCR3B &= 0b11111000; // Clear CS30, CS31, CS32
 }
 
 /**

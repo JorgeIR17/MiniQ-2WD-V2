@@ -1,5 +1,5 @@
 /**
- * @file SENSORES.h
+ * @file sensores.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de los sensores infrarrojos.
  * @version 0.1
@@ -14,7 +14,7 @@
 
 #define F_CPU 16000000UL
 #include <util/delay.h>
-#include "../Peripherals/ADC.h"
+#include "../Peripherals/adc.h"
 
 // Definición canales sensores
 

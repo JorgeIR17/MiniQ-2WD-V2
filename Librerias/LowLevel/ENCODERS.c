@@ -1,5 +1,5 @@
 /**
- * @file ENCODERS.c
+ * @file encoders.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los encoders.
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "ENCODERS.h"
+#include "encoders.h"
 
 uint16_t encoder_leer(uint8_t encoder) 
 {

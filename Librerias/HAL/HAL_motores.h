@@ -1,5 +1,5 @@
 /**
- * @file HAL_motores.h
+ * @file hal_motores.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los motores
  * @version 0.1
@@ -13,7 +13,7 @@
 #define HAL_MOTORES_H_
 
 #include <avr/io.h>
-#include "../LowLevel/MOTORES.h"
+#include "../LowLevel/motores.h"
 
 /**
  * @brief Inicializa los motores del robot.

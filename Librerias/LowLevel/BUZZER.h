@@ -16,9 +16,9 @@
 #include <util/delay.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "../Peripherals/TMR0.h"
-#include "../Peripherals/TMR1.h"
-#include "../Peripherals/GPIO.h"
+#include "../Peripherals/tmr0.h"
+#include "../Peripherals/tmr1.h"
+#include "../Peripherals/gpio.h"
 
 // Definicion de notas musicales en ingles
 #define C3 	238

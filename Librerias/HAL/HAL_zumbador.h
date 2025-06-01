@@ -1,5 +1,5 @@
 /**
- * @file HAL_zumbador.h
+ * @file hal_zumbador.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso del zumbador
  * @version 0.1
@@ -13,7 +13,7 @@
 #define HAL_ZUMBADOR_H_
 
 #include <avr/io.h>
-#include "../LowLevel/BUZZER.h"
+#include "../LowLevel/buzzer.h"
 
 
 #define INICIO 1

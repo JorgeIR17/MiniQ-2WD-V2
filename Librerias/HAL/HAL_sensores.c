@@ -1,5 +1,5 @@
 /**
- * @file HAL_sensores.c
+ * @file hal_sensores.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso de los sensores IR
  * @version 0.1
@@ -9,7 +9,7 @@
  * 
  */
 
-#include "HAL_sensores.h"
+#include "hal_sensores.h"
 
 int8_t HAL_sensores_obtener_posicion()
 {

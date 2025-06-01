@@ -1,5 +1,5 @@
 /**
- * @file HAL_ledrgb.h
+ * @file hal_ledrgb.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso del led RGB
  * @version 0.1
@@ -12,10 +12,9 @@
 #ifndef HAL_LEDRGB_H_
 #define HAL_LEDRGB_H_
 
-#include "../LowLevel/LED_RGB.h"
+#include "../LowLevel/led_rgb.h"
 
-
-
+// Definicion de colores
 #define WHITE 0
 #define RED 1
 #define GREEN 2

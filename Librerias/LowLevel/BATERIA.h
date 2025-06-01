@@ -1,5 +1,5 @@
 /**
- * @file BATERIA.h
+ * @file bateria.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso del medidor de batería.
  * @version 0.1
@@ -12,7 +12,7 @@
 #ifndef BATERIA_H_
 #define BATERIA_H_
 
-#include "../Peripherals/ADC.h"
+#include "../Peripherals/adc.h"
 
 /**
  * @brief Canal de ADC del medidor de batería.

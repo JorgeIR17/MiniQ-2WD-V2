@@ -1,5 +1,5 @@
 /**
- * @file HAL_ledrgb.c
+ * @file hal_ledrgb.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso del led RGB
  * @version 0.1
@@ -9,7 +9,8 @@
  * 
  */
 
-#include "HAL_ledrgb.h"
+#include "hal_ledrgb.h"
+
 
 void HAL_ledrgb_color(uint8_t color)
 {
@@ -85,8 +86,6 @@ void HAL_ledrgb_color(uint8_t color)
 	
 }
 
-#include <avr/io.h>
-
 /**
  * @brief Delay en microsegundos (us), sin usar timers ni <util/delay.h>.
  * 
@@ -95,13 +94,16 @@ void HAL_ledrgb_color(uint8_t color)
  * 
  * @param us Cantidad de microsegundos a esperar (máx ~4000)
  */
-void delay_us(uint16_t us) {
-    while (us--) {
+void delay_us(uint16_t us) 
+{
+    while (us--) 
+	{
         // 1 us = 16 ciclos -> ajustamos el bucle interno para ~1 us
         // Cada iteración son ~4 ciclos (2 por sbiw, 2 por brne)
         // Requiere 4 iteraciones para ~1 us
 
-        for (uint8_t i = 0; i < 4; i++) {
+        for (uint8_t i = 0; i < 4; i++) 
+		{
             asm volatile("nop");
         }
     }
@@ -112,8 +114,10 @@ void delay_us(uint16_t us) {
  * 
  * @param ms Cantidad de milisegundos a esperar
  */
-void delay_ms(uint16_t ms) {
-    while (ms--) {
+void delay_ms(uint16_t ms) 
+{
+    while (ms--) 
+	{
         delay_us(1000);
     }
 }
@@ -121,7 +125,7 @@ void delay_ms(uint16_t ms) {
 
 void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion)
 {
-	uint16_t tiempo = duracion / 100;
+	uint16_t tiempo = duracion / 100; // El estado cambia cada 100 ms
 
 	while (tiempo > 0)
 	{
@@ -131,9 +135,12 @@ void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion)
 			led_rgb_apagar();
 		tiempo--;
 	}
+	led_rgb_apagar(); // Asegurar apagar el led al terminar
 }
 
-void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracion) {
+
+void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracion) 
+{
 	float intensidad;
 	uint8_t r_base, g_base, b_base;
 	uint8_t r, g, b;
@@ -165,9 +172,11 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 		default:        led_rgb_apagar(); return;
 	}
 
-	while (tiempo < duracion) {
+	while (tiempo < duracion) 
+	{
 		// Subida de intensidad
-		for (uint16_t i = 0; i < pasos && tiempo < duracion; i++) {
+		for (uint16_t i = 0; i < pasos && tiempo < duracion; i++) 
+		{
 			intensidad = (1.0 - cos((float)i / pasos * 3.14159)) / 2.0;
 			r = (uint8_t)(r_base * intensidad);
 			g = (uint8_t)(g_base * intensidad);
@@ -178,7 +187,8 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 		}
 
 		// Bajada de intensidad
-		for (uint16_t i = pasos; i > 0 && tiempo < duracion; i--) {
+		for (uint16_t i = pasos; i > 0 && tiempo < duracion; i--) 
+		{
 			intensidad = (1.0 - cos((float)i / pasos * 3.14159)) / 2.0;
 			r = (uint8_t)(r_base * intensidad);
 			g = (uint8_t)(g_base * intensidad);
@@ -199,12 +209,13 @@ void HAL_ledrgb_efecto_arcoiris(uint16_t duracion)
 
 	while (tiempo < duracion)
 	{
-		led_rgb_hue_a_rgb(hue++, &r, &g, &b); // Convierte el matiz actual a RGB y env�a el color al LED
+		led_rgb_hue_a_rgb(hue++, &r, &g, &b); // Convierte el matiz actual a RGB y envia el color al LED
 		led_rgb_enviar_color(r, g, b);
 		_delay_ms(20);
 		tiempo += 20;
 	}
 }
+
 
 void HAL_ledrgb_apagar()
 {
