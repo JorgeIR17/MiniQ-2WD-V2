@@ -35,9 +35,9 @@
 #define RISING_EDGE 3
 
 // Zumbador (OC)
-#define BUZZER_DDR     DDRB
-#define BUZZER_PORT    PORTB
-#define BUZZER_PIN     DDB2  // PB2
+#define BUZZER_DDR      DDRB
+#define BUZZER_PORT     PORTB
+#define BUZZER_PIN      DDB2  // PB2
 
 // Puente H para motores
 #define MOTOR_EN1_DDR   DDRD
@@ -49,8 +49,8 @@
 #define MOTOR_EN2_PIN   DDE6  // PE6
 
 // Encoders
-#define ENCODER_DDR    DDRD
-#define ENCODER_PORT   PORTD
+#define ENCODER_DDR     DDRD
+#define ENCODER_PORT    PORTD
 #define ENCODER1_PIN    DDD2   
 #define ENCODER2_PIN    DDD3   
 
@@ -59,7 +59,21 @@
 #define RGB_PORT        PORTB
 #define RGB_PIN         DDB6
 
+// Transmisores y Receptor IR (IRM8881T)
+#define IRR_DDR			DDRB
+#define IRR_PORT		PORTB
+#define IRR_PIN			DDB4
 
+#define IRL_DDR			DDRC
+#define IRL_PORT		PORTC
+#define IRL_PIN			DDC7
+
+#define IRS_DDR			DDRB
+#define IRS_PORT		PORTB
+#define IRS_PIN			DDB0
+#define IRS_PCINT		0
+
+volatile uint8_t cont_obs;
 
 
 /**
@@ -132,8 +146,6 @@ static inline void GPIO_Pullup(volatile uint8_t* port, uint8_t pin, uint8_t stat
  *
  * @param int_num Número de interrupción externa (válido: 0, 1, 2, 3).
  * @param mode Modo de disparo de la interrupción. Puede ser:
- *  - LOW_LEVEL: Nivel bajo constante
- *  - ANY_CHANGE: Cualquier cambio de nivel
  *  - FALLING_EDGE: Flanco de bajada
  *  - RISING_EDGE: Flanco de subida
  * @param enable_pullup Habilita (ON) o deshabilita (OFF) la resistencia pull-up interna.
@@ -145,25 +157,36 @@ static inline void GPIO_Interrupt_Init(uint8_t int_num, uint8_t mode)
 		GPIO_Init(&DDRD, PORTD2, INPUT);
 		switch (mode) 
 		{
-			case LOW_LEVEL: break;
-			case ANY_CHANGE: EICRA |= (1 << ISC20); break;
 			case FALLING_EDGE: EICRA |= (1 << ISC21); break;
 			case RISING_EDGE: EICRA |= (1 << ISC20); break;
 		}
 		EIMSK |= (1 << INT2);
 	}
-	else
+	if(int_num == 3)
 	{
 		GPIO_Init(&DDRD, PORTD0, INPUT);
 		switch (mode) 
 		{
-			case LOW_LEVEL: break;
-			case ANY_CHANGE: EICRA |= (1 << ISC30); break;
 			case FALLING_EDGE: EICRA |= (1 << ISC31); break;
 			case RISING_EDGE: EICRA |= (1 << ISC30); break;
 		}
 		EIMSK |= (1 << INT3);
 	}
 }
+
+/**
+ * @brief Habilita la interrupción por cambio de pin (PCINT0–7) en el ATmega32U4.
+ *
+ * @param pcint Número de pin PCINT (solo válido: 0–7)
+ */
+static inline void GPIO_PCInterrupt_Enable(uint8_t pcint)
+{
+    if (pcint <= 7) 
+	{
+        PCICR |= (1 << PCIE0);          // Habilita el grupo PCINT0
+        PCMSK0 |= (1 << pcint);         // Habilita el pin específico
+    }
+}
+
 
 #endif /* GPIO_H_ */

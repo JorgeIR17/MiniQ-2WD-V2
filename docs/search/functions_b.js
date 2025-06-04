@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['sensores_5fcalibrar_0',['sensores_calibrar',['../sensores_8c.html#a980c044a8788a768df3da7f9658f72b1',1,'sensores_calibrar():&#160;sensores.c'],['../sensores_8h.html#a980c044a8788a768df3da7f9658f72b1',1,'sensores_calibrar():&#160;sensores.c']]],
-  ['sensores_5finit_1',['sensores_init',['../sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6',1,'sensores.h']]],
-  ['sensores_5fleer_2',['sensores_leer',['../sensores_8c.html#a7dc5c5602efe5ce14c898558ee0685e5',1,'sensores_leer(uint8_t sensor):&#160;sensores.c'],['../sensores_8h.html#a7dc5c5602efe5ce14c898558ee0685e5',1,'sensores_leer(uint8_t sensor):&#160;sensores.c']]]
+  ['receptor_5fenviar_5fpulso_0',['receptor_enviar_pulso',['../receptor_8h.html#a5cc1b5028ae4aeaade9e16c489a76b34',1,'receptor.c']]],
+  ['receptor_5finit_1',['receptor_init',['../receptor_8h.html#aed5909a60fb35fc549c4cb7c89a859a4',1,'receptor.h']]]
 ];

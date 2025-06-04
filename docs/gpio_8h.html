@@ -75,12 +75,13 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">gpio.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4.  
+<p>Definición de las interrupciones de cambio de pin (PCINT) del ATMega32U4.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
 <code>#include &lt;avr/interrupt.h&gt;</code><br />
@@ -170,6 +171,36 @@ Macros</h2></td></tr>
 <tr class="memitem:aaa73d13caaf79ae7fe6f932c81455221" id="r_aaa73d13caaf79ae7fe6f932c81455221"><td class="memItemLeft" align="right" valign="top"><a id="aaa73d13caaf79ae7fe6f932c81455221" name="aaa73d13caaf79ae7fe6f932c81455221"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RGB_PIN</b>&#160;&#160;&#160;DDB6</td></tr>
 <tr class="separator:aaa73d13caaf79ae7fe6f932c81455221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b5f62612270b8357cfe0c967291e230" id="r_a5b5f62612270b8357cfe0c967291e230"><td class="memItemLeft" align="right" valign="top"><a id="a5b5f62612270b8357cfe0c967291e230" name="a5b5f62612270b8357cfe0c967291e230"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRR_DDR</b>&#160;&#160;&#160;DDRB</td></tr>
+<tr class="separator:a5b5f62612270b8357cfe0c967291e230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f053b9b31c7cacf017dbb78b171eb1d" id="r_a6f053b9b31c7cacf017dbb78b171eb1d"><td class="memItemLeft" align="right" valign="top"><a id="a6f053b9b31c7cacf017dbb78b171eb1d" name="a6f053b9b31c7cacf017dbb78b171eb1d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRR_PORT</b>&#160;&#160;&#160;PORTB</td></tr>
+<tr class="separator:a6f053b9b31c7cacf017dbb78b171eb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da9717c2ceb83eb521a1ee38d68c09e" id="r_a2da9717c2ceb83eb521a1ee38d68c09e"><td class="memItemLeft" align="right" valign="top"><a id="a2da9717c2ceb83eb521a1ee38d68c09e" name="a2da9717c2ceb83eb521a1ee38d68c09e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRR_PIN</b>&#160;&#160;&#160;DDB4</td></tr>
+<tr class="separator:a2da9717c2ceb83eb521a1ee38d68c09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b70a6c8d9f61f6f52b359961a4a5e6" id="r_a29b70a6c8d9f61f6f52b359961a4a5e6"><td class="memItemLeft" align="right" valign="top"><a id="a29b70a6c8d9f61f6f52b359961a4a5e6" name="a29b70a6c8d9f61f6f52b359961a4a5e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRL_DDR</b>&#160;&#160;&#160;DDRC</td></tr>
+<tr class="separator:a29b70a6c8d9f61f6f52b359961a4a5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed79a69dc4bcf6b0af9931ba2bbdd80b" id="r_aed79a69dc4bcf6b0af9931ba2bbdd80b"><td class="memItemLeft" align="right" valign="top"><a id="aed79a69dc4bcf6b0af9931ba2bbdd80b" name="aed79a69dc4bcf6b0af9931ba2bbdd80b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRL_PORT</b>&#160;&#160;&#160;PORTC</td></tr>
+<tr class="separator:aed79a69dc4bcf6b0af9931ba2bbdd80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af206b576414228ff161fcc0bf62483b9" id="r_af206b576414228ff161fcc0bf62483b9"><td class="memItemLeft" align="right" valign="top"><a id="af206b576414228ff161fcc0bf62483b9" name="af206b576414228ff161fcc0bf62483b9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRL_PIN</b>&#160;&#160;&#160;DDC7</td></tr>
+<tr class="separator:af206b576414228ff161fcc0bf62483b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0702b340cebfbc797c93613b9c22739e" id="r_a0702b340cebfbc797c93613b9c22739e"><td class="memItemLeft" align="right" valign="top"><a id="a0702b340cebfbc797c93613b9c22739e" name="a0702b340cebfbc797c93613b9c22739e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRS_DDR</b>&#160;&#160;&#160;DDRB</td></tr>
+<tr class="separator:a0702b340cebfbc797c93613b9c22739e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93df1a7c9556251a969e14534d882872" id="r_a93df1a7c9556251a969e14534d882872"><td class="memItemLeft" align="right" valign="top"><a id="a93df1a7c9556251a969e14534d882872" name="a93df1a7c9556251a969e14534d882872"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRS_PORT</b>&#160;&#160;&#160;PORTB</td></tr>
+<tr class="separator:a93df1a7c9556251a969e14534d882872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32926aeccb2cda084cbf025d2d08bd91" id="r_a32926aeccb2cda084cbf025d2d08bd91"><td class="memItemLeft" align="right" valign="top"><a id="a32926aeccb2cda084cbf025d2d08bd91" name="a32926aeccb2cda084cbf025d2d08bd91"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRS_PIN</b>&#160;&#160;&#160;DDB0</td></tr>
+<tr class="separator:a32926aeccb2cda084cbf025d2d08bd91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54208a98de55532bbe02f3a11b87316c" id="r_a54208a98de55532bbe02f3a11b87316c"><td class="memItemLeft" align="right" valign="top"><a id="a54208a98de55532bbe02f3a11b87316c" name="a54208a98de55532bbe02f3a11b87316c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>IRS_PCINT</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a54208a98de55532bbe02f3a11b87316c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -188,9 +219,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a892ce642edd8a73d11d47e88aa7a11c5" id="r_a892ce642edd8a73d11d47e88aa7a11c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a> (uint8_t int_num, uint8_t mode)</td></tr>
 <tr class="memdesc:a892ce642edd8a73d11d47e88aa7a11c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura una interrupción externa (INTx) en el ATmega32U4.  <br /></td></tr>
 <tr class="separator:a892ce642edd8a73d11d47e88aa7a11c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc68600958efc8156b1ddca9bc4ff2b3" id="r_abc68600958efc8156b1ddca9bc4ff2b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#abc68600958efc8156b1ddca9bc4ff2b3">GPIO_PCInterrupt_Enable</a> (uint8_t pcint)</td></tr>
+<tr class="memdesc:abc68600958efc8156b1ddca9bc4ff2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita la interrupción por cambio de pin (PCINT0–7) en el ATmega32U4.  <br /></td></tr>
+<tr class="separator:abc68600958efc8156b1ddca9bc4ff2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab65aae3c3af04abb948fe8cd31d57f30" id="r_ab65aae3c3af04abb948fe8cd31d57f30"><td class="memItemLeft" align="right" valign="top"><a id="ab65aae3c3af04abb948fe8cd31d57f30" name="ab65aae3c3af04abb948fe8cd31d57f30"></a>
+volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cont_obs</b></td></tr>
+<tr class="separator:ab65aae3c3af04abb948fe8cd31d57f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4. </p>
+<div class="textblock"><p>Definición de las interrupciones de cambio de pin (PCINT) del ATMega32U4. </p>
+<p>Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4.</p>
+<dl class="section author"><dt>Author</dt><dd>Jorge Ibáñez </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2025-06-01</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025</dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jorge Ibáñez </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-05-14</dd></dl>
@@ -288,13 +333,45 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">int_num</td><td>Número de interrupción externa (válido: 0, 1, 2, 3). </td></tr>
     <tr><td class="paramname">mode</td><td>Modo de disparo de la interrupción. Puede ser:<ul>
-<li>LOW_LEVEL: Nivel bajo constante</li>
-<li>ANY_CHANGE: Cualquier cambio de nivel</li>
 <li>FALLING_EDGE: Flanco de bajada</li>
 <li>RISING_EDGE: Flanco de subida </li>
 </ul>
 </td></tr>
     <tr><td class="paramname">enable_pullup</td><td>Habilita (ON) o deshabilita (OFF) la resistencia pull-up interna. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abc68600958efc8156b1ddca9bc4ff2b3" name="abc68600958efc8156b1ddca9bc4ff2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc68600958efc8156b1ddca9bc4ff2b3">&#9670;&#160;</a></span>GPIO_PCInterrupt_Enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GPIO_PCInterrupt_Enable </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>pcint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Habilita la interrupción por cambio de pin (PCINT0–7) en el ATmega32U4. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pcint</td><td>Número de pin PCINT (solo válido: 0–7) </td></tr>
   </table>
   </dd>
 </dl>

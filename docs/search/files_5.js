@@ -12,8 +12,10 @@ var searchData=
   ['hal_5fmotores_2eh_9',['hal_motores.h',['../hal__motores_8h.html',1,'']]],
   ['hal_5fpulsadores_2ec_10',['hal_pulsadores.c',['../hal__pulsadores_8c.html',1,'']]],
   ['hal_5fpulsadores_2eh_11',['hal_pulsadores.h',['../hal__pulsadores_8h.html',1,'']]],
-  ['hal_5fsensores_2ec_12',['hal_sensores.c',['../hal__sensores_8c.html',1,'']]],
-  ['hal_5fsensores_2eh_13',['hal_sensores.h',['../hal__sensores_8h.html',1,'']]],
-  ['hal_5fzumbador_2ec_14',['hal_zumbador.c',['../hal__zumbador_8c.html',1,'']]],
-  ['hal_5fzumbador_2eh_15',['hal_zumbador.h',['../hal__zumbador_8h.html',1,'']]]
+  ['hal_5freceptor_2ec_12',['hal_receptor.c',['../hal__receptor_8c.html',1,'']]],
+  ['hal_5freceptor_2eh_13',['hal_receptor.h',['../hal__receptor_8h.html',1,'']]],
+  ['hal_5fsensores_2ec_14',['hal_sensores.c',['../hal__sensores_8c.html',1,'']]],
+  ['hal_5fsensores_2eh_15',['hal_sensores.h',['../hal__sensores_8h.html',1,'']]],
+  ['hal_5fzumbador_2ec_16',['hal_zumbador.c',['../hal__zumbador_8c.html',1,'']]],
+  ['hal_5fzumbador_2eh_17',['hal_zumbador.h',['../hal__zumbador_8h.html',1,'']]]
 ];
