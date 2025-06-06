@@ -26,7 +26,7 @@
  */
 static inline void fotodiodos_init()
 {
-	ADC_init();
+	ADC_Init();
 }
 
 /**

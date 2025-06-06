@@ -8,9 +8,13 @@ var searchData=
   ['battery_5fchannel_5',['BATTERY_CHANNEL',['../bateria_8h.html#a3be0db38f35febf791b42c29d293fe09',1,'bateria.h']]],
   ['battery_5fmax_6',['BATTERY_MAX',['../bateria_8h.html#ad1cc5f0ce9cd8cdc55c634127e92ec45',1,'bateria.h']]],
   ['battery_5fmin_7',['BATTERY_MIN',['../bateria_8h.html#a947c0b4c1947192c03212f2d9be3d27c',1,'bateria.h']]],
-  ['buzzer_2ec_8',['buzzer.c',['../buzzer_8c.html',1,'']]],
-  ['buzzer_2eh_9',['buzzer.h',['../buzzer_8h.html',1,'']]],
-  ['buzzer_5finit_10',['buzzer_init',['../buzzer_8h.html#aaefef572438292e8be236dbc15746753',1,'buzzer.h']]],
-  ['buzzer_5fstop_11',['buzzer_stop',['../buzzer_8c.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;buzzer.c'],['../buzzer_8h.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;buzzer.c']]],
-  ['buzzer_5ftone_12',['buzzer_tone',['../buzzer_8c.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;buzzer.c'],['../buzzer_8h.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;buzzer.c']]]
+  ['brujula_2ec_8',['brujula.c',['../brujula_8c.html',1,'']]],
+  ['brujula_2eh_9',['brujula.h',['../brujula_8h.html',1,'']]],
+  ['brujula_5finit_10',['brujula_init',['../brujula_8h.html#ad251694be14cb781f4441afc74268879',1,'brujula.h']]],
+  ['brujula_5fleer_11',['brujula_leer',['../brujula_8c.html#acf24be534311b6398adc5538d7347f89',1,'brujula_leer(int16_t *x, int16_t *y, int16_t *z):&#160;brujula.c'],['../brujula_8h.html#acf24be534311b6398adc5538d7347f89',1,'brujula_leer(int16_t *x, int16_t *y, int16_t *z):&#160;brujula.c']]],
+  ['buzzer_2ec_12',['buzzer.c',['../buzzer_8c.html',1,'']]],
+  ['buzzer_2eh_13',['buzzer.h',['../buzzer_8h.html',1,'']]],
+  ['buzzer_5finit_14',['buzzer_init',['../buzzer_8h.html#aaefef572438292e8be236dbc15746753',1,'buzzer.h']]],
+  ['buzzer_5fstop_15',['buzzer_stop',['../buzzer_8c.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;buzzer.c'],['../buzzer_8h.html#a970bff6c5d77472b941d8a8daf3161e0',1,'buzzer_stop():&#160;buzzer.c']]],
+  ['buzzer_5ftone_16',['buzzer_tone',['../buzzer_8c.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;buzzer.c'],['../buzzer_8h.html#ad78f2bae40cd062793a2f5406f18ae1f',1,'buzzer_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration):&#160;buzzer.c']]]
 ];

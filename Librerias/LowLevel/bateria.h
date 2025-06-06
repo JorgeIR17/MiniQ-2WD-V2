@@ -47,7 +47,7 @@
  */
 static inline void bateria_init()
 {
-	ADC_init();
+	ADC_Init();
 }
 
 /**

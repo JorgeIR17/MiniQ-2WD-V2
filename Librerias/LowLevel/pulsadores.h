@@ -20,7 +20,7 @@
  */
 static inline void pulsadores_init()
 {
-	ADC_init();
+	ADC_Init();
 }
 
 /**

@@ -34,7 +34,7 @@
  * @brief Inicializa el ADC.
  * 
  */
-static inline void ADC_init()
+static inline void ADC_Init()
 {
     //Delete previous configuration
     ADMUX = 0;
