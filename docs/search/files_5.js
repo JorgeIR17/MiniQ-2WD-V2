@@ -8,7 +8,7 @@ var searchData=
   ['hal_5fencoders_2eh_5',['hal_encoders.h',['../hal__encoders_8h.html',1,'']]],
   ['hal_5ffotodiodos_2ec_6',['hal_fotodiodos.c',['../hal__fotodiodos_8c.html',1,'']]],
   ['hal_5ffotodiodos_2eh_7',['hal_fotodiodos.h',['../hal__fotodiodos_8h.html',1,'']]],
-  ['hal_5fledrgb_2ec_8',['hal_ledrgb.c',['../hal__ledrgb_8c.html',1,'']]],
+  ['hal_5fledrgb_2ec_8',['HAL_ledrgb.c',['../_h_a_l__ledrgb_8c.html',1,'']]],
   ['hal_5fledrgb_2eh_9',['hal_ledrgb.h',['../hal__ledrgb_8h.html',1,'']]],
   ['hal_5fmotores_2ec_10',['hal_motores.c',['../hal__motores_8c.html',1,'']]],
   ['hal_5fmotores_2eh_11',['hal_motores.h',['../hal__motores_8h.html',1,'']]],

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['delay_5fms_0',['delay_ms',['../hal__ledrgb_8c.html#aa0dce6d249d81fb85b082273270ba710',1,'hal_ledrgb.c']]],
-  ['delay_5fus_1',['delay_us',['../hal__ledrgb_8c.html#a58f9378c36dbb864c00f8c964c652173',1,'hal_ledrgb.c']]],
-  ['divisor_5fratio_2',['DIVISOR_RATIO',['../bateria_8h.html#a6c0af78b486056704c7ac6b3a85ea742',1,'bateria.h']]]
+  ['clear_5fterminal_0',['clear_terminal',['../menus_8c.html#af0e8e5346802ba4161c023d8a3da403d',1,'clear_terminal():&#160;menus.c'],['../menus_8h.html#af0e8e5346802ba4161c023d8a3da403d',1,'clear_terminal():&#160;menus.c']]]
 ];

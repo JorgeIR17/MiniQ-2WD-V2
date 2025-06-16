@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['photodiode_5fchannel_0',['PHOTODIODE_CHANNEL',['../fotodiodos_8h.html#a48444d28e5ce43723aca2e089191bd14',1,'fotodiodos.h']]],
-  ['pruebas_5fhal_2ec_1',['pruebas_hal.c',['../pruebas__hal_8c.html',1,'']]],
-  ['pruebas_5fhal_2eh_2',['pruebas_hal.h',['../pruebas__hal_8h.html',1,'']]],
-  ['pulsadores_2ec_3',['pulsadores.c',['../pulsadores_8c.html',1,'']]],
-  ['pulsadores_2eh_4',['pulsadores.h',['../pulsadores_8h.html',1,'']]],
-  ['pulsadores_5finit_5',['pulsadores_init',['../pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d',1,'pulsadores.h']]],
-  ['pulsadores_5fleer_6',['pulsadores_leer',['../pulsadores_8c.html#aeda17a3b6c10ab5b774763b3b5a1b270',1,'pulsadores_leer():&#160;pulsadores.c'],['../pulsadores_8h.html#aeda17a3b6c10ab5b774763b3b5a1b270',1,'pulsadores_leer():&#160;pulsadores.c']]]
+  ['m_5fusb_5ftx_5ffloat_0',['m_usb_tx_float',['../menus_8c.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c'],['../menus_8h.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c']]],
+  ['m_5fusb_5ftx_5fprint_5fstr_1',['m_usb_tx_print_str',['../menus_8c.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c'],['../menus_8h.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c']]],
+  ['menu_5fprincipal_2',['menu_principal',['../menus_8c.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c'],['../menus_8h.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c']]],
+  ['menu_5fpruebas_3',['menu_pruebas',['../menus_8h.html#a9c6e246c0f06a669c82102cc5787c320',1,'menus.h']]],
+  ['menus_2ec_4',['menus.c',['../menus_8c.html',1,'']]],
+  ['menus_2eh_5',['menus.h',['../menus_8h.html',1,'']]],
+  ['motor_5fgirar_6',['motor_girar',['../motores_8c.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c'],['../motores_8h.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c']]],
+  ['motor_5fset_5fspeed_7',['motor_set_speed',['../motores_8c.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c'],['../motores_8h.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c']]],
+  ['motor_5fstop_8',['motor_stop',['../motores_8h.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c'],['../motores_8c.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c']]],
+  ['motores_2ec_9',['motores.c',['../motores_8c.html',1,'']]],
+  ['motores_2eh_10',['motores.h',['../motores_8h.html',1,'']]],
+  ['motores_5finit_11',['motores_init',['../motores_8h.html#a2b4603b827ca2d9d6dd1dda1c36f1a12',1,'motores.h']]]
 ];

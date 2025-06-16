@@ -87,8 +87,11 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4130a064ac575bae2c57a63c782307c3" id="r_a4130a064ac575bae2c57a63c782307c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__zumbador_8c.html#a4130a064ac575bae2c57a63c782307c3">HAL_zumbador_alerta</a> (uint8_t tipo)</td></tr>
-<tr class="memdesc:a4130a064ac575bae2c57a63c782307c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emite una alerta.  <br /></td></tr>
+<tr class="memdesc:a4130a064ac575bae2c57a63c782307c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emite una alerta por el zumbador.  <br /></td></tr>
 <tr class="separator:a4130a064ac575bae2c57a63c782307c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad3fef7df97758c8c3adc6f953ce917" id="r_a4ad3fef7df97758c8c3adc6f953ce917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__zumbador_8c.html#a4ad3fef7df97758c8c3adc6f953ce917">HAL_zumbador_nota</a> (uint8_t nota, uint16_t duracion)</td></tr>
+<tr class="memdesc:a4ad3fef7df97758c8c3adc6f953ce917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emite el sonido de una nota.  <br /></td></tr>
+<tr class="separator:a4ad3fef7df97758c8c3adc6f953ce917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af45abc97d7de831a455e4cfaab6d1bb3" id="r_af45abc97d7de831a455e4cfaab6d1bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__zumbador_8c.html#af45abc97d7de831a455e4cfaab6d1bb3">HAL_zumbador_detener</a> ()</td></tr>
 <tr class="memdesc:af45abc97d7de831a455e4cfaab6d1bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detiene el funcionamiento del zumbador.  <br /></td></tr>
 <tr class="separator:af45abc97d7de831a455e4cfaab6d1bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +119,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Emite una alerta. </p>
+<p>Emite una alerta por el zumbador. </p>
 <p>Esta función emite un sonido con una frecuencia y duración determinadas según el valor del parámetro dado, siendo sus posibles valores las macros proporcionadas.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -144,6 +147,43 @@ Functions</h2></td></tr>
 
 <p>Detiene el funcionamiento del zumbador. </p>
 <p>Detiene cualquier sonido emitido por el zumbador. </p>
+
+</div>
+</div>
+<a id="a4ad3fef7df97758c8c3adc6f953ce917" name="a4ad3fef7df97758c8c3adc6f953ce917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad3fef7df97758c8c3adc6f953ce917">&#9670;&#160;</a></span>HAL_zumbador_nota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_zumbador_nota </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nota</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>duracion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Emite el sonido de una nota. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nota</td><td>Nota emitida. Es necesario hacer uso de las macros proporcionadas, las cuales permiten emitir las 7 notas y sus semitonos de 3 octavas distintas. </td></tr>
+    <tr><td class="paramname">duracion</td><td>Duración del sonido en milisegundos. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -85,7 +85,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;avr/interrupt.h&gt;</code><br />
 <code>#include &lt;util/delay.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="gpio_8h_source.html">../Peripherals/gpio.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="tmr3_8h_source.html">../Peripherals/tmr3.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_t_m_r3_8h_source.html">../Peripherals/tmr3.h</a>&quot;</code><br />
 </div>
 <p><a href="led__rgb_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,9 +110,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>led_rgb_init</
 <tr class="memitem:a1b9b0d3eab86bfe30056696581bf3240" id="r_a1b9b0d3eab86bfe30056696581bf3240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led__rgb_8h.html#a1b9b0d3eab86bfe30056696581bf3240">led_rgb_enviar_color</a> (uint8_t red, uint8_t green, uint8_t blue)</td></tr>
 <tr class="memdesc:a1b9b0d3eab86bfe30056696581bf3240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un color al led según su código RGB.  <br /></td></tr>
 <tr class="separator:a1b9b0d3eab86bfe30056696581bf3240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f5bcfbf87e540b14d8555acb5cb5880" id="r_a9f5bcfbf87e540b14d8555acb5cb5880"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="led__rgb_8h.html#a9f5bcfbf87e540b14d8555acb5cb5880">led_rgb_hue_a_rgb</a> (uint8_t hue, uint8_t *r, uint8_t *g, uint8_t *b)</td></tr>
-<tr class="memdesc:a9f5bcfbf87e540b14d8555acb5cb5880"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte un valor de matiz (hue) a valores RGB.  <br /></td></tr>
-<tr class="separator:a9f5bcfbf87e540b14d8555acb5cb5880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a290c28a37d7537f75e0a4f44b6380453" id="r_a290c28a37d7537f75e0a4f44b6380453"><td class="memItemLeft" align="right" valign="top"><a id="a290c28a37d7537f75e0a4f44b6380453" name="a290c28a37d7537f75e0a4f44b6380453"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>led_rgb_apagar</b> ()</td></tr>
 <tr class="separator:a290c28a37d7537f75e0a4f44b6380453"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,58 +211,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>led_rgb_apagar</b> ()
     <tr><td class="paramname">red</td><td>Valor del componente R. </td></tr>
     <tr><td class="paramname">green</td><td>Valor del componente G. </td></tr>
     <tr><td class="paramname">blue</td><td>Valor del componente B. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9f5bcfbf87e540b14d8555acb5cb5880" name="a9f5bcfbf87e540b14d8555acb5cb5880"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f5bcfbf87e540b14d8555acb5cb5880">&#9670;&#160;</a></span>led_rgb_hue_a_rgb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void led_rgb_hue_a_rgb </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>hue</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>r</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convierte un valor de matiz (hue) a valores RGB. </p>
-<p>Esta función transforma un valor de hue (0-255) en su representación RGB correspondiente. Divide el espectro de color en 6 regiones, cada una abarcando ~43 unidades de hue, e interpola los valores de los componentes rojo, verde y azul según la región correspondiente.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">hue</td><td>Valor del matiz que representa la posición en el círculo cromático. </td></tr>
-    <tr><td class="paramname">r</td><td>Puntero a la variable donde se almacenará el valor del canal rojo. </td></tr>
-    <tr><td class="paramname">g</td><td>Puntero a la variable donde se almacenará el valor del canal verde. </td></tr>
-    <tr><td class="paramname">b</td><td>Puntero a la variable donde se almacenará el valor del canal azul. </td></tr>
   </table>
   </dd>
 </dl>

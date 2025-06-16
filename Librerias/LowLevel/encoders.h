@@ -41,14 +41,14 @@ static inline void encoders_init()
     TMR3_CTC_Start(DIV_CLK_64); // Iniciar con prescaler 64
 	pulsos_izq = 0;
 	pulsos_der = 0;
-	interval_izq = 1;
-	interval_der = 1;
+	pulsos_rpm_izq = 0;
+	pulsos_rpm_der = 0;
 	rpm_izq = 0;
 	rpm_der = 0;
 }
 
 /**
- * @brief Lee los pulsos de un encoder.
+ * @brief Lee los pulsos acumulados de un encoder.
  * 
  * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
  * @return uint16_t Número de pulsos acumulados por el encoder.

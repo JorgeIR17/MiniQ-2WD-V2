@@ -17,7 +17,11 @@
  * Incrementa el contador de pulsos del encoder izquierdo.
  * 
  */
-ISR(INT2_vect) { pulsos_der++; }
+ISR(INT2_vect) 
+{ 
+	pulsos_der++; 
+	pulsos_rpm_der++;
+}
 
 /**
  * @brief Interrupción del encoder derecho.
@@ -25,7 +29,11 @@ ISR(INT2_vect) { pulsos_der++; }
  * Incrementa el contador de pulsos del encoder derecho.
  * 
  */
-ISR(INT3_vect) { pulsos_izq++; }
+ISR(INT3_vect) 
+{ 
+	pulsos_izq++; 
+	pulsos_rpm_izq++;
+}
 
 /**
  * @brief Interrupción del Timer 3.
@@ -35,10 +43,13 @@ ISR(INT3_vect) { pulsos_izq++; }
  */
 ISR(TIMER3_COMPA_vect) 
 {
-    rpm_izq = ((uint32_t)pulsos_izq * 600) / (PULSOS_POR_VUELTA * interval_izq); // uint32_t para evitar overflow
-    rpm_der = ((uint32_t)pulsos_der * 600) / (PULSOS_POR_VUELTA * interval_der); // uint32_t para evitar overflow
-	interval_izq++;
-	interval_der++;
+    rpm_izq = (pulsos_rpm_izq * 600) / (PULSOS_POR_VUELTA * 1);
+    rpm_der = (pulsos_rpm_der * 600) / (PULSOS_POR_VUELTA * 1);
+    pulsos_rpm_izq = 0;
+	pulsos_rpm_der = 0;
 	
-	blink = !(blink); // Alterna parpadeo del led
+	blink = (!blink); // Alterna parpadeo del led
+
+	
+	blink_time = blink_time - 100;
 }

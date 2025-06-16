@@ -32,6 +32,7 @@ static inline void led_rgb_init()
 	TMR3_CTC_enaInterrupt(); // Habilitar interrupcion
 	TMR3_CTC_Start(DIV_CLK_64); // Iniciar con prescaler 64
 	blink = true;
+	blink_time = 0;
 }
 
 /**
@@ -57,19 +58,7 @@ void led_rgb_enviar_byte(uint8_t byte);
  */
 void led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue);
 
-/**
- * @brief Convierte un valor de matiz (hue) a valores RGB.
- *
- * Esta función transforma un valor de hue (0-255) en su representación RGB correspondiente. 
- * Divide el espectro de color en 6 regiones, cada una abarcando ~43 unidades de hue, 
- * e interpola los valores de los componentes rojo, verde y azul según la región correspondiente.
- *
- * @param hue Valor del matiz que representa la posición en el círculo cromático.
- * @param r Puntero a la variable donde se almacenará el valor del canal rojo.
- * @param g Puntero a la variable donde se almacenará el valor del canal verde.
- * @param b Puntero a la variable donde se almacenará el valor del canal azul.
- */
-void led_rgb_hue_a_rgb(uint8_t hue, uint8_t* r, uint8_t* g, uint8_t* b);
+
 
 void led_rgb_apagar();
 

@@ -227,6 +227,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_ledrgb_ini
 <tr class="memitem:a440c32b1f39143ce73db7a8fada68270" id="r_a440c32b1f39143ce73db7a8fada68270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__ledrgb_8h.html#a440c32b1f39143ce73db7a8fada68270">HAL_ledrgb_efecto_breathing</a> (uint8_t color, uint16_t pasos, uint16_t duracion)</td></tr>
 <tr class="memdesc:a440c32b1f39143ce73db7a8fada68270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza un efecto de respiración del led de un color durante un tiempo dado.  <br /></td></tr>
 <tr class="separator:a440c32b1f39143ce73db7a8fada68270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747c0386fab9d8689423da46154b6212" id="r_a747c0386fab9d8689423da46154b6212"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__ledrgb_8h.html#a747c0386fab9d8689423da46154b6212">hal_ledrgb_hue_a_rgb</a> (uint8_t hue, uint8_t *r, uint8_t *g, uint8_t *b)</td></tr>
+<tr class="memdesc:a747c0386fab9d8689423da46154b6212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte un valor de matiz (hue) a valores RGB.  <br /></td></tr>
+<tr class="separator:a747c0386fab9d8689423da46154b6212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299e2c98e40ae3ef917885d0c5f415a9" id="r_a299e2c98e40ae3ef917885d0c5f415a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__ledrgb_8h.html#a299e2c98e40ae3ef917885d0c5f415a9">HAL_ledrgb_efecto_arcoiris</a> (uint16_t duracion)</td></tr>
 <tr class="memdesc:a299e2c98e40ae3ef917885d0c5f415a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza un efecto de arcoiris del led durante un tiempo dado.  <br /></td></tr>
 <tr class="separator:a299e2c98e40ae3ef917885d0c5f415a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -332,6 +335,58 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_ledrgb_apagar</b>
     <tr><td class="paramname">color</td><td>Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés. </td></tr>
     <tr><td class="paramname">pasos</td><td>Indica el número de pasos del efecto. A mayor número de pasos, la intensidad aumentará de forma más progresiva. </td></tr>
     <tr><td class="paramname">duracion</td><td>Duración en milisegundos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a747c0386fab9d8689423da46154b6212" name="a747c0386fab9d8689423da46154b6212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747c0386fab9d8689423da46154b6212">&#9670;&#160;</a></span>hal_ledrgb_hue_a_rgb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void hal_ledrgb_hue_a_rgb </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>hue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convierte un valor de matiz (hue) a valores RGB. </p>
+<p>Esta función transforma un valor de hue (0-255) en su representación RGB correspondiente. Divide el espectro de color en 6 regiones, cada una abarcando ~43 unidades de hue, e interpola los valores de los componentes rojo, verde y azul según la región correspondiente.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hue</td><td>Valor del matiz que representa la posición en el círculo cromático. </td></tr>
+    <tr><td class="paramname">r</td><td>Puntero a la variable donde se almacenará el valor del canal rojo. </td></tr>
+    <tr><td class="paramname">g</td><td>Puntero a la variable donde se almacenará el valor del canal verde. </td></tr>
+    <tr><td class="paramname">b</td><td>Puntero a la variable donde se almacenará el valor del canal azul. </td></tr>
   </table>
   </dd>
 </dl>

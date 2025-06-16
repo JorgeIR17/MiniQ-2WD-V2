@@ -27,11 +27,12 @@
 
 volatile uint16_t pulsos_izq;
 volatile uint16_t pulsos_der;
-volatile uint16_t interval_izq;
-volatile uint16_t interval_der;
+volatile uint16_t pulsos_rpm_izq;
+volatile uint16_t pulsos_rpm_der;
 volatile uint16_t rpm_izq;
 volatile uint16_t rpm_der;
 volatile bool blink;
+volatile uint16_t blink_time;
 
 /**
  * @brief Inicializa el Timer 3 en modo CTC.

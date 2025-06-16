@@ -92,6 +92,20 @@ void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion);
 void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracion);
 
 /**
+ * @brief Convierte un valor de matiz (hue) a valores RGB.
+ *
+ * Esta función transforma un valor de hue (0-255) en su representación RGB correspondiente. 
+ * Divide el espectro de color en 6 regiones, cada una abarcando ~43 unidades de hue, 
+ * e interpola los valores de los componentes rojo, verde y azul según la región correspondiente.
+ *
+ * @param hue Valor del matiz que representa la posición en el círculo cromático.
+ * @param r Puntero a la variable donde se almacenará el valor del canal rojo.
+ * @param g Puntero a la variable donde se almacenará el valor del canal verde.
+ * @param b Puntero a la variable donde se almacenará el valor del canal azul.
+ */
+void hal_ledrgb_hue_a_rgb(uint8_t hue, uint8_t* r, uint8_t* g, uint8_t* b);
+
+/**
  * @brief Realiza un efecto de arcoiris del led durante un tiempo dado.
  * 
  * @param duracion Duración en milisegundos.

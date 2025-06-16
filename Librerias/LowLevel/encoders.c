@@ -26,13 +26,7 @@ uint16_t encoder_get_speed(uint8_t encoder)
 void encoder_reset(uint8_t encoder)
 {
     if (encoder == ENCODER_IZQUIERDO)
-	{ 
 		pulsos_izq = 0;
-		interval_izq = 0;
-	}
     else
-	{
 		pulsos_der = 0;
-		interval_der = 0;
-	}
 }

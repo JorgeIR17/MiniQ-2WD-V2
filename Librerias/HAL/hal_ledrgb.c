@@ -86,54 +86,17 @@ void HAL_ledrgb_color(uint8_t color)
 	
 }
 
-/**
- * @brief Delay en microsegundos (us), sin usar timers ni <util/delay.h>.
- * 
- * Aproximado para una frecuencia de CPU de 16 MHz.
- * Cada iteración de bucle consume ~4 ciclos de reloj.
- * 
- * @param us Cantidad de microsegundos a esperar (máx ~4000)
- */
-void delay_us(uint16_t us) 
-{
-    while (us--) 
-	{
-        // 1 us = 16 ciclos -> ajustamos el bucle interno para ~1 us
-        // Cada iteración son ~4 ciclos (2 por sbiw, 2 por brne)
-        // Requiere 4 iteraciones para ~1 us
-
-        for (uint8_t i = 0; i < 4; i++) 
-		{
-            asm volatile("nop");
-        }
-    }
-}
-
-/**
- * @brief Delay en milisegundos (ms), usa delay_us internamente.
- * 
- * @param ms Cantidad de milisegundos a esperar
- */
-void delay_ms(uint16_t ms) 
-{
-    while (ms--) 
-	{
-        delay_us(1000);
-    }
-}
-
 
 void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion)
 {
-	uint16_t tiempo = duracion / 100; // El estado cambia cada 100 ms
+	blink_time = duracion;
 
-	while (tiempo > 0)
+	while (blink_time > 0)
 	{
-		if(blink)
+		if(blink != 0)
 			HAL_ledrgb_color(color);
 		else
 			led_rgb_apagar();
-		tiempo--;
 	}
 	led_rgb_apagar(); // Asegurar apagar el led al terminar
 }
@@ -200,6 +163,49 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 	}
 }
 
+void hal_ledrgb_hue_a_rgb(uint8_t hue, uint8_t* r, uint8_t* g, uint8_t* b)
+{
+	uint8_t region = hue / 43; // Divide el matiz (hue) en una de las 6 regiones del espectro de color
+	uint8_t resto = (hue - (region * 43)) * 6; // Calcula el resto para interpolar entre los colores base
+
+	uint8_t p = 0; // p siempre es 0; q y t se usan para interpolar colores
+	uint8_t q = (255 * (255 - resto)) / 255;
+	uint8_t t = (255 * resto) / 255;
+
+	switch (region)
+	{
+		case 0:
+			*r = 255;
+			*g = t;
+			*b = p;
+			break;
+		case 1:
+			*r = q;
+			*g = 255;
+			*b = p;
+			break;
+		case 2:
+			*r = p;
+			*g = 255;
+			*b = t;
+			break;
+		case 3:
+			*r = p;
+			*g = q;
+			*b = 255;
+			break;
+		case 4:
+			*r = t;
+			*g = p;
+			*b = 255;
+			break;
+		default: // region 5
+			*r = 255;
+			*g = p;
+			*b = q;
+			break;
+	}
+}
 
 void HAL_ledrgb_efecto_arcoiris(uint16_t duracion)
 {
@@ -209,7 +215,7 @@ void HAL_ledrgb_efecto_arcoiris(uint16_t duracion)
 
 	while (tiempo < duracion)
 	{
-		led_rgb_hue_a_rgb(hue++, &r, &g, &b); // Convierte el matiz actual a RGB y envia el color al LED
+		hal_ledrgb_hue_a_rgb(hue++, &r, &g, &b); // Convierte el matiz actual a RGB y envia el color al LED
 		led_rgb_enviar_color(r, g, b);
 		_delay_ms(20);
 		tiempo += 20;
