@@ -1,3 +1,17 @@
+/**
+ * @file pruebas.h
+ * @author Jorge Ibáñez
+ * @brief Declaración de las funciones de las pruebas del DFRobot MiniQ 2WD
+ * @version 0.1
+ * @date 2025-06-09
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ * Para poder mostrar los menús, así como la información a mostrar en las pruebas, se ha hecho uso de la librería de USB
+ * de MEAM.Design (https://medesign.seas.upenn.edu/index.php/Guides/MaEvArM-usb).
+ * 
+ */
+
 
 #ifndef PRUEBAS_H_
 #define PRUEBAS_H_

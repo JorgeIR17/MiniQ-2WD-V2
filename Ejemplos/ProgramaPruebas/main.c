@@ -1,11 +1,3 @@
-/*
- * MainPruebas.c
- *
- * Created: 09/06/2025 11:57:45
- *  Author: Jorge
- */ 
-
-
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
