@@ -32,7 +32,7 @@ void motor_set_speed(uint8_t motor, int16_t velocidad)
 		}
     }
 
-    else
+    if(motor == MOTOR_DERECHO)
     {
         TMR4_PWM_Start(TMR4_PWM_DIV_CLK_64);
         if(velocidad >= 0) // Hacia delante

@@ -37,6 +37,8 @@ void led_rgb_enviar_bit(uint8_t bit)
 
 void led_rgb_enviar_byte(uint8_t byte)
 {
+	if (byte > 255) byte = 255;
+
 	for (uint8_t i = 0; i < 8; i++) // Se recorre el byte desde el MSB (7) hasta el LSB (0)
 	{
 		led_rgb_enviar_bit(byte & (1 << (7 - i))); // El bit actual se evalua con un AND bit a bit y se envia

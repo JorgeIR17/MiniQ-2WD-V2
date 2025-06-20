@@ -12,9 +12,9 @@
 #ifndef GPIO_H_
 #define GPIO_H_
 
-#define F_CPU 16000000UL
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include "tmr3.h"
 
 // Modo pin
 #define INPUT 0
@@ -138,13 +138,13 @@ static inline void GPIO_Pullup(volatile uint8_t* port, uint8_t pin, uint8_t stat
 }
 
 /**
- * @brief Configura una interrupción externa (INTx) en el ATmega32U4.
+ * @brief Configura una interrupción externa (INT2 o INT3) en el ATmega32U4.
  *
- * Esta función permite activar una interrupción externa en uno de los pines INT0, INT1, INT2 o INT3,
+ * Esta función permite activar una interrupción externa en uno de los pines INT2 o INT3,
  * definiendo el tipo de evento que la activa (nivel bajo, cambio, flanco de bajada o subida) y si se desea
  * habilitar la resistencia pull-up interna del pin correspondiente.
  *
- * @param int_num Número de interrupción externa (válido: 0, 1, 2, 3).
+ * @param int_num Número de interrupción externa (válido: 2, 3).
  * @param mode Modo de disparo de la interrupción. Puede ser:
  *  - FALLING_EDGE: Flanco de bajada
  *  - RISING_EDGE: Flanco de subida

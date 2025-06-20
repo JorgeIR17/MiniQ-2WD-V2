@@ -98,7 +98,7 @@ inline void TMR4_PWM_set_direction(uint8_t motor, uint8_t direction)
 		if(direction == BACKWARD)
 			PORTD |= (1<<MOTOR_EN1_PIN);
 	}
-	else // Motor derecho
+	if (motor == 1) // Motor derecho
 	{	
 		if(direction == FORWARD)
 			PORTE &= ~(1<<MOTOR_EN2_PIN);

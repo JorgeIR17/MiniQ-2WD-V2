@@ -45,6 +45,7 @@ static inline void encoders_init()
 	pulsos_rpm_der = 0;
 	rpm_izq = 0;
 	rpm_der = 0;
+	sei();
 }
 
 /**

@@ -7,8 +7,9 @@
  * 
  * @copyright Copyright (c) 2025
 
-#include "pruebas.h"
+*/
 
+#include "pruebas.h"
 
 /*-----------------PRUEBAS BAJO NIVEL------------------*/
 
@@ -63,16 +64,9 @@ void prueba_brujula()
 		m_usb_tx_int(z);
 
 		_delay_ms(300);
-
-		// Salida opcional por tecla
-		if (m_usb_rx_available())
-		{
-			char c = m_usb_rx_char();
-			if (c == 'q' || c == 'Q') break; // salir con 'q'
-		}
 	}
 
-    m_usb_rx_char(); // Limpia la tecla presionada
+    while (m_usb_rx_available()) m_usb_rx_char(); // Limpia la tecla presionada
 	m_usb_tx_string("\nFin de prueba.\n");
 }
 
@@ -571,6 +565,35 @@ void prueba_HAL_bateria()
 }
 
 
+/*void prueba_HAL_brujula()
+{
+	m_usb_tx_string("\n== PRUEBA HAL BRUJULA ==\n");
+	m_usb_tx_string("Mostrando valores de los ejes X, Y, Z:\n");
+
+	int16_t x, y, z;
+
+	while (!m_usb_rx_available())
+	{
+		HAL_brujula_leer_ejes(&x, &y, &z);
+
+		// Limpiar línea anterior
+		m_usb_tx_string("\r                                                              \r");
+
+		// Mostrar los valores actuales
+		m_usb_tx_string("X: ");
+		m_usb_tx_int(x);
+		m_usb_tx_string(" | Y: ");
+		m_usb_tx_int(y);
+		m_usb_tx_string(" | Z: ");
+		m_usb_tx_int(z);
+
+		_delay_ms(300);
+	}
+
+    while (m_usb_rx_available()) m_usb_rx_char(); // Limpia la tecla presionada
+	m_usb_tx_string("\nFin de prueba.\n");
+}*/
+
 void prueba_HAL_brujula()
 {
 	m_usb_tx_string("\n== PRUEBA HAL BRUJULA ==\n");
@@ -594,16 +617,9 @@ void prueba_HAL_brujula()
 		m_usb_tx_int(z);
 
 		_delay_ms(300);
-
-		// Salida opcional por tecla
-		if (m_usb_rx_available())
-		{
-			char c = m_usb_rx_char();
-			if (c == 'q' || c == 'Q') break; // salir con 'q'
-		}
 	}
 
-    m_usb_rx_char(); // Limpia la tecla presionada
+    while (m_usb_rx_available()) m_usb_rx_char(); // Limpia la tecla presionada
 	m_usb_tx_string("\nFin de prueba.\n");
 }
 

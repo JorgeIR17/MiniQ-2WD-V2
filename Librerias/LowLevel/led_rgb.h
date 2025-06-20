@@ -33,6 +33,8 @@ static inline void led_rgb_init()
 	TMR3_CTC_Start(DIV_CLK_64); // Iniciar con prescaler 64
 	blink = true;
 	blink_time = 0;
+	
+	sei();
 }
 
 /**

@@ -13,6 +13,7 @@
 #ifndef RECEPTOR_H_
 #define RECEPTOR_H_
 
+#define F_CPU 16000000UL
 #include "../Peripherals/gpio.h"
 #include <util/delay.h>
 
@@ -30,6 +31,8 @@ static inline void receptor_init()
 	GPIO_Init(&IRS_DDR, IRS_PIN, INPUT);
 	GPIO_PCInterrupt_Enable(IRS_PCINT);
 	cont_obs = 0;
+	
+	sei();
 }
 
 /**

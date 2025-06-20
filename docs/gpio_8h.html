@@ -85,14 +85,12 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
 <code>#include &lt;avr/interrupt.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="tmr3_8h_source.html">tmr3.h</a>&quot;</code><br />
 </div>
 <p><a href="gpio_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft" align="right" valign="top"><a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_CPU</b>&#160;&#160;&#160;16000000UL</td></tr>
-<tr class="separator:a43bafb28b29491ec7f871319b5a3b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb283bd7893b9855e2f23013891fc82" id="r_a1bb283bd7893b9855e2f23013891fc82"><td class="memItemLeft" align="right" valign="top"><a id="a1bb283bd7893b9855e2f23013891fc82" name="a1bb283bd7893b9855e2f23013891fc82"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a1bb283bd7893b9855e2f23013891fc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -217,7 +215,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a55f8fd7cdccc215ef4f78bd08a1ff3d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada.  <br /></td></tr>
 <tr class="separator:a55f8fd7cdccc215ef4f78bd08a1ff3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a892ce642edd8a73d11d47e88aa7a11c5" id="r_a892ce642edd8a73d11d47e88aa7a11c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a> (uint8_t int_num, uint8_t mode)</td></tr>
-<tr class="memdesc:a892ce642edd8a73d11d47e88aa7a11c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura una interrupción externa (INTx) en el ATmega32U4.  <br /></td></tr>
+<tr class="memdesc:a892ce642edd8a73d11d47e88aa7a11c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configura una interrupción externa (INT2 o INT3) en el ATmega32U4.  <br /></td></tr>
 <tr class="separator:a892ce642edd8a73d11d47e88aa7a11c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc68600958efc8156b1ddca9bc4ff2b3" id="r_abc68600958efc8156b1ddca9bc4ff2b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio_8h.html#abc68600958efc8156b1ddca9bc4ff2b3">GPIO_PCInterrupt_Enable</a> (uint8_t pcint)</td></tr>
 <tr class="memdesc:abc68600958efc8156b1ddca9bc4ff2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Habilita la interrupción por cambio de pin (PCINT0–7) en el ATmega32U4.  <br /></td></tr>
@@ -327,11 +325,11 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cont_obs<
 </table>
 </div><div class="memdoc">
 
-<p>Configura una interrupción externa (INTx) en el ATmega32U4. </p>
-<p>Esta función permite activar una interrupción externa en uno de los pines INT0, INT1, INT2 o INT3, definiendo el tipo de evento que la activa (nivel bajo, cambio, flanco de bajada o subida) y si se desea habilitar la resistencia pull-up interna del pin correspondiente.</p>
+<p>Configura una interrupción externa (INT2 o INT3) en el ATmega32U4. </p>
+<p>Esta función permite activar una interrupción externa en uno de los pines INT2 o INT3, definiendo el tipo de evento que la activa (nivel bajo, cambio, flanco de bajada o subida) y si se desea habilitar la resistencia pull-up interna del pin correspondiente.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">int_num</td><td>Número de interrupción externa (válido: 0, 1, 2, 3). </td></tr>
+    <tr><td class="paramname">int_num</td><td>Número de interrupción externa (válido: 2, 3). </td></tr>
     <tr><td class="paramname">mode</td><td>Modo de disparo de la interrupción. Puede ser:<ul>
 <li>FALLING_EDGE: Flanco de bajada</li>
 <li>RISING_EDGE: Flanco de subida </li>

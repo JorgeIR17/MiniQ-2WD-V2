@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: File Members</title>
+<title>My Project: Peripherals/tmr3.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,17 +67,56 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_28aa774a0905b332275db673cb8fc5a4.html">Peripherals</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">tmr3.c File Reference</div></div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all documented file members with links to the documentation:</div>
 
-<h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>IR0&#160;:&#160;<a class="el" href="sensores_8h.html#acbde681c731ebedb97a4d04a52f41407">sensores.h</a></li>
-<li>IR1&#160;:&#160;<a class="el" href="sensores_8h.html#a7b2b32709f9770a283701ffcf3723497">sensores.h</a></li>
-<li>IR2&#160;:&#160;<a class="el" href="sensores_8h.html#a5a08e4f5cb3582e623cc14a6c92d48de">sensores.h</a></li>
-<li>IR3&#160;:&#160;<a class="el" href="sensores_8h.html#a26c72d21cca0ec21af4bd9b20ba3ad51">sensores.h</a></li>
-<li>IR4&#160;:&#160;<a class="el" href="sensores_8h.html#a20f2f5908baa0eeba04b9ceaf718cea0">sensores.h</a></li>
-<li>ISR()&#160;:&#160;<a class="el" href="tmr0_8c.html#aec43762dc86e029b395d4e5819192c2d">tmr0.c</a>, <a class="el" href="tmr1_8c.html#ad39420cdd896dd12c68e36313139d0a5">tmr1.c</a>, <a class="el" href="tmr3_8c.html#a86953738188622410b88938da2bf8a63">tmr3.c</a></li>
-</ul>
+<p>Definición de las interrupciones ejecutadas por el Timer 3 del ATMega32U4.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="tmr3_8h_source.html">tmr3.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a86953738188622410b88938da2bf8a63" id="r_a86953738188622410b88938da2bf8a63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmr3_8c.html#a86953738188622410b88938da2bf8a63">ISR</a> (TIMER3_COMPA_vect)</td></tr>
+<tr class="memdesc:a86953738188622410b88938da2bf8a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupción del Timer 3.  <br /></td></tr>
+<tr class="separator:a86953738188622410b88938da2bf8a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definición de las interrupciones ejecutadas por el Timer 3 del ATMega32U4. </p>
+<dl class="section author"><dt>Author</dt><dd>Jorge Ibáñez </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2025-05-04</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a86953738188622410b88938da2bf8a63" name="a86953738188622410b88938da2bf8a63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86953738188622410b88938da2bf8a63">&#9670;&#160;</a></span>ISR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">TIMER3_COMPA_vect&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Interrupción del Timer 3. </p>
+<p>Determina las velocidades de las ruedas en RPM y alterna el valor y duración del parpadeo del led RGB. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

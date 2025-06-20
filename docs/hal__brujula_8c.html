@@ -79,23 +79,150 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Definición de la capa HAL para el uso de la brujula HMC5883L (QMC5883L)  
+<p>Definición de la capa HAL para el uso de la brujula HMC5883L.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="hal__brujula_8h_source.html">hal_brujula.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa3873d82e4a798eb8d2e813994ecb5eb" id="r_aa3873d82e4a798eb8d2e813994ecb5eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#aa3873d82e4a798eb8d2e813994ecb5eb">HAL_brujula_leer_ejes</a> (int16_t *x, int16_t *y, int16_t *z)</td></tr>
-<tr class="memdesc:aa3873d82e4a798eb8d2e813994ecb5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los valores de los tres ejes del magnetómetro HMC5883L (QMC5833L).  <br /></td></tr>
+<tr class="memdesc:aa3873d82e4a798eb8d2e813994ecb5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los valores de los tres ejes del magnetómetro HMC5883L.  <br /></td></tr>
 <tr class="separator:aa3873d82e4a798eb8d2e813994ecb5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20e6047b81b78d98db7bfb399b9c4ad2" id="r_a20e6047b81b78d98db7bfb399b9c4ad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#a20e6047b81b78d98db7bfb399b9c4ad2">HAL_brujula_calibrar</a> (int16_t *offset_x, int16_t *offset_y)</td></tr>
+<tr class="memdesc:a20e6047b81b78d98db7bfb399b9c4ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una calibración básica de la brújula.  <br /></td></tr>
+<tr class="separator:a20e6047b81b78d98db7bfb399b9c4ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbf28066bf7165053e516ca4a68007b" id="r_a5fbf28066bf7165053e516ca4a68007b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#a5fbf28066bf7165053e516ca4a68007b">HAL_brujula_get_heading_calibrado</a> (int16_t offset_x, int16_t offset_y)</td></tr>
+<tr class="memdesc:a5fbf28066bf7165053e516ca4a68007b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula el heading actual (ángulo respecto al norte) usando los offsets de calibración.  <br /></td></tr>
+<tr class="separator:a5fbf28066bf7165053e516ca4a68007b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d0c006cfe05308bf58d2a25547e08d" id="r_ae1d0c006cfe05308bf58d2a25547e08d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#ae1d0c006cfe05308bf58d2a25547e08d">HAL_brujula_diferencia_angulo</a> (float angulo_objetivo, float angulo_actual)</td></tr>
+<tr class="memdesc:ae1d0c006cfe05308bf58d2a25547e08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula la diferencia angular entre dos ángulos en grados.  <br /></td></tr>
+<tr class="separator:ae1d0c006cfe05308bf58d2a25547e08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45963be513352cb1934dc9d594296d27" id="r_a45963be513352cb1934dc9d594296d27"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#a45963be513352cb1934dc9d594296d27">HAL_brujula_promedio_heading_calibrado</a> (int16_t offset_x, int16_t offset_y, uint8_t muestras)</td></tr>
+<tr class="memdesc:a45963be513352cb1934dc9d594296d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula el promedio del heading calibrado de la brújula.  <br /></td></tr>
+<tr class="separator:a45963be513352cb1934dc9d594296d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definición de la capa HAL para el uso de la brujula HMC5883L (QMC5883L) </p>
+<div class="textblock"><p>Definición de la capa HAL para el uso de la brujula HMC5883L. </p>
 <dl class="section author"><dt>Author</dt><dd>Jorge Ibáñez </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-05-03</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a20e6047b81b78d98db7bfb399b9c4ad2" name="a20e6047b81b78d98db7bfb399b9c4ad2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e6047b81b78d98db7bfb399b9c4ad2">&#9670;&#160;</a></span>HAL_brujula_calibrar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_brujula_calibrar </td>
+          <td>(</td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>offset_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>offset_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza una calibración básica de la brújula. </p>
+<p>Guarda los máximos y mínimos en X e Y mientras el usuario gira el sensor. Calcula el offset para centrar las lecturas.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">offset_x</td><td>Desplazamiento medio del eje X </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">offset_y</td><td>Desplazamiento medio del eje Y </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1d0c006cfe05308bf58d2a25547e08d" name="ae1d0c006cfe05308bf58d2a25547e08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d0c006cfe05308bf58d2a25547e08d">&#9670;&#160;</a></span>HAL_brujula_diferencia_angulo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float HAL_brujula_diferencia_angulo </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angulo_objetivo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angulo_actual</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula la diferencia angular entre dos ángulos en grados. </p>
+<p>El resultado está en el rango [-180, 180], lo que indica cuánto y en qué dirección se debe girar desde angulo_actual hacia angulo_objetivo.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angulo_objetivo</td><td>Ángulo objetivo en grados [0–360) </td></tr>
+    <tr><td class="paramname">angulo_actual</td><td>Ángulo actual en grados [0–360) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Diferencia angular en grados (puede ser negativa) </dd></dl>
+
+</div>
+</div>
+<a id="a5fbf28066bf7165053e516ca4a68007b" name="a5fbf28066bf7165053e516ca4a68007b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbf28066bf7165053e516ca4a68007b">&#9670;&#160;</a></span>HAL_brujula_get_heading_calibrado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float HAL_brujula_get_heading_calibrado </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>offset_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>offset_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula el heading actual (ángulo respecto al norte) usando los offsets de calibración. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset_x</td><td>Offset del eje X obtenido en calibración </td></tr>
+    <tr><td class="paramname">offset_y</td><td>Offset del eje Y obtenido en calibración </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Ángulo en grados, de 0 a 360 </dd></dl>
+
+</div>
+</div>
 <a id="aa3873d82e4a798eb8d2e813994ecb5eb" name="aa3873d82e4a798eb8d2e813994ecb5eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3873d82e4a798eb8d2e813994ecb5eb">&#9670;&#160;</a></span>HAL_brujula_leer_ejes()</h2>
 
@@ -128,7 +255,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lee los valores de los tres ejes del magnetómetro HMC5883L (QMC5833L). </p>
+<p>Lee los valores de los tres ejes del magnetómetro HMC5883L. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>Puntero donde se guardará el valor del eje X </td></tr>
@@ -137,6 +264,52 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a45963be513352cb1934dc9d594296d27" name="a45963be513352cb1934dc9d594296d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45963be513352cb1934dc9d594296d27">&#9670;&#160;</a></span>HAL_brujula_promedio_heading_calibrado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float HAL_brujula_promedio_heading_calibrado </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>offset_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>offset_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>muestras</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula el promedio del heading calibrado de la brújula. </p>
+<p>Esta función realiza varias lecturas consecutivas del ángulo (heading) actual corregido con los offsets de calibración, y devuelve el valor medio. Es útil para reducir el efecto de ruido o pequeñas oscilaciones en las lecturas del sensor magnético.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">offset_x</td><td>Offset de calibración para el eje X. </td></tr>
+    <tr><td class="paramname">offset_y</td><td>Offset de calibración para el eje Y. </td></tr>
+    <tr><td class="paramname">muestras</td><td>Número de lecturas consecutivas a promediar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float Heading promedio en grados (rango de 0° a 360°). </dd></dl>
 
 </div>
 </div>

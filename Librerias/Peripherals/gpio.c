@@ -12,10 +12,36 @@
 #include "gpio.h"
 
 /**
- * @brief Incrementa el contador de pulsos del receptor IR.
+ * @brief Interrupción externa del receptor IR.
+ * 
+ * Incrementa el contador de pulsos del receptor IR.
  * 
  */
 ISR(PCINT0_vect)
 {
 	cont_obs++;
+}
+
+/**
+ * @brief Interrupción del encoder izquierdo.
+ * 
+ * Incrementa el contador de pulsos del encoder izquierdo.
+ * 
+ */
+ISR(INT2_vect) 
+{ 
+	pulsos_der++; 
+	pulsos_rpm_der++;
+}
+
+/**
+ * @brief Interrupción del encoder derecho.
+ * 
+ * Incrementa el contador de pulsos del encoder derecho.
+ * 
+ */
+ISR(INT3_vect) 
+{ 
+	pulsos_izq++; 
+	pulsos_rpm_izq++;
 }

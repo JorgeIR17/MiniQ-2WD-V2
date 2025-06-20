@@ -14,19 +14,21 @@
 uint16_t encoder_leer(uint8_t encoder) 
 {
     if (encoder == ENCODER_IZQUIERDO) return pulsos_izq;  // Encoder izquierdo
-    else return pulsos_der;               // Encoder derecho
+    else if (encoder == ENCODER_DERECHO) return pulsos_der;    // Encoder derecho
+	else return 0;
 }
 
 uint16_t encoder_get_speed(uint8_t encoder) 
 {
     if (encoder == ENCODER_IZQUIERDO) return rpm_izq;  // Encoder izquierdo
-    else return rpm_der;               // Encoder derecho
+    else if (encoder == ENCODER_DERECHO) return rpm_der;    // Encoder derecho
+	else return 0;
 }
 
 void encoder_reset(uint8_t encoder)
 {
     if (encoder == ENCODER_IZQUIERDO)
 		pulsos_izq = 0;
-    else
+    if (encoder == ENCODER_DERECHO)
 		pulsos_der = 0;
 }

@@ -45,7 +45,7 @@ void sensores_calibrar()
 	
 	for(uint8_t vueltas = 0; vueltas < 10; vueltas++)
 	{
-		for(uint8_t i = IZQUIERDA; i < DERECHA; i++)
+		for(uint8_t i = IZQUIERDA_CENTRO; i < DERECHA_CENTRO; i++)
 		{
 			lectura = sensores_leer(i);
 			if(lectura > valor_max) valor_max = lectura; // ALmacena el valor leido mas alto (blanco)
@@ -56,7 +56,7 @@ void sensores_calibrar()
 	
 	if((valor_max - valor_min) > 100) // asegurar que se hayan leido valores correspondientes a blanco y negro
 	{
-		blanco = valor_max - valor_min;
-		negro = valor_max - valor_min;
+		blanco = valor_max * 0.9;
+		negro = valor_min * 1.1;
 	}
 }

@@ -16,6 +16,8 @@
 #ifndef PRUEBAS_H_
 #define PRUEBAS_H_
 
+#define F_CPU 16000000UL
+#include <util/delay.h>
 #include "../HAL/hal_motores.h"
 #include "../HAL/hal_sensores.h"
 #include "../HAL/hal_zumbador.h"

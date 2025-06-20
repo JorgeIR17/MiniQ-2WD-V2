@@ -16,6 +16,8 @@
 #ifndef MENUS_H_
 #define MENUS_H_
 
+#define F_CPU 16000000UL
+#include <util/delay.h>
 #include "m_usb.h"
 #include "pruebas.h"
 
@@ -111,7 +113,7 @@ static inline void menu_pruebas()
 	HAL_receptor_init();
 	HAL_sensores_init();
 	HAL_zumbador_init();
-	while (!m_usb_isconnected()); // Espera a estar conectado
+	//while (!m_usb_isconnected()); // Espera a estar conectado
 	_delay_ms(7000); // Tiempo de espera para abrir la terminal
 
 	m_usb_tx_string("Interfaz lista. Bienvenido al sistema de prueba.\n");

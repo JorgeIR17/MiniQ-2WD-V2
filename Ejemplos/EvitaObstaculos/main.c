@@ -1,15 +1,8 @@
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
-#include "m_usb.h"
 #include "Librerias/HAL/hal_motores.h"
-#include "Librerias/HAL/hal_sensores.h"
-#include "Librerias/HAL/hal_zumbador.h"
-#include "Librerias/HAL/hal_encoders.h"
 #include "Librerias/HAL/hal_ledrgb.h"
-#include "Librerias/HAL/hal_pulsadores.h"
-#include "Librerias/HAL/hal_bateria.h"
-#include "Librerias/HAL/hal_fotodiodos.h"
 #include "Librerias/HAL/hal_receptor.h"
 
 int main(void)

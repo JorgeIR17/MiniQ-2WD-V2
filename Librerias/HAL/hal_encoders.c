@@ -21,7 +21,7 @@ uint16_t HAL_encoders_get_distance(uint8_t encoder)
 	uint16_t pulsos = 0;
 	if(encoder == ENCODER_IZQUIERDO)
 		pulsos = encoder_leer(ENCODER_IZQUIERDO);
-	else
+	if(encoder == ENCODER_DERECHO)
 		pulsos = encoder_leer(ENCODER_DERECHO);	
 	return pulsos * MM_POR_PULSO;
 }
