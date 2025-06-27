@@ -14,8 +14,8 @@
 float bateria_get_voltage()
 {
     uint16_t value = ADC_Read_Single_Poll(BATTERY_CHANNEL);
-    float voltage_d9 = (value / 1023.0) * VREF; // Convertir valor de ADC a voltaje
-    float voltage = voltage_d9 * DIVISOR_RATIO; // Aplica el factor del divisor resistivo para obtener el voltaje real
+    float voltage = (value / 1023.0) * VREF; // Convierte el valor de ADC a voltaje
+    voltage = voltage * DIVISOR_RATIO; // Aplica el factor del divisor resistivo para obtener el voltaje real
     return voltage;
 }
 

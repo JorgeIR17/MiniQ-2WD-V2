@@ -17,12 +17,12 @@ int8_t HAL_sensores_obtener_posicion()
     uint16_t izquierda = HAL_sensores_leer(IZQUIERDA_CENTRO);
     uint16_t derecha = HAL_sensores_leer(DERECHA_CENTRO);
 
-    if(centro <= negro && izquierda >= blanco && derecha >= blanco)   return 0;  // Robot centrado
-    if(centro <= negro && izquierda <= negro)                       return 1;  // Robot un poco a la derecha
-    if(centro <= negro && derecha <= negro)                         return -1; // Robot un poco a la izquierda
-    if(centro >= blanco && izquierda <= negro)                       return 2;  // Robot a la derecha
-    if(centro >= blanco && derecha <= negro)                         return -2; // Robot a la izquierda
-	if(centro >= blanco && izquierda >= blanco && derecha >= blanco)   return ERROR_LINEA; // No se detecta la linea
+    if(centro <= negro && izquierda >= blanco && derecha >= blanco)     return 0;  // Robot centrado
+    if(centro <= negro && izquierda <= negro)                           return 1;  // Robot un poco a la derecha
+    if(centro <= negro && derecha <= negro)                             return -1; // Robot un poco a la izquierda
+    if(centro >= blanco && (izquierda <= negro || (derecha >= blanco && izquierda > negro)))                          return 2;  // Robot a la derecha
+    if(centro >= blanco && (derecha <= negro || (izquierda >= blanco && derecha > negro)))                            return -2; // Robot a la izquierda
+    if(centro >= blanco && izquierda >= blanco && derecha >= blanco)    return ERROR_LINEA; // No se detecta la linea
 
     return NADA; 
 }

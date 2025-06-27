@@ -75,8 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">tmr3.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -85,7 +84,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
 <code>#include &lt;avr/interrupt.h&gt;</code><br />
-<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br />
 </div>
 <p><a href="tmr3_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,9 +105,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a19b14c59eb9eaff4296df1077be5751d" id="r_a19b14c59eb9eaff4296df1077be5751d"><td class="memItemLeft" align="right" valign="top"><a id="a19b14c59eb9eaff4296df1077be5751d" name="a19b14c59eb9eaff4296df1077be5751d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DIV_CLK_1024</b>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:a19b14c59eb9eaff4296df1077be5751d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59379d6f4652f923e61ac3868ccfe631" id="r_a59379d6f4652f923e61ac3868ccfe631"><td class="memItemLeft" align="right" valign="top"><a id="a59379d6f4652f923e61ac3868ccfe631" name="a59379d6f4652f923e61ac3868ccfe631"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PULSOS_POR_VUELTA</b>&#160;&#160;&#160;25</td></tr>
-<tr class="separator:a59379d6f4652f923e61ac3868ccfe631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -134,33 +130,6 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>TMR3_CTC_Stop<
 <tr class="memitem:aaf83f5a1f949df52892ea9d7ab23363d" id="r_aaf83f5a1f949df52892ea9d7ab23363d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmr3_8h.html#aaf83f5a1f949df52892ea9d7ab23363d">TMR3_CTC_Set</a> (uint16_t valueCounterA)</td></tr>
 <tr class="memdesc:aaf83f5a1f949df52892ea9d7ab23363d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece el valor de contador del Timer 3 en modo CTC.  <br /></td></tr>
 <tr class="separator:aaf83f5a1f949df52892ea9d7ab23363d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a643c2d335d5130b4e9974f33c4dec7b5" id="r_a643c2d335d5130b4e9974f33c4dec7b5"><td class="memItemLeft" align="right" valign="top"><a id="a643c2d335d5130b4e9974f33c4dec7b5" name="a643c2d335d5130b4e9974f33c4dec7b5"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_izq</b></td></tr>
-<tr class="separator:a643c2d335d5130b4e9974f33c4dec7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e7c84c344a8ef3d65b01e41a17031bc" id="r_a3e7c84c344a8ef3d65b01e41a17031bc"><td class="memItemLeft" align="right" valign="top"><a id="a3e7c84c344a8ef3d65b01e41a17031bc" name="a3e7c84c344a8ef3d65b01e41a17031bc"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_der</b></td></tr>
-<tr class="separator:a3e7c84c344a8ef3d65b01e41a17031bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad930ce946b0a9164fab2590d908a909d" id="r_ad930ce946b0a9164fab2590d908a909d"><td class="memItemLeft" align="right" valign="top"><a id="ad930ce946b0a9164fab2590d908a909d" name="ad930ce946b0a9164fab2590d908a909d"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_rpm_izq</b></td></tr>
-<tr class="separator:ad930ce946b0a9164fab2590d908a909d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af33b6e04314a2b53194ba839affa71bd" id="r_af33b6e04314a2b53194ba839affa71bd"><td class="memItemLeft" align="right" valign="top"><a id="af33b6e04314a2b53194ba839affa71bd" name="af33b6e04314a2b53194ba839affa71bd"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_rpm_der</b></td></tr>
-<tr class="separator:af33b6e04314a2b53194ba839affa71bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7c22693e06b43555c1b3b3026757f8a" id="r_ab7c22693e06b43555c1b3b3026757f8a"><td class="memItemLeft" align="right" valign="top"><a id="ab7c22693e06b43555c1b3b3026757f8a" name="ab7c22693e06b43555c1b3b3026757f8a"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rpm_izq</b></td></tr>
-<tr class="separator:ab7c22693e06b43555c1b3b3026757f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03fd2a8857ecd3ce1380329698b8e649" id="r_a03fd2a8857ecd3ce1380329698b8e649"><td class="memItemLeft" align="right" valign="top"><a id="a03fd2a8857ecd3ce1380329698b8e649" name="a03fd2a8857ecd3ce1380329698b8e649"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rpm_der</b></td></tr>
-<tr class="separator:a03fd2a8857ecd3ce1380329698b8e649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49378004f4947f3bb6572ad70e985894" id="r_a49378004f4947f3bb6572ad70e985894"><td class="memItemLeft" align="right" valign="top"><a id="a49378004f4947f3bb6572ad70e985894" name="a49378004f4947f3bb6572ad70e985894"></a>
-volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>blink</b></td></tr>
-<tr class="separator:a49378004f4947f3bb6572ad70e985894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb06ad7d40f61c24517a160d195a23d0" id="r_adb06ad7d40f61c24517a160d195a23d0"><td class="memItemLeft" align="right" valign="top"><a id="adb06ad7d40f61c24517a160d195a23d0" name="adb06ad7d40f61c24517a160d195a23d0"></a>
-volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>blink_time</b></td></tr>
-<tr class="separator:adb06ad7d40f61c24517a160d195a23d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Definición de los drivers de bajo nivel para el uso del Timer 3 del ATMega32U4. </p>

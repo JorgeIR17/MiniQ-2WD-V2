@@ -1,7 +1,7 @@
 /**
  * @file pruebas.c
  * @author Jorge Ibáñez
- * @brief Declaración de las funciones de las pruebas del DFRobot MiniQ 2WD
+ * @brief Definición de las funciones de las pruebas del DFRobot MiniQ 2WD
  * @version 0.1
  * @date 2025-06-09
  * 
@@ -564,64 +564,48 @@ void prueba_HAL_bateria()
 	m_usb_tx_string("\nFin de prueba.\n");
 }
 
-
-/*void prueba_HAL_brujula()
-{
-	m_usb_tx_string("\n== PRUEBA HAL BRUJULA ==\n");
-	m_usb_tx_string("Mostrando valores de los ejes X, Y, Z:\n");
-
-	int16_t x, y, z;
-
-	while (!m_usb_rx_available())
-	{
-		HAL_brujula_leer_ejes(&x, &y, &z);
-
-		// Limpiar línea anterior
-		m_usb_tx_string("\r                                                              \r");
-
-		// Mostrar los valores actuales
-		m_usb_tx_string("X: ");
-		m_usb_tx_int(x);
-		m_usb_tx_string(" | Y: ");
-		m_usb_tx_int(y);
-		m_usb_tx_string(" | Z: ");
-		m_usb_tx_int(z);
-
-		_delay_ms(300);
-	}
-
-    while (m_usb_rx_available()) m_usb_rx_char(); // Limpia la tecla presionada
-	m_usb_tx_string("\nFin de prueba.\n");
-}*/
-
 void prueba_HAL_brujula()
 {
-	m_usb_tx_string("\n== PRUEBA HAL BRUJULA ==\n");
-	m_usb_tx_string("Mostrando valores de los ejes X, Y, Z:\n");
+    int16_t offset_x = 0, offset_y = 0;
+    float heading_inicial = 0.0;
 
-	int16_t x, y, z;
+    m_usb_tx_string("\n== PRUEBA HAL BRUJULA ==\n");
+    m_usb_tx_string("Manten el robot en posicion estable para calibrar la brujula.\n");
+    m_usb_tx_string("Presiona cualquier tecla para comenzar la calibracion...\n");
 
-	while (!m_usb_rx_available())
-	{
-		HAL_brujula_leer_ejes(&x, &y, &z);
+    while (!m_usb_rx_available()); // Espera entrada
+    m_usb_rx_char();               // Limpia el buffer
 
-		// Limpiar línea anterior
-		m_usb_tx_string("\r                                                              \r");
+    m_usb_tx_string("Calibrando brujula...\n");
 
-		// Mostrar los valores actuales
-		m_usb_tx_string("X: ");
-		m_usb_tx_int(x);
-		m_usb_tx_string(" | Y: ");
-		m_usb_tx_int(y);
-		m_usb_tx_string(" | Z: ");
-		m_usb_tx_int(z);
+    HAL_brujula_calibrar(&offset_x, &offset_y);
 
-		_delay_ms(300);
-	}
+    m_usb_tx_string("Calibracion completa.\n");
 
-    while (m_usb_rx_available()) m_usb_rx_char(); // Limpia la tecla presionada
-	m_usb_tx_string("\nFin de prueba.\n");
+    // Guardamos como referencia el heading inicial promedio
+    heading_inicial = HAL_brujula_promedio_heading_calibrado(offset_x, offset_y, 10);
+
+    m_usb_tx_string("Prueba en curso. Presiona cualquier tecla para salir.\n");
+
+    while (!m_usb_rx_available())
+    {
+        float heading_actual = HAL_brujula_get_heading_calibrado(offset_x, offset_y);
+        float angulo_relativo = HAL_brujula_diferencia_angulo(heading_actual, heading_inicial);
+
+        // Limpiar línea anterior
+        m_usb_tx_string("\r                                   \r");
+
+        m_usb_tx_string("Angulo respecto al inicio: ");
+        m_usb_tx_int((int)angulo_relativo);
+        m_usb_tx_string("°");
+
+        _delay_ms(200);
+    }
+
+    m_usb_rx_char(); // Limpia la tecla de salida
+    m_usb_tx_string("\nFin de prueba.\n");
 }
+
 
 
 void prueba_HAL_encoders()

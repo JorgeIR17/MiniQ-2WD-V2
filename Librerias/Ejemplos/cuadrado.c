@@ -1,18 +1,32 @@
+/**
+ * @file cuadrado.c
+ * @author Jorge Ibáñez
+ * @brief Ejemplo de uso del MiniQ 2WD mediante recorrido en forma de cuadrado
+ * @version 0.1
+ * @date 2025-06-26
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ * En este programa se realiza una calbración de la brújula, y se recorre la distancia de cada lado para posteriormente girar 90º hacia el sigueinte lado del cuadrado.
+ */
+
 #define F_CPU 16000000UL
 #include <avr/io.h>
 #include <util/delay.h>
-#include "m_usb.h"
-#include "Librerias/HAL/hal_motores.h"
-#include "Librerias/HAL/hal_zumbador.h"
-#include "Librerias/HAL/hal_encoders.h"
-#include "Librerias/HAL/hal_brujula.h"
+#include "../HAL/hal_motores.h"
+#include "../HAL/hal_zumbador.h"
+#include "../HAL/hal_encoders.h"
+#include "../HAL/hal_brujula.h"
 
 int main(void)
 {
+	// Inicializamos los componentes
 	HAL_motores_init();
 	HAL_encoders_init();
 	HAL_brujula_init();
 	HAL_zumbador_init();
+
+	uint16_t lado = 100; // lado de 100 mm
 
 	_delay_ms(3000);  // espera antes de iniciar calibración
 	
@@ -33,15 +47,15 @@ int main(void)
 	{
 		for (uint8_t i = 0; i < total; i++)
 		{
-			// ---- Avanzar 100 mm ----
+			// ---- Avanzar distancia lado ----
 			HAL_encoders_reset(ENCODER_IZQUIERDO);
 			HAL_encoders_reset(ENCODER_DERECHO);
 
 			HAL_motores_avanzar(50);  // velocidad fija
 
 			while (
-			HAL_encoders_get_distance(ENCODER_IZQUIERDO) < 100.0 &&
-			HAL_encoders_get_distance(ENCODER_DERECHO)  < 100.0)
+			HAL_encoders_get_distance(ENCODER_IZQUIERDO) < lado &&
+			HAL_encoders_get_distance(ENCODER_DERECHO)  < lado)
 			{
 				_delay_ms(10);
 			}
@@ -55,12 +69,12 @@ int main(void)
 			float error = HAL_brujula_diferencia_angulo(destino, actual);
 
 			if (error > 0)
-			HAL_motores_girar(35, -35);  // derecha
+			HAL_motores_girar(35, -35);  // Derecha
 			else
-			HAL_motores_girar(-35, 35);  // izquierda
+			HAL_motores_girar(-35, 35);  // Izquierda
 
 			while (fabs(HAL_brujula_diferencia_angulo(
-			destino, HAL_brujula_promedio_heading_calibrado(offset_x, offset_y, 5))) > 5.0)
+			destino, HAL_brujula_promedio_heading_calibrado(offset_x, offset_y, 5))) > 5.0) // Girar hasta alcanzar el angulo buscado
 			{
 				_delay_ms(10);
 			}

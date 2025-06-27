@@ -13,8 +13,7 @@
 
 bool HAL_pulsadores_key_1()
 {
-	uint16_t valor = pulsadores_leer();
-	return (valor == 1);
+	return (pulsadores_leer() == 1);
 }
 
 bool HAL_pulsadores_key_2()

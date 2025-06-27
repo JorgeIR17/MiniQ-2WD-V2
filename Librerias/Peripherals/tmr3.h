@@ -14,7 +14,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <stdbool.h>
+#include "gpio.h" // Para la ISR de TIMER3_COMPA_VEC
 
 // Divisores de frecuencia de reloj
 #define DIV_CLK_1       1
@@ -22,17 +22,6 @@
 #define DIV_CLK_64      3
 #define DIV_CLK_256     4
 #define DIV_CLK_1024    5
-
-#define PULSOS_POR_VUELTA 25    // 25 pulsos
-
-volatile uint16_t pulsos_izq;
-volatile uint16_t pulsos_der;
-volatile uint16_t pulsos_rpm_izq;
-volatile uint16_t pulsos_rpm_der;
-volatile uint16_t rpm_izq;
-volatile uint16_t rpm_der;
-volatile bool blink;
-volatile uint16_t blink_time;
 
 /**
  * @brief Inicializa el Timer 3 en modo CTC.

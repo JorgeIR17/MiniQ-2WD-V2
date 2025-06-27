@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['fotodiodos_2ec_0',['fotodiodos.c',['../fotodiodos_8c.html',1,'']]],
-  ['fotodiodos_2eh_1',['fotodiodos.h',['../fotodiodos_8h.html',1,'']]],
-  ['fotodiodos_5finit_2',['fotodiodos_init',['../fotodiodos_8h.html#a09de4bad1e90fcca7519a7618aa234f3',1,'fotodiodos.h']]],
-  ['fotodiodos_5fobtener_5fposicion_3',['fotodiodos_obtener_posicion',['../fotodiodos_8c.html#a77028ea350b67e3b53d0045e6197a998',1,'fotodiodos_obtener_posicion():&#160;fotodiodos.c'],['../fotodiodos_8h.html#a77028ea350b67e3b53d0045e6197a998',1,'fotodiodos_obtener_posicion():&#160;fotodiodos.c']]]
+  ['del_20software_0',['Uso del software',['../index.html#uso',1,'']]],
+  ['descriptor_5flist_5fstruct_1',['descriptor_list_struct',['../structdescriptor__list__struct.html',1,'']]],
+  ['dfrobot_20miniq_202wd_20v2_200_2',['Librerías C para el DFRobot MiniQ 2WD V2.0',['../index.html',1,'']]],
+  ['divisor_5fratio_3',['DIVISOR_RATIO',['../bateria_8h.html#a6c0af78b486056704c7ac6b3a85ea742',1,'bateria.h']]]
 ];

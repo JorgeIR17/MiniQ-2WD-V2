@@ -85,7 +85,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
 <code>#include &lt;avr/interrupt.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="tmr3_8h_source.html">tmr3.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="gpio_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -160,6 +160,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ab92771b46b59d4f902e68a9149937cd7" id="r_ab92771b46b59d4f902e68a9149937cd7"><td class="memItemLeft" align="right" valign="top"><a id="ab92771b46b59d4f902e68a9149937cd7" name="ab92771b46b59d4f902e68a9149937cd7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER2_PIN</b>&#160;&#160;&#160;DDD3</td></tr>
 <tr class="separator:ab92771b46b59d4f902e68a9149937cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59379d6f4652f923e61ac3868ccfe631" id="r_a59379d6f4652f923e61ac3868ccfe631"><td class="memItemLeft" align="right" valign="top"><a id="a59379d6f4652f923e61ac3868ccfe631" name="a59379d6f4652f923e61ac3868ccfe631"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PULSOS_POR_VUELTA</b>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a59379d6f4652f923e61ac3868ccfe631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a599330806fc7daf299682677d1ddda0e" id="r_a599330806fc7daf299682677d1ddda0e"><td class="memItemLeft" align="right" valign="top"><a id="a599330806fc7daf299682677d1ddda0e" name="a599330806fc7daf299682677d1ddda0e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RGB_DDR</b>&#160;&#160;&#160;DDRB</td></tr>
 <tr class="separator:a599330806fc7daf299682677d1ddda0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,6 +226,30 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a643c2d335d5130b4e9974f33c4dec7b5" id="r_a643c2d335d5130b4e9974f33c4dec7b5"><td class="memItemLeft" align="right" valign="top"><a id="a643c2d335d5130b4e9974f33c4dec7b5" name="a643c2d335d5130b4e9974f33c4dec7b5"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_izq</b></td></tr>
+<tr class="separator:a643c2d335d5130b4e9974f33c4dec7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7c84c344a8ef3d65b01e41a17031bc" id="r_a3e7c84c344a8ef3d65b01e41a17031bc"><td class="memItemLeft" align="right" valign="top"><a id="a3e7c84c344a8ef3d65b01e41a17031bc" name="a3e7c84c344a8ef3d65b01e41a17031bc"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_der</b></td></tr>
+<tr class="separator:a3e7c84c344a8ef3d65b01e41a17031bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad930ce946b0a9164fab2590d908a909d" id="r_ad930ce946b0a9164fab2590d908a909d"><td class="memItemLeft" align="right" valign="top"><a id="ad930ce946b0a9164fab2590d908a909d" name="ad930ce946b0a9164fab2590d908a909d"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_rpm_izq</b></td></tr>
+<tr class="separator:ad930ce946b0a9164fab2590d908a909d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33b6e04314a2b53194ba839affa71bd" id="r_af33b6e04314a2b53194ba839affa71bd"><td class="memItemLeft" align="right" valign="top"><a id="af33b6e04314a2b53194ba839affa71bd" name="af33b6e04314a2b53194ba839affa71bd"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>pulsos_rpm_der</b></td></tr>
+<tr class="separator:af33b6e04314a2b53194ba839affa71bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c22693e06b43555c1b3b3026757f8a" id="r_ab7c22693e06b43555c1b3b3026757f8a"><td class="memItemLeft" align="right" valign="top"><a id="ab7c22693e06b43555c1b3b3026757f8a" name="ab7c22693e06b43555c1b3b3026757f8a"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rpm_izq</b></td></tr>
+<tr class="separator:ab7c22693e06b43555c1b3b3026757f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03fd2a8857ecd3ce1380329698b8e649" id="r_a03fd2a8857ecd3ce1380329698b8e649"><td class="memItemLeft" align="right" valign="top"><a id="a03fd2a8857ecd3ce1380329698b8e649" name="a03fd2a8857ecd3ce1380329698b8e649"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>rpm_der</b></td></tr>
+<tr class="separator:a03fd2a8857ecd3ce1380329698b8e649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49378004f4947f3bb6572ad70e985894" id="r_a49378004f4947f3bb6572ad70e985894"><td class="memItemLeft" align="right" valign="top"><a id="a49378004f4947f3bb6572ad70e985894" name="a49378004f4947f3bb6572ad70e985894"></a>
+volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>blink</b></td></tr>
+<tr class="separator:a49378004f4947f3bb6572ad70e985894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb06ad7d40f61c24517a160d195a23d0" id="r_adb06ad7d40f61c24517a160d195a23d0"><td class="memItemLeft" align="right" valign="top"><a id="adb06ad7d40f61c24517a160d195a23d0" name="adb06ad7d40f61c24517a160d195a23d0"></a>
+volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>blink_time</b></td></tr>
+<tr class="separator:adb06ad7d40f61c24517a160d195a23d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65aae3c3af04abb948fe8cd31d57f30" id="r_ab65aae3c3af04abb948fe8cd31d57f30"><td class="memItemLeft" align="right" valign="top"><a id="ab65aae3c3af04abb948fe8cd31d57f30" name="ab65aae3c3af04abb948fe8cd31d57f30"></a>
 volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cont_obs</b></td></tr>
 <tr class="separator:ab65aae3c3af04abb948fe8cd31d57f30"><td class="memSeparator" colspan="2">&#160;</td></tr>

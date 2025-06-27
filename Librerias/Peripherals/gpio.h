@@ -14,7 +14,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include "tmr3.h"
+#include <stdbool.h>
 
 // Modo pin
 #define INPUT 0
@@ -54,10 +54,22 @@
 #define ENCODER1_PIN    DDD2   
 #define ENCODER2_PIN    DDD3   
 
+#define PULSOS_POR_VUELTA 25    // 25 pulsos
+
+volatile uint16_t pulsos_izq;
+volatile uint16_t pulsos_der;
+volatile uint16_t pulsos_rpm_izq;
+volatile uint16_t pulsos_rpm_der;
+volatile uint16_t rpm_izq;
+volatile uint16_t rpm_der;
+
 // LED RGB
 #define RGB_DDR         DDRB
 #define RGB_PORT        PORTB
 #define RGB_PIN         DDB6
+
+volatile bool blink;
+volatile uint16_t blink_time;
 
 // Transmisores y Receptor IR (IRM8881T)
 #define IRR_DDR			DDRB

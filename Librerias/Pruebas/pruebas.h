@@ -28,7 +28,7 @@
 #include "../HAL/hal_fotodiodos.h"
 #include "../HAL/hal_receptor.h"
 #include "../HAL/hal_brujula.h"
-#include "m_usb.h"
+#include "../USB/m_usb.h"
 #include "menus.h"
 
 #define PRUEBA_BATERIA          1

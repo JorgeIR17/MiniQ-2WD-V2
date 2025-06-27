@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['pruebas_2ec_0',['pruebas.c',['../pruebas_8c.html',1,'']]],
-  ['pruebas_2eh_1',['pruebas.h',['../pruebas_8h.html',1,'']]],
-  ['pulsadores_2ec_2',['pulsadores.c',['../pulsadores_8c.html',1,'']]],
-  ['pulsadores_2eh_3',['pulsadores.h',['../pulsadores_8h.html',1,'']]]
+  ['menupruebas_2ec_0',['menupruebas.c',['../menupruebas_8c.html',1,'']]],
+  ['menus_2ec_1',['menus.c',['../menus_8c.html',1,'']]],
+  ['menus_2eh_2',['menus.h',['../menus_8h.html',1,'']]],
+  ['motores_2ec_3',['motores.c',['../motores_8c.html',1,'']]],
+  ['motores_2eh_4',['motores.h',['../motores_8h.html',1,'']]]
 ];

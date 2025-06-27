@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['m_5fusb_5ftx_5ffloat_0',['m_usb_tx_float',['../menus_8c.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c'],['../menus_8h.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c']]],
-  ['m_5fusb_5ftx_5fprint_5fstr_1',['m_usb_tx_print_str',['../menus_8c.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c'],['../menus_8h.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c']]],
-  ['menu_5fprincipal_2',['menu_principal',['../menus_8c.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c'],['../menus_8h.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c']]],
-  ['menu_5fpruebas_3',['menu_pruebas',['../menus_8h.html#a9c6e246c0f06a669c82102cc5787c320',1,'menus.h']]],
-  ['menus_2ec_4',['menus.c',['../menus_8c.html',1,'']]],
-  ['menus_2eh_5',['menus.h',['../menus_8h.html',1,'']]],
-  ['motor_5fgirar_6',['motor_girar',['../motores_8c.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c'],['../motores_8h.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c']]],
-  ['motor_5fset_5fspeed_7',['motor_set_speed',['../motores_8c.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c'],['../motores_8h.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c']]],
-  ['motor_5fstop_8',['motor_stop',['../motores_8h.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c'],['../motores_8c.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c']]],
-  ['motores_2ec_9',['motores.c',['../motores_8c.html',1,'']]],
-  ['motores_2eh_10',['motores.h',['../motores_8h.html',1,'']]],
-  ['motores_5finit_11',['motores_init',['../motores_8h.html#a2b4603b827ca2d9d6dd1dda1c36f1a12',1,'motores.h']]]
+  ['introducción_0',['Introducción',['../index.html#intro',1,'']]],
+  ['ir0_1',['IR0',['../sensores_8h.html#acbde681c731ebedb97a4d04a52f41407',1,'sensores.h']]],
+  ['ir1_2',['IR1',['../sensores_8h.html#a7b2b32709f9770a283701ffcf3723497',1,'sensores.h']]],
+  ['ir2_3',['IR2',['../sensores_8h.html#a5a08e4f5cb3582e623cc14a6c92d48de',1,'sensores.h']]],
+  ['ir3_4',['IR3',['../sensores_8h.html#a26c72d21cca0ec21af4bd9b20ba3ad51',1,'sensores.h']]],
+  ['ir4_5',['IR4',['../sensores_8h.html#a20f2f5908baa0eeba04b9ceaf718cea0',1,'sensores.h']]],
+  ['isr_6',['isr',['../tmr0_8c.html#aec43762dc86e029b395d4e5819192c2d',1,'ISR(TIMER0_COMPA_vect):&#160;tmr0.c'],['../tmr1_8c.html#ad39420cdd896dd12c68e36313139d0a5',1,'ISR(TIMER1_COMPA_vect):&#160;tmr1.c'],['../tmr3_8c.html#a86953738188622410b88938da2bf8a63',1,'ISR(TIMER3_COMPA_vect):&#160;tmr3.c']]]
 ];

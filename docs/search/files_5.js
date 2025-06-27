@@ -1,23 +1,4 @@
 var searchData=
 [
-  ['hal_5fbateria_2ec_0',['hal_bateria.c',['../hal__bateria_8c.html',1,'']]],
-  ['hal_5fbateria_2eh_1',['hal_bateria.h',['../hal__bateria_8h.html',1,'']]],
-  ['hal_5fbrujula_2ec_2',['hal_brujula.c',['../hal__brujula_8c.html',1,'']]],
-  ['hal_5fbrujula_2eh_3',['hal_brujula.h',['../hal__brujula_8h.html',1,'']]],
-  ['hal_5fencoders_2ec_4',['hal_encoders.c',['../hal__encoders_8c.html',1,'']]],
-  ['hal_5fencoders_2eh_5',['hal_encoders.h',['../hal__encoders_8h.html',1,'']]],
-  ['hal_5ffotodiodos_2ec_6',['hal_fotodiodos.c',['../hal__fotodiodos_8c.html',1,'']]],
-  ['hal_5ffotodiodos_2eh_7',['hal_fotodiodos.h',['../hal__fotodiodos_8h.html',1,'']]],
-  ['hal_5fledrgb_2ec_8',['hal_ledrgb.c',['../hal__ledrgb_8c.html',1,'']]],
-  ['hal_5fledrgb_2eh_9',['hal_ledrgb.h',['../hal__ledrgb_8h.html',1,'']]],
-  ['hal_5fmotores_2ec_10',['hal_motores.c',['../hal__motores_8c.html',1,'']]],
-  ['hal_5fmotores_2eh_11',['hal_motores.h',['../hal__motores_8h.html',1,'']]],
-  ['hal_5fpulsadores_2ec_12',['hal_pulsadores.c',['../hal__pulsadores_8c.html',1,'']]],
-  ['hal_5fpulsadores_2eh_13',['hal_pulsadores.h',['../hal__pulsadores_8h.html',1,'']]],
-  ['hal_5freceptor_2ec_14',['hal_receptor.c',['../hal__receptor_8c.html',1,'']]],
-  ['hal_5freceptor_2eh_15',['hal_receptor.h',['../hal__receptor_8h.html',1,'']]],
-  ['hal_5fsensores_2ec_16',['hal_sensores.c',['../hal__sensores_8c.html',1,'']]],
-  ['hal_5fsensores_2eh_17',['hal_sensores.h',['../hal__sensores_8h.html',1,'']]],
-  ['hal_5fzumbador_2ec_18',['hal_zumbador.c',['../hal__zumbador_8c.html',1,'']]],
-  ['hal_5fzumbador_2eh_19',['hal_zumbador.h',['../hal__zumbador_8h.html',1,'']]]
+  ['gpio_2eh_0',['gpio.h',['../gpio_8h.html',1,'']]]
 ];
