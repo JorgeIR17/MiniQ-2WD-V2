@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Librerías C para el DFRobot MiniQ 2WD V2.0</title>
+<title>My Project: Librerías C para el DFRobot MiniQ 2WD V2</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,22 +69,67 @@ $(function() {
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Librerías C para el DFRobot MiniQ 2WD V2.0 </div></div>
+  <div class="headertitle"><div class="title">Librerías C para el DFRobot MiniQ 2WD V2 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="intro"></a>
-Introducción</h1>
-<h1><a class="anchor" id="modulos"></a>
-Módulos principales</h1>
+<div class="textblock"><h1><a class="anchor" id="contenido"></a>
+Contenido</h1>
 <ul>
-<li>Peripherals: Incluye las librerías para controlar los periféricos del ATMega32U4.</li>
-<li>LowLevel: Incluye las librerías para controlar los componentes del MiniQ 2WD a bajo nivel.</li>
-<li>HAL: Incluye las librerías para usar los componentes del MiniQ 2WD, abstrayéndose del funcionamiento del hardware.</li>
-<li>Pruebas: Incluye las librerías para realizar las pruebas unitarias de los componentes del MiniQ 2WD, mediante un menú mostrado en terminal.</li>
-<li>Ejemplos: Incluye ejemplos de uso del MiniQ 2WD que sirven como pruebas funcionales y de demostración.</li>
+<li>Peripherals: Librerías para usar los periféricos del ATMega32U4</li>
+<li>LowLevel: Librerías de bajo nivel de los componentes del MiniQ 2WD</li>
+<li>HAL: Capa de abstracción hardware de los componentes del MiniQ 2WD</li>
+<li>Ejemplos: Ejemplos de aplicación del robot (siguelíneas, evitaobstáculos, pruebas unitarias...)</li>
+<li>Pruebas: Librerías del programa de pruebas unitarias de los componentes del MiniQ 2WD</li>
+<li>USB: Librerías para comunicación serie mediante USB originalmente desarrolladas por MEAM.Design <br  />
+ (<a href="https://medesign.seas.upenn.edu/index.php/Guides/MaEvArM-usb">https://medesign.seas.upenn.edu/index.php/Guides/MaEvArM-usb</a>)</li>
 </ul>
+<h1><a class="anchor" id="instalacion"></a>
+Instalación</h1>
+<h2><a class="anchor" id="atmel"></a>
+Atmel Studio</h2>
+<p>Puedes descargar Atmel Studio 7 a través del siguiente enlace: <br  />
+ <a href="https://www.microchip.com/en-us/tools-resources/archives/avr-sam-mcus">https://www.microchip.com/en-us/tools-resources/archives/avr-sam-mcus</a></p>
+<p>Sigue estos pasos para instalar y compilar el proyecto en <b>Atmel Studio 7</b>:</p>
+<ol type="1">
+<li>Clona el repositorio en tu máquina local.</li>
+<li>Crea un nuevo proyecto en Atmel Studio (<b>File -&gt; New -&gt; Project... -&gt; GCC C Executable Project</b>).</li>
+<li>En <b>Device Selection</b>, selecciona <b>ATmega32U4</b>.</li>
+<li>Añade la carpeta <b>Librerias</b> a la carpeta del proyecto desde el explorador de archivos.</li>
+<li>En la pestaña <b>Solution Explorer</b>, selecciona <b>Show All Files</b>, haz clic derecho sobre la carpeta <b>Librerias</b> y selecciona <b>Include In Project</b>.</li>
+</ol>
+<h2><a class="anchor" id="avrdude"></a>
+AVRdude</h2>
+<p>Para poder programar el MiniQ 2WD en Atmel Studio es necesario usar la herramienta <b>AVRdude</b>. Para descargarla, sigue los siguientes pasos:</p>
+<ol type="1">
+<li>Descarga <b>AVRdude 7.2</b> a través del siguiente enlace: <br  />
+ <a href="https://github.com/avrdudes/avrdude/releases">https://github.com/avrdudes/avrdude/releases</a></li>
+<li>Extrae la carpeta y renómbrala como <b>avrdude_7_2</b>.</li>
+<li>Mueve la carpeta a **C:\Program Files**.</li>
+<li>En Atmel Studio, crea una nueva herramienta externa (<b>Tools -&gt; External Tools..</b>).</li>
+<li>En el campo <b>Title</b>, escribe un nombre para la herramienta (Ej. MiniQ).</li>
+<li>En el campo <b>Command</b>, escribe la ruta de avrdude.exe: <br  />
+ <code>C:\Program Files\avrdude_7_2\avrdude.exe</code></li>
+<li><p class="startli">En el campo <b>Arguments</b>, escribe los siguientes parámetros:</p>
+<div class="fragment"><div class="line">-C<span class="stringliteral">&quot;C:\Program Files\avrdude_7_2\avrdude.conf&quot;</span> -v -patmega32u4 -cavr109 -PCOM4 -b57600 -D -Uflash:w:<span class="stringliteral">&quot;$(ProjectDir)Debug\$(TargetName).hex&quot;</span>:i</div>
+</div><!-- fragment --><p class="startli">El parámetro <b>-PCOM4</b> deberá modificarse para que coincida con el COM asignado al robot. <br  />
+ Para ello, en Windows, ve a <b>Administrador de dispositivos -&gt; Puertos (COM y LPT)</b> con el robot conectado por USB al PC, encendido y reiniciado. En el apartado aparecerá el COM asignado al robot, el cual deberá coincidir con el parámetro anteriormente nombrado.</p>
+</li>
+<li>Por último, activa la opción <b>Use Output window</b> y selecciona <b>Apply</b>. <br  />
+ La herramienta aparecerá en <b>Tools</b>.</li>
+</ol>
 <h1><a class="anchor" id="uso"></a>
-Uso del software</h1>
+Uso</h1>
+<ol type="1">
+<li>Para usar alguno de los códigos de ejemplo o usar uno propio, es necesario asegurarse de que sea el único con una función <b>main()</b> que sea compilado para evitar errores. <br  />
+ Para ello, haz clic sobre el archivo en la pestaña <b>Solution Explorer</b>, y en la pestaña <b>Properties</b>, en el apartado <br  />
+ <b>Advanced -&gt; Build Action</b>, selecciona <b>Compile</b> o <b>None</b>, dependiendo del caso.</li>
+<li>Una vez configurado, selecciona <b>Build -&gt; Build Solution</b> (o F7) para compilar el programa.</li>
+<li>Una vez compilado, enciende y reinicia el robot, y selecciona la herramienta creada. <br  />
+ Es importante no tardar mucho en programar el robot, ya que a los 10 segundos de reiniciarse, se desconecta el COM y se inicia el programa que tuviera almacenado anteriormente.</li>
+<li>En el caso de usar las pruebas unitarias u otro programa que requiera de comunicación serie, es necesario apagar y volver a encender el robot después de programarlo para que funcione. <br  />
+ El puerto COM puede ser distinto al asignado para programar, por lo que se deberá encender el robot y comprobar el COM asignado para la comunicación. <br  />
+ Para el uso de la comunicación se recomienda la herramienta <b>PuTTY</b>: <a href="https://www.putty.org/">https://www.putty.org/</a> </li>
+</ol>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

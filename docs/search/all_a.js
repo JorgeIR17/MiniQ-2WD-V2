@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['introducción_0',['Introducción',['../index.html#intro',1,'']]],
-  ['ir0_1',['IR0',['../sensores_8h.html#acbde681c731ebedb97a4d04a52f41407',1,'sensores.h']]],
-  ['ir1_2',['IR1',['../sensores_8h.html#a7b2b32709f9770a283701ffcf3723497',1,'sensores.h']]],
-  ['ir2_3',['IR2',['../sensores_8h.html#a5a08e4f5cb3582e623cc14a6c92d48de',1,'sensores.h']]],
-  ['ir3_4',['IR3',['../sensores_8h.html#a26c72d21cca0ec21af4bd9b20ba3ad51',1,'sensores.h']]],
-  ['ir4_5',['IR4',['../sensores_8h.html#a20f2f5908baa0eeba04b9ceaf718cea0',1,'sensores.h']]],
-  ['isr_6',['isr',['../tmr0_8c.html#aec43762dc86e029b395d4e5819192c2d',1,'ISR(TIMER0_COMPA_vect):&#160;tmr0.c'],['../tmr1_8c.html#ad39420cdd896dd12c68e36313139d0a5',1,'ISR(TIMER1_COMPA_vect):&#160;tmr1.c'],['../tmr3_8c.html#a86953738188622410b88938da2bf8a63',1,'ISR(TIMER3_COMPA_vect):&#160;tmr3.c']]]
+  ['led_5frgb_2ec_0',['led_rgb.c',['../led__rgb_8c.html',1,'']]],
+  ['led_5frgb_2eh_1',['led_rgb.h',['../led__rgb_8h.html',1,'']]],
+  ['led_5frgb_5fenviar_5fbit_2',['led_rgb_enviar_bit',['../led__rgb_8c.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;led_rgb.c'],['../led__rgb_8h.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;led_rgb.c']]],
+  ['led_5frgb_5fenviar_5fbyte_3',['led_rgb_enviar_byte',['../led__rgb_8c.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;led_rgb.c'],['../led__rgb_8h.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;led_rgb.c']]],
+  ['led_5frgb_5fenviar_5fcolor_4',['led_rgb_enviar_color',['../led__rgb_8c.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;led_rgb.c'],['../led__rgb_8h.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;led_rgb.c']]],
+  ['led_5frgb_5finit_5',['led_rgb_init',['../led__rgb_8h.html#a22a13cdfa2b46be0b5edccfa6742ea90',1,'led_rgb.h']]],
+  ['librerías_20c_20para_20el_20dfrobot_20miniq_202wd_20v2_6',['Librerías C para el DFRobot MiniQ 2WD V2',['../index.html',1,'']]]
 ];

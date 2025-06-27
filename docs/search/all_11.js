@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['usb_5fstring_5fdescriptor_5fstruct_0',['usb_string_descriptor_struct',['../structusb__string__descriptor__struct.html',1,'']]],
-  ['uso_20del_20software_1',['Uso del software',['../index.html#uso',1,'']]]
+  ['v2_0',['Librerías C para el DFRobot MiniQ 2WD V2',['../index.html',1,'']]],
+  ['vref_1',['VREF',['../bateria_8h.html#a2c9e85d22a9ba37ea589b1747af46307',1,'bateria.h']]]
 ];

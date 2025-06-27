@@ -1,10 +1,17 @@
 var searchData=
 [
-  ['led_5frgb_2ec_0',['led_rgb.c',['../led__rgb_8c.html',1,'']]],
-  ['led_5frgb_2eh_1',['led_rgb.h',['../led__rgb_8h.html',1,'']]],
-  ['led_5frgb_5fenviar_5fbit_2',['led_rgb_enviar_bit',['../led__rgb_8c.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;led_rgb.c'],['../led__rgb_8h.html#aa11b1339dff4363f228b48fc67aeb6fd',1,'led_rgb_enviar_bit(uint8_t bit):&#160;led_rgb.c']]],
-  ['led_5frgb_5fenviar_5fbyte_3',['led_rgb_enviar_byte',['../led__rgb_8c.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;led_rgb.c'],['../led__rgb_8h.html#a733945e5c2a0b63be913cedb511dd149',1,'led_rgb_enviar_byte(uint8_t byte):&#160;led_rgb.c']]],
-  ['led_5frgb_5fenviar_5fcolor_4',['led_rgb_enviar_color',['../led__rgb_8c.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;led_rgb.c'],['../led__rgb_8h.html#a1b9b0d3eab86bfe30056696581bf3240',1,'led_rgb_enviar_color(uint8_t red, uint8_t green, uint8_t blue):&#160;led_rgb.c']]],
-  ['led_5frgb_5finit_5',['led_rgb_init',['../led__rgb_8h.html#a22a13cdfa2b46be0b5edccfa6742ea90',1,'led_rgb.h']]],
-  ['librerías_20c_20para_20el_20dfrobot_20miniq_202wd_20v2_200_6',['Librerías C para el DFRobot MiniQ 2WD V2.0',['../index.html',1,'']]]
+  ['m_5fusb_5ftx_5ffloat_0',['m_usb_tx_float',['../menus_8c.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c'],['../menus_8h.html#a9fd3b2e6ca58d21630a207f3084ecf9f',1,'m_usb_tx_float(float value, uint8_t width, uint8_t precision):&#160;menus.c']]],
+  ['m_5fusb_5ftx_5fprint_5fstr_1',['m_usb_tx_print_str',['../menus_8c.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c'],['../menus_8h.html#aeffbd2caac87332a3824af4aee96f2e5',1,'m_usb_tx_print_str(const char *str):&#160;menus.c']]],
+  ['menu_5fprincipal_2',['menu_principal',['../menus_8c.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c'],['../menus_8h.html#ae3a600065cfe3e0105b6209e35d20264',1,'menu_principal():&#160;menus.c']]],
+  ['menu_5fpruebas_3',['menu_pruebas',['../menus_8h.html#a9c6e246c0f06a669c82102cc5787c320',1,'menus.h']]],
+  ['menupruebas_2ec_4',['menupruebas.c',['../menupruebas_8c.html',1,'']]],
+  ['menus_2ec_5',['menus.c',['../menus_8c.html',1,'']]],
+  ['menus_2eh_6',['menus.h',['../menus_8h.html',1,'']]],
+  ['miniq_202wd_20v2_7',['Librerías C para el DFRobot MiniQ 2WD V2',['../index.html',1,'']]],
+  ['motor_5fgirar_8',['motor_girar',['../motores_8c.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c'],['../motores_8h.html#a2957a28daf8ac7a542f99735b9d96ccc',1,'motor_girar(int16_t velocidad_izq, int16_t velocidad_der):&#160;motores.c']]],
+  ['motor_5fset_5fspeed_9',['motor_set_speed',['../motores_8c.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c'],['../motores_8h.html#abd3fd69846a8479db3e76df6ead81636',1,'motor_set_speed(uint8_t motor, int16_t velocidad):&#160;motores.c']]],
+  ['motor_5fstop_10',['motor_stop',['../motores_8c.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c'],['../motores_8h.html#a01e9890bd4217e0108f26149af4ad05e',1,'motor_stop():&#160;motores.c']]],
+  ['motores_2ec_11',['motores.c',['../motores_8c.html',1,'']]],
+  ['motores_2eh_12',['motores.h',['../motores_8h.html',1,'']]],
+  ['motores_5finit_13',['motores_init',['../motores_8h.html#a2b4603b827ca2d9d6dd1dda1c36f1a12',1,'motores.h']]]
 ];
