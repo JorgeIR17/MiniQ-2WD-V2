@@ -98,8 +98,4 @@ Para conocer el uso de las funciones y los programas, puedes consultar la **docu
 
 # Licencia
 
-<<<<<<< HEAD
 Este proyecto está licenciado bajo la GNU General Public License v3.0. Consulta el archivo LICENSE para más detalles.
-=======
-Este proyecto está licenciado bajo la GNU General Public License v3.0. Consulta el archivo LICENSE para más detalles.
->>>>>>> ba171150b106a7f42db1734477b54a7377dbd847
