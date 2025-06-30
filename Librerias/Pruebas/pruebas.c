@@ -44,6 +44,7 @@ void prueba_bateria()
 void prueba_brujula()
 {
 	m_usb_tx_string("\n== PRUEBA BRUJULA ==\n");
+    m_usb_tx_string("Pulsa cualquier tecla para salir.\n");
 	m_usb_tx_string("Mostrando valores de los ejes X, Y, Z:\n");
 
 	int16_t x, y, z;
@@ -327,7 +328,7 @@ void prueba_pulsadores()
 {
     m_usb_tx_string("\n== PRUEBA PULSADORES ==\n");
     m_usb_tx_string("Iniciando prueba de pulsadores.\n");
-    m_usb_tx_string("Presione cualquier tecla para salir.\n");
+    m_usb_tx_string("Presiona cualquier tecla para salir.\n");
 
     while (!m_usb_rx_available()) 
     {
@@ -411,7 +412,7 @@ void prueba_sensores()
 	uint16_t lectura_izq, lectura_izq_c, lectura_c, lectura_der_c, lectura_der;
 	
 	m_usb_tx_string("\n== PRUEBA SENSORES IR ==\n");
-	m_usb_tx_string("Presione '0' para salir y realizar la calibración...\n");
+	m_usb_tx_string("Presiona '0' para salir y realizar la calibración...\n");
 
 	while (!salir)
 	{
@@ -624,6 +625,7 @@ void prueba_HAL_encoders()
     HAL_encoders_reset(ENCODER_DERECHO);
 
     m_usb_tx_string("Usa teclas para controlar velocidad:\n");
+    m_usb_tx_string("Presiona '0' para salir.\n");
     m_usb_tx_string("'i' = aumenta | 'k' = disminuye | 'r' = reset distancias | '0' = detener y salir\n");
 
     while (!salir)

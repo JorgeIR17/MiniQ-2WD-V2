@@ -23,14 +23,14 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"Main Page",url:"index.html"},
-{text:"Classes",url:"annotated.html",children:[
-{text:"Class List",url:"annotated.html"},
-{text:"Class Index",url:"classes.html"}]},
-{text:"Files",url:"files.html",children:[
-{text:"File List",url:"files.html"},
-{text:"File Members",url:"globals.html",children:[
-{text:"All",url:"globals.html",children:[
+{text:"Página principal",url:"index.html"},
+{text:"Clases",url:"annotated.html",children:[
+{text:"Lista de clases",url:"annotated.html"},
+{text:"Índice de clases",url:"classes.html"}]},
+{text:"Archivos",url:"files.html",children:[
+{text:"Lista de archivos",url:"files.html"},
+{text:"Miembros de los archivos",url:"globals.html",children:[
+{text:"Todos",url:"globals.html",children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"b",url:"globals_b.html#index_b"},
 {text:"c",url:"globals_c.html#index_c"},
@@ -48,7 +48,7 @@ var menudata={children:[
 {text:"t",url:"globals_t.html#index_t"},
 {text:"v",url:"globals_v.html#index_v"},
 {text:"z",url:"globals_z.html#index_z"}]},
-{text:"Functions",url:"globals_func.html",children:[
+{text:"Funciones",url:"globals_func.html",children:[
 {text:"a",url:"globals_func.html#index_a"},
 {text:"b",url:"globals_func_b.html#index_b"},
 {text:"c",url:"globals_func_c.html#index_c"},
@@ -64,4 +64,4 @@ var menudata={children:[
 {text:"s",url:"globals_func_s.html#index_s"},
 {text:"t",url:"globals_func_t.html#index_t"},
 {text:"z",url:"globals_func_z.html#index_z"}]},
-{text:"Macros",url:"globals_defs.html"}]}]}]}
+{text:"defines",url:"globals_defs.html"}]}]}]}

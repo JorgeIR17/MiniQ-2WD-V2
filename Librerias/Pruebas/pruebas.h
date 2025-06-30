@@ -147,7 +147,7 @@ void prueba_HAL_bateria();
 /**
  * @brief Realiza una prueba de las funciones de la capa HAL de la brújula.
  * 
- * En la prueba se muestran los valores de los ejes X, Y y Z.
+ * En la prueba se realiza una calibración de la brújula, y posteriormente se muestra el ángulo con respecto al inicio.
  * 
  */
 void prueba_HAL_brujula();
