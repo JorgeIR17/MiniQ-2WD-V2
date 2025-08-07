@@ -22,5 +22,5 @@ var searchData=
   ['prueba_5fsensores_19',['prueba_sensores',['../pruebas_8c.html#a63984ce17c22ab2ed2705f6cd50d2968',1,'prueba_sensores():&#160;pruebas.c'],['../pruebas_8h.html#a63984ce17c22ab2ed2705f6cd50d2968',1,'prueba_sensores():&#160;pruebas.c']]],
   ['prueba_5fzumbador_20',['prueba_zumbador',['../pruebas_8c.html#a8da9dee268c9489094b15ec162064ae7',1,'prueba_zumbador():&#160;pruebas.c'],['../pruebas_8h.html#a8da9dee268c9489094b15ec162064ae7',1,'prueba_zumbador():&#160;pruebas.c']]],
   ['pulsadores_5finit_21',['pulsadores_init',['../pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d',1,'pulsadores.h']]],
-  ['pulsadores_5fleer_22',['pulsadores_leer',['../pulsadores_8c.html#aeda17a3b6c10ab5b774763b3b5a1b270',1,'pulsadores_leer():&#160;pulsadores.c'],['../pulsadores_8h.html#aeda17a3b6c10ab5b774763b3b5a1b270',1,'pulsadores_leer():&#160;pulsadores.c']]]
+  ['pulsadores_5fread_22',['pulsadores_read',['../pulsadores_8c.html#aada2814ae6699a855e8bd74ef42e7768',1,'pulsadores_read():&#160;pulsadores.c'],['../pulsadores_8h.html#aada2814ae6699a855e8bd74ef42e7768',1,'pulsadores_read():&#160;pulsadores.c']]]
 ];

@@ -2,7 +2,7 @@
  * @file hal_ledrgb.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso del led RGB
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025
@@ -14,7 +14,7 @@
 
 #include "../LowLevel/led_rgb.h"
 
-// Definicion de colores
+// Definicion de colores en ingles y español
 #define WHITE 0
 #define RED 1
 #define GREEN 2

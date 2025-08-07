@@ -2,7 +2,7 @@
  * @file zumbador.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso del zumbador.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -19,6 +19,11 @@
 #include "../Peripherals/tmr0.h"
 #include "../Peripherals/tmr1.h"
 #include "../Peripherals/gpio.h"
+
+// Pin del zumbador
+#define BUZZER_DDR      DDRB
+#define BUZZER_PORT     PORTB
+#define BUZZER_PIN      DDB2  // PB2
 
 /**
  * @brief Inicializa el zumbador.

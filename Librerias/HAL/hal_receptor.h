@@ -2,7 +2,7 @@
  * @file hal_receptor.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los transmisores y el receptor IR (IRM8881T).
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-04
  * 
  * @copyright Copyright (c) 2025
@@ -16,6 +16,7 @@
 #include "../LowLevel/receptor.h"
 #include <stdlib.h>
 
+// Posiciones de obstaculos
 #define OBS_NADA      0
 #define OBS_DERECHA   1
 #define OBS_IZQUIERDA 2

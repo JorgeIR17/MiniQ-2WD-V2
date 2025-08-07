@@ -2,7 +2,7 @@
  * @file brujula.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de la brujula HMC5883L.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -36,7 +36,7 @@ static inline void brujula_init(void)
     TWI_Start();
     TWI_Write(HMC5883_ADDR << 1);
     TWI_Write(0x01);       // Registro B
-    TWI_Write(0x20);       // Ganancia = 1.3 Ga (default)
+    TWI_Write(0x20);       // Ganancia = 1.3 Ga (por defecto)
     TWI_Stop();
 
     // Configuración: Modo (0x02)
@@ -56,7 +56,7 @@ static inline void brujula_init(void)
  * @param[out] y Valor del eje Y
  * @param[out] z Valor del eje Z
  */
-void brujula_leer(int16_t* x, int16_t* y, int16_t* z);
+void brujula_read(int16_t* x, int16_t* y, int16_t* z);
 
 
 

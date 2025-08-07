@@ -2,7 +2,7 @@
  * @file hal_pulsadores.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los pulsadores
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025

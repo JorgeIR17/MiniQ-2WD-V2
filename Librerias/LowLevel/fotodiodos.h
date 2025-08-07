@@ -2,7 +2,7 @@
  * @file fotodiodos.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso de diodos fotosensibles.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -14,10 +14,7 @@
 
 #include "../Peripherals/adc.h"
 
-/**
- * @brief Canal de ADC de los fotodiodos.
- * 
- */
+// Canal de ADC de los fotodiodos.
 #define PHOTODIODE_CHANNEL 0
 
 /**
@@ -38,11 +35,6 @@ static inline void fotodiodos_init()
  * · 3: Luz a la izquierda.
  * · 4: Ausencia de luz.
  */
-uint8_t fotodiodos_obtener_posicion();
+uint8_t fotodiodos_position();
 
 #endif /* FOTODIODOS_H_ */
-
-// > 980 -> derecha
-// < 900 && > 150 -> recto
-// < 45 -> izquierda
-// resto -> stop

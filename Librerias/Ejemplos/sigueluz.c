@@ -2,7 +2,7 @@
  * @file sigueluz.c
  * @author Jorge Ibáñez
  * @brief Ejemplo de uso del MiniQ 2WD como robot seguidor de luz
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
@@ -24,39 +24,98 @@
 #include "../HAL/hal_fotodiodos.h"
 
 
+typedef enum 
+{
+	INIT,
+	LUZ_CENTRO_ESTADO,
+	LUZ_DERECHA_ESTADO,
+	LUZ_IZQUIERDA_ESTADO,
+	LUZ_ERROR_ESTADO
+} Estado;
+
 int main(void)
 {
+	// Inicializamos los componentes
 	HAL_ledrgb_init();
 	HAL_fotodiodos_init();
 	HAL_motores_init();
-		
-	_delay_ms(3000);
-	
-	while(1)
+
+	Estado estadoActual = INIT;
+	Estado estadoSiguiente = INIT;
+
+	while (1)
 	{
-		if(HAL_fotodiodos_posicion() == LUZ_CENTRO)
-		{ 
-			HAL_motores_avanzar(80);
-			HAL_ledrgb_color(VERDE);
-		}
-		
-		if(HAL_fotodiodos_posicion() == LUZ_DERECHA) 
+		uint8_t luz = HAL_fotodiodos_posicion();
+
+		switch (estadoActual)
 		{
-			HAL_motores_girar(100, 60);
-			HAL_ledrgb_color(AZUL);
+			case INIT:
+				_delay_ms(3000);
+				estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
+
+			case LUZ_CENTRO_ESTADO:
+				HAL_motores_avanzar(80);
+				HAL_ledrgb_color(VERDE);
+
+				if (luz == LUZ_CENTRO)
+					estadoSiguiente = LUZ_CENTRO_ESTADO;
+				else if (luz == LUZ_DERECHA)
+					estadoSiguiente = LUZ_DERECHA_ESTADO;
+				else if (luz == LUZ_IZQUIERDA)
+					estadoSiguiente = LUZ_IZQUIERDA_ESTADO;
+				else
+					estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
+
+			case LUZ_DERECHA_ESTADO:
+				HAL_motores_girar(100, 60);
+				HAL_ledrgb_color(AZUL);
+
+				if (luz == LUZ_DERECHA)
+					estadoSiguiente = LUZ_DERECHA_ESTADO;
+				else if (luz == LUZ_CENTRO)
+					estadoSiguiente = LUZ_CENTRO_ESTADO;
+				else if (luz == LUZ_IZQUIERDA)
+					estadoSiguiente = LUZ_IZQUIERDA_ESTADO;
+				else
+					estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
+
+			case LUZ_IZQUIERDA_ESTADO:
+				HAL_motores_girar(60, 100);
+				HAL_ledrgb_color(ROJO);
+
+				if (luz == LUZ_IZQUIERDA)
+					estadoSiguiente = LUZ_IZQUIERDA_ESTADO;
+				else if (luz == LUZ_CENTRO)
+					estadoSiguiente = LUZ_CENTRO_ESTADO;
+				else if (luz == LUZ_DERECHA)
+					estadoSiguiente = LUZ_DERECHA_ESTADO;
+				else
+					estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
+
+			case LUZ_ERROR_ESTADO:
+				HAL_motores_detener();
+				HAL_ledrgb_color(AMARILLO);
+
+				if (luz == LUZ_CENTRO)
+					estadoSiguiente = LUZ_CENTRO_ESTADO;
+				else if (luz == LUZ_DERECHA)
+					estadoSiguiente = LUZ_DERECHA_ESTADO;
+				else if (luz == LUZ_IZQUIERDA)
+					estadoSiguiente = LUZ_IZQUIERDA_ESTADO;
+				else
+					estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
+
+			default:
+				estadoSiguiente = LUZ_ERROR_ESTADO;
+				break;
 		}
-	
-		if(HAL_fotodiodos_posicion() == LUZ_IZQUIERDA)
-		{
-			HAL_motores_girar(60, 100);
-			HAL_ledrgb_color(ROJO);
-		}
-		if(HAL_fotodiodos_posicion() == LUZ_ERROR)
-		{ 
-			HAL_motores_detener();
-			HAL_ledrgb_color(AMARILLO);
-		}
-		
-		_delay_ms(15);
+
+		estadoActual = estadoSiguiente;
+		_delay_ms(15); // Retardo para evitar oscilaciones rápidas
 	}
 }

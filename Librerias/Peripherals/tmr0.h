@@ -1,8 +1,8 @@
 /**
  * @file tmr0.h
  * @author Jorge Ibáñez
- * @brief Definición de funciones para usar el Timer 0 del ATMega32U4.
- * @version 0.1
+ * @brief Definición de los drivers de bajo nivel para el uso del Timer 0 del ATMega32U4.
+ * @version 1.0
  * @date 2025-05-04
  * 
  * @copyright Copyright (c) 2025

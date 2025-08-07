@@ -2,7 +2,7 @@
  * @file tmr0.c
  * @author Jorge Ibáñez
  * @brief Definición de la interrupción ejecutada por el Timer 0 del ATMega32U4.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-04
  * 
  * @copyright Copyright (c) 2025
@@ -19,5 +19,6 @@
  */
 ISR(TIMER0_COMPA_vect)
 {
-	PORTB ^= (1<<BUZZER_PIN);
+	//PORTB ^= (1<<BUZZER_PIN);
+	GPIO_Toggle(&PORTB, DDB2);
 }

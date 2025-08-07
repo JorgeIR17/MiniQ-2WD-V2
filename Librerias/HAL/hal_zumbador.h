@@ -2,7 +2,7 @@
  * @file hal_zumbador.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso del zumbador
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-04
  * 
  * @copyright Copyright (c) 2025
@@ -70,7 +70,7 @@
 #define Bb5 32
 #define B5  30	
 
-// Definicion de notas musicales en espanol
+// Definicion de notas musicales en español
 #define DO3   C3
 #define DOs3  Cs3
 #define REb3  Db3
@@ -125,6 +125,7 @@
 #define SIb5  Bb5
 #define SI5   B5	
 
+// Frecuencia y duracion de alertas
 #define STARTING_SOUND B4
 #define STARTING_SOUND_DURATION 1000
 

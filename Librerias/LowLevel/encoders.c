@@ -2,7 +2,7 @@
  * @file encoders.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los encoders.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -11,7 +11,7 @@
 
 #include "encoders.h"
 
-uint16_t encoder_leer(uint8_t encoder) 
+uint16_t encoder_read(uint8_t encoder) 
 {
     if (encoder == ENCODER_IZQUIERDO)   return pulsos_izq;     // Encoder izquierdo
     if (encoder == ENCODER_DERECHO)     return pulsos_der;     // Encoder derecho

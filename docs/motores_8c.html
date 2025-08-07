@@ -86,41 +86,44 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
-<tr class="memitem:abd3fd69846a8479db3e76df6ead81636" id="r_abd3fd69846a8479db3e76df6ead81636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motores_8c.html#abd3fd69846a8479db3e76df6ead81636">motor_set_speed</a> (uint8_t motor, int16_t velocidad)</td></tr>
-<tr class="memdesc:abd3fd69846a8479db3e76df6ead81636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gira una de las ruedas a una velocidad determinada.  <br /></td></tr>
-<tr class="separator:abd3fd69846a8479db3e76df6ead81636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01e9890bd4217e0108f26149af4ad05e" id="r_a01e9890bd4217e0108f26149af4ad05e"><td class="memItemLeft" align="right" valign="top"><a id="a01e9890bd4217e0108f26149af4ad05e" name="a01e9890bd4217e0108f26149af4ad05e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>motor_stop</b> ()</td></tr>
-<tr class="memdesc:a01e9890bd4217e0108f26149af4ad05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detiene el movimiento de las ruedas. <br /></td></tr>
-<tr class="separator:a01e9890bd4217e0108f26149af4ad05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2957a28daf8ac7a542f99735b9d96ccc" id="r_a2957a28daf8ac7a542f99735b9d96ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motores_8c.html#a2957a28daf8ac7a542f99735b9d96ccc">motor_girar</a> (int16_t velocidad_izq, int16_t velocidad_der)</td></tr>
-<tr class="memdesc:a2957a28daf8ac7a542f99735b9d96ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gira ambas ruedas a distintas velocidades determinadas.  <br /></td></tr>
-<tr class="separator:a2957a28daf8ac7a542f99735b9d96ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea3d97b4345807de206218dc6a06cba" id="r_a9ea3d97b4345807de206218dc6a06cba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motores_8c.html#a9ea3d97b4345807de206218dc6a06cba">motores_set_direction</a> (uint8_t motor, uint8_t direction)</td></tr>
+<tr class="memdesc:a9ea3d97b4345807de206218dc6a06cba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece la dirección de movimiento de una rueda determinada.  <br /></td></tr>
+<tr class="separator:a9ea3d97b4345807de206218dc6a06cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac904a3d6d13460a2890fbc6cce5b3fcb" id="r_ac904a3d6d13460a2890fbc6cce5b3fcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motores_8c.html#ac904a3d6d13460a2890fbc6cce5b3fcb">motores_set_speed</a> (uint8_t motor, int16_t velocidad)</td></tr>
+<tr class="memdesc:ac904a3d6d13460a2890fbc6cce5b3fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gira una de las ruedas a una velocidad determinada.  <br /></td></tr>
+<tr class="separator:ac904a3d6d13460a2890fbc6cce5b3fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee45505414b4cef550a5775d39aee642" id="r_aee45505414b4cef550a5775d39aee642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motores_8c.html#aee45505414b4cef550a5775d39aee642">motores_spin</a> (int16_t velocidad_izq, int16_t velocidad_der)</td></tr>
+<tr class="memdesc:aee45505414b4cef550a5775d39aee642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gira ambas ruedas a distintas velocidades determinadas.  <br /></td></tr>
+<tr class="separator:aee45505414b4cef550a5775d39aee642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa299ffc9f97288ac537952a1cb3606e3" id="r_aa299ffc9f97288ac537952a1cb3606e3"><td class="memItemLeft" align="right" valign="top"><a id="aa299ffc9f97288ac537952a1cb3606e3" name="aa299ffc9f97288ac537952a1cb3606e3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>motores_stop</b> ()</td></tr>
+<tr class="memdesc:aa299ffc9f97288ac537952a1cb3606e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detiene el movimiento de las ruedas. <br /></td></tr>
+<tr class="separator:aa299ffc9f97288ac537952a1cb3606e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Definición de los drivers de bajo nivel para el uso de los motores. </p>
 <dl class="section author"><dt>Autor</dt><dd>Jorge Ibáñez </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-05-06</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Documentación de funciones</h2>
-<a id="a2957a28daf8ac7a542f99735b9d96ccc" name="a2957a28daf8ac7a542f99735b9d96ccc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2957a28daf8ac7a542f99735b9d96ccc">&#9670;&#160;</a></span>motor_girar()</h2>
+<a id="a9ea3d97b4345807de206218dc6a06cba" name="a9ea3d97b4345807de206218dc6a06cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea3d97b4345807de206218dc6a06cba">&#9670;&#160;</a></span>motores_set_direction()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void motor_girar </td>
+          <td class="memname">void motores_set_direction </td>
           <td>(</td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>velocidad_izq</em>, </td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>motor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>velocidad_der</em>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -130,25 +133,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>motor_stop</b> ()</td
       </table>
 </div><div class="memdoc">
 
-<p>Gira ambas ruedas a distintas velocidades determinadas. </p>
+<p>Establece la dirección de movimiento de una rueda determinada. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">velocidad_izq</td><td>Velocidad de la rueda izquierda. El valor debe ser un número entero entre -255 y 255. Si el valor es negativo, la rueda girará en sentido inverso. </td></tr>
-    <tr><td class="paramname">velocidad_der</td><td>Velocidad de la rueda derecha. El valor debe ser un número entero entre -255 y 255. Si el valor es negativo, la rueda girará en sentido inverso. </td></tr>
+    <tr><td class="paramname">motor</td><td>Motor izquierdo o derecho </td></tr>
+    <tr><td class="paramname">direction</td><td>Sentido de la rueda. Es necesario hacer uso de las macros proporcionadas. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="abd3fd69846a8479db3e76df6ead81636" name="abd3fd69846a8479db3e76df6ead81636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd3fd69846a8479db3e76df6ead81636">&#9670;&#160;</a></span>motor_set_speed()</h2>
+<a id="ac904a3d6d13460a2890fbc6cce5b3fcb" name="ac904a3d6d13460a2890fbc6cce5b3fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac904a3d6d13460a2890fbc6cce5b3fcb">&#9670;&#160;</a></span>motores_set_speed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void motor_set_speed </td>
+          <td class="memname">void motores_set_speed </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>motor</em>, </td>
@@ -172,6 +175,43 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>motor_stop</b> ()</td
   <table class="params">
     <tr><td class="paramname">motor</td><td>Motor derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas. </td></tr>
     <tr><td class="paramname">velocidad</td><td>Velocidad de la rueda. El valor debe ser un número entero entre -255 y 255. Si el valor es negativo, la rueda girará en sentido inverso. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aee45505414b4cef550a5775d39aee642" name="aee45505414b4cef550a5775d39aee642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee45505414b4cef550a5775d39aee642">&#9670;&#160;</a></span>motores_spin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void motores_spin </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>velocidad_izq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>velocidad_der</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gira ambas ruedas a distintas velocidades determinadas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">velocidad_izq</td><td>Velocidad de la rueda izquierda. El valor debe ser un número entero entre -255 y 255. Si el valor es negativo, la rueda girará en sentido inverso. </td></tr>
+    <tr><td class="paramname">velocidad_der</td><td>Velocidad de la rueda derecha. El valor debe ser un número entero entre -255 y 255. Si el valor es negativo, la rueda girará en sentido inverso. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,8 +1,8 @@
 /**
  * @file tmr3.c
  * @author Jorge Ibáñez
- * @brief Definición de las interrupciones ejecutadas por el Timer 3 del ATMega32U4.
- * @version 0.1
+ * @brief Definición de la interrupción ejecutada por el Timer 3 del ATMega32U4.
+ * @version 1.0
  * @date 2025-05-04
  * 
  * @copyright Copyright (c) 2025

@@ -2,7 +2,7 @@
  * @file menupruebas.c
  * @author Jorge Ibáñez
  * @brief Programa de pruebas unitarias del MiniQ 2WD
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * Para hacer uso de este programa, es necesario conectar el robot a un PC mediante USB, apagar y encender el robot y usar

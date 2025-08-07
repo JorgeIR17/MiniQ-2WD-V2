@@ -1,8 +1,8 @@
 /**
  * @file gpio.h
  * @author Jorge Ibáñez
- * @brief Declaración de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4.
- * @version 0.1
+ * @brief Definición de los drivers de bajo nivel para el uso de los GPIO del ATMega32U4.
+ * @version 1.0
  * @date 2025-05-14
  * 
  * @copyright Copyright (c) 2025
@@ -29,31 +29,10 @@
 #define ON 1
 
 // Modos de interrupcion
-#define LOW_LEVEL 0
-#define ANY_CHANGE 1
-#define FALLING_EDGE 2
-#define RISING_EDGE 3
-
-// Zumbador (OC)
-#define BUZZER_DDR      DDRB
-#define BUZZER_PORT     PORTB
-#define BUZZER_PIN      DDB2  // PB2
-
-// Puente H para motores
-#define MOTOR_EN1_DDR   DDRD
-#define MOTOR_EN1_PORT  PORTD
-#define MOTOR_EN1_PIN   DDD6  // PD6
-
-#define MOTOR_EN2_DDR   DDRE
-#define MOTOR_EN2_PORT  PORTE
-#define MOTOR_EN2_PIN   DDE6  // PE6
+#define FALLING_EDGE 1
+#define RISING_EDGE 2
 
 // Encoders
-#define ENCODER_DDR     DDRD
-#define ENCODER_PORT    PORTD
-#define ENCODER1_PIN    DDD2   
-#define ENCODER2_PIN    DDD3   
-
 #define PULSOS_POR_VUELTA 25    // 25 pulsos
 
 volatile uint16_t pulsos_izq;
@@ -64,27 +43,10 @@ volatile uint16_t rpm_izq;
 volatile uint16_t rpm_der;
 
 // LED RGB
-#define RGB_DDR         DDRB
-#define RGB_PORT        PORTB
-#define RGB_PIN         DDB6
-
 volatile bool blink;
 volatile uint16_t blink_time;
 
 // Transmisores y Receptor IR (IRM8881T)
-#define IRR_DDR			DDRB
-#define IRR_PORT		PORTB
-#define IRR_PIN			DDB4
-
-#define IRL_DDR			DDRC
-#define IRL_PORT		PORTC
-#define IRL_PIN			DDC7
-
-#define IRS_DDR			DDRB
-#define IRS_PORT		PORTB
-#define IRS_PIN			DDB0
-#define IRS_PCINT		0
-
 volatile uint8_t cont_obs;
 
 
@@ -99,11 +61,11 @@ static inline void GPIO_Init(volatile uint8_t* ddr, uint8_t pin, uint8_t directi
 {
     if (direction == OUTPUT) 
     {
-        *ddr |= (1 << pin);  // Configura como salida
+        *ddr |= (1 << pin);  // Output
     } 
     else 
     {
-        *ddr &= ~(1 << pin); // Configura como entrada
+        *ddr &= ~(1 << pin); // Input
     }
 }
 
@@ -133,6 +95,20 @@ static inline uint8_t GPIO_Read(volatile uint8_t* pin_reg, uint8_t pin)
 {
     return (*pin_reg & (1 << pin)) != 0;
 }
+
+/**
+ * @brief Alterna el valor lógico de un pin de salida.
+ *
+ * Esta función alterna el estado del pin indicado: si está en HIGH, lo cambia a LOW, y viceversa.
+ *
+ * @param port Puntero al registro PORTx (por ejemplo &PORTB)
+ * @param pin Número de pin (0–7)
+ */
+static inline void GPIO_Toggle(volatile uint8_t* port, uint8_t pin)
+{
+    *port ^= (1 << pin);
+}
+
 
 /**
  * @brief Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada.
@@ -174,6 +150,7 @@ static inline void GPIO_Interrupt_Init(uint8_t int_num, uint8_t mode)
 		}
 		EIMSK |= (1 << INT2);
 	}
+    
 	if(int_num == 3)
 	{
 		GPIO_Init(&DDRD, PORTD0, INPUT);
@@ -195,8 +172,8 @@ static inline void GPIO_PCInterrupt_Enable(uint8_t pcint)
 {
     if (pcint <= 7) 
 	{
-        PCICR |= (1 << PCIE0);          // Habilita el grupo PCINT0
-        PCMSK0 |= (1 << pcint);         // Habilita el pin específico
+        PCICR |= (1 << PCIE0);          // Enables PCINT0 group
+        PCMSK0 |= (1 << pcint);         // Enables an specific pin
     }
 }
 

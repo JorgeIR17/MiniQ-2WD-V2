@@ -2,7 +2,7 @@
  * @file recorrerdistancia.c
  * @author Jorge Ibáñez
  * @brief Ejemplo de uso del MiniQ 2WD mediante recorrido de distancia
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
@@ -36,14 +36,14 @@ int main(void)
 		if (sentido == 1) // Desplazamiento hacia delante
 		{
 			HAL_motores_avanzar(70);
-			uint16_t dist_i = HAL_encoders_get_distance(ENCODER_IZQUIERDO);
-			uint16_t dist_d = HAL_encoders_get_distance(ENCODER_DERECHO);
+			uint16_t dist_i = HAL_encoders_obtener_distancia(ENCODER_IZQUIERDO);
+			uint16_t dist_d = HAL_encoders_obtener_distancia(ENCODER_DERECHO);
 			
 			if(dist_i >= distancia && dist_d >= distancia) // Al alcanzar la distancia, se reinicia
 			{
 				HAL_motores_detener();
-				HAL_encoders_reset(ENCODER_IZQUIERDO);
-				HAL_encoders_reset(ENCODER_DERECHO);
+				HAL_encoders_reiniciar(ENCODER_IZQUIERDO);
+				HAL_encoders_reiniciar(ENCODER_DERECHO);
 				sentido = 0; // Cambio de sentido
 			}
 		}
@@ -51,14 +51,14 @@ int main(void)
 		else // Desplazamiento hacia atras
 		{
 			HAL_motores_avanzar(-70);
-			uint16_t dist_i = HAL_encoders_get_distance(ENCODER_IZQUIERDO);
-			uint16_t dist_d = HAL_encoders_get_distance(ENCODER_DERECHO);
+			uint16_t dist_i = HAL_encoders_obtener_distancia(ENCODER_IZQUIERDO);
+			uint16_t dist_d = HAL_encoders_obtener_distancia(ENCODER_DERECHO);
 			
 			if(dist_i >= distancia && dist_d >= distancia) // Al alcanzar la distancia, se reinicia
 			{
 				HAL_motores_detener();
-				HAL_encoders_reset(ENCODER_IZQUIERDO);
-				HAL_encoders_reset(ENCODER_DERECHO);
+				HAL_encoders_reiniciar(ENCODER_IZQUIERDO);
+				HAL_encoders_reiniciar(ENCODER_DERECHO);
 				sentido = 1; // Cambio de sentido
 				distancia += 100; // Al recorrer en ambos sentidos, se aumenta la distancia a recorrer en 100 mm
 			}

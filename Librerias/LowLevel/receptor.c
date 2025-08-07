@@ -2,7 +2,7 @@
  * @file receptor.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los transmisores y el receptor IR (IRM8881T).
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -12,7 +12,7 @@
 #include "receptor.h"
 
 
-void receptor_enviar_pulso(uint8_t transmisor)
+void receptor_send_pulse(uint8_t transmisor)
 {
 	if(transmisor == TRANSMISOR_DERECHO || transmisor == TRANSMISOR_IZQUIERDO)
 	{

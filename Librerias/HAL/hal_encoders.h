@@ -2,7 +2,7 @@
  * @file hal_encoders.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los encoders
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025
@@ -14,6 +14,7 @@
 
 #include "../LowLevel/encoders.h"
 
+// Macros para el calculo de distancia recorrida
 #define DIAMETRO_RUEDA_MM 42.0
 #define PI 3.1416               // Valor de pi
 #define MM_POR_PULSO 5.28
@@ -33,7 +34,7 @@ static inline void HAL_encoders_init()
  * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
  * @return uint16_t Valor de velocidad en RPM.
  */
-uint16_t HAL_encoders_get_speed(uint8_t encoder);
+uint16_t HAL_encoders_obtener_velocidad(uint8_t encoder);
 
 /**
  * @brief Calcula la distancia recorrida por una rueda.
@@ -41,13 +42,13 @@ uint16_t HAL_encoders_get_speed(uint8_t encoder);
  * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
  * @return uint16_t Valor de distancia en milímetros.
  */
-uint16_t HAL_encoders_get_distance(uint8_t encoder);
+uint16_t HAL_encoders_obtener_distancia(uint8_t encoder);
 
 /**
  * @brief Reinicia el contador de pulsos de un encoder.
  * 
  * @param encoder Encoder derecho o izquierdo. Es necesario hacer uso de las macros proporcionadas.
  */
-void HAL_encoders_reset(uint8_t encoder);
+void HAL_encoders_reiniciar(uint8_t encoder);
 
 #endif /* HAL_ENCODERS_H_ */

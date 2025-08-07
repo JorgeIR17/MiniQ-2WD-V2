@@ -89,50 +89,56 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../Peripherals/gpio.h&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;../Peripherals/tmr3.h&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ENCODER_IZQUIERDO 0</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ENCODER_DERECHO 1</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">   26</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">encoders_init</a>()</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Encoder 1 - PD2 (INT2)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;ENCODER_DDR, ENCODER1_PIN, INPUT);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a>(&amp;ENCODER_PORT, ENCODER1_PIN, ON);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a>(2, RISING_EDGE); <span class="comment">// pull-up ya está activado manualmente</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Encoder 2 - PD3 (INT3)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;ENCODER_DDR, ENCODER2_PIN, INPUT);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a>(&amp;ENCODER_PORT, ENCODER2_PIN, ON);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a>(3, RISING_EDGE); <span class="comment">// pull-up ya está activado manualmente</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="tmr3_8h.html#acd76a07dcccec4089c9a08546ca40c7c">TMR3_CTC_Init</a>();        <span class="comment">// Configurar Timer 3 en modo CTC</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="tmr3_8h.html#aaf83f5a1f949df52892ea9d7ab23363d">TMR3_CTC_Set</a>(15624);    <span class="comment">// Configurar OCR3A para 100 ms (con prescaler 64)</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="tmr3_8h.html#aa49ffead1915b4f4fda600da6cd418ec">TMR3_CTC_enaInterrupt</a>(); <span class="comment">// Habilitar interrupcion</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="tmr3_8h.html#a6d1e7b4239da20f2c1610ea1e80fd9e6">TMR3_CTC_Start</a>(DIV_CLK_64); <span class="comment">// Iniciar con prescaler 64</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    pulsos_izq = 0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    pulsos_der = 0;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    pulsos_rpm_izq = 0;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    pulsos_rpm_der = 0;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    rpm_izq = 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    rpm_der = 0;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    sei();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Pines de los encoders</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ENCODER_DDR     DDRD</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ENCODER_PORT    PORTD</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define ENCODER1_PIN    DDD2   </span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define ENCODER2_PIN    DDD3 </span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define ENCODER_IZQUIERDO 0</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ENCODER_DERECHO 1</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">   32</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">encoders_init</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Encoder 1 - PD2 (INT2)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;ENCODER_DDR, ENCODER1_PIN, INPUT);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a>(&amp;ENCODER_PORT, ENCODER1_PIN, ON);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a>(2, RISING_EDGE); <span class="comment">// pull-up ya está activado manualmente</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// Encoder 2 - PD3 (INT3)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;ENCODER_DDR, ENCODER2_PIN, INPUT);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a>(&amp;ENCODER_PORT, ENCODER2_PIN, ON);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a>(3, RISING_EDGE); <span class="comment">// pull-up ya está activado manualmente</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="tmr3_8h.html#acd76a07dcccec4089c9a08546ca40c7c">TMR3_CTC_Init</a>();        <span class="comment">// Configurar Timer 3 en modo CTC</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="tmr3_8h.html#aaf83f5a1f949df52892ea9d7ab23363d">TMR3_CTC_Set</a>(49999);    <span class="comment">// Configurar OCR3A para 200 ms (con prescaler 64)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="tmr3_8h.html#aa49ffead1915b4f4fda600da6cd418ec">TMR3_CTC_enaInterrupt</a>(); <span class="comment">// Habilitar interrupcion</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_function" href="tmr3_8h.html#a6d1e7b4239da20f2c1610ea1e80fd9e6">TMR3_CTC_Start</a>(DIV_CLK_64); <span class="comment">// Iniciar con prescaler 64</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    pulsos_izq = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    pulsos_der = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    pulsos_rpm_izq = 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    pulsos_rpm_der = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    rpm_izq = 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    rpm_der = 0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    sei();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint16_t <a class="code hl_function" href="encoders_8h.html#a66712066f669e2403331c0b0553f3280">encoder_leer</a>(uint8_t encoder);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>uint16_t <a class="code hl_function" href="encoders_8h.html#ab41cbb7d72557170661cb8ad864399f3">encoder_get_speed</a>(uint8_t encoder);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="encoders_8h.html#adcf815c8865b4d103d6612728fb6adf1">encoder_reset</a>(uint8_t encoder);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">/* ENCODERS_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aencoders_8h_html_a66712066f669e2403331c0b0553f3280"><div class="ttname"><a href="encoders_8h.html#a66712066f669e2403331c0b0553f3280">encoder_leer</a></div><div class="ttdeci">uint16_t encoder_leer(uint8_t encoder)</div><div class="ttdoc">Lee los pulsos acumulados de un encoder.</div><div class="ttdef"><b>Definition</b> encoders.c:14</div></div>
-<div class="ttc" id="aencoders_8h_html_a79ca8add080b997fcc869ca3b887102f"><div class="ttname"><a href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">encoders_init</a></div><div class="ttdeci">static void encoders_init()</div><div class="ttdoc">Inicializa los encoders.</div><div class="ttdef"><b>Definition</b> encoders.h:26</div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>uint16_t <a class="code hl_function" href="encoders_8h.html#adec755c88ca58258cd791c2d8c024e67">encoder_read</a>(uint8_t encoder);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>uint16_t <a class="code hl_function" href="encoders_8h.html#ab41cbb7d72557170661cb8ad864399f3">encoder_get_speed</a>(uint8_t encoder);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keywordtype">void</span> <a class="code hl_function" href="encoders_8h.html#adcf815c8865b4d103d6612728fb6adf1">encoder_reset</a>(uint8_t encoder);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">/* ENCODERS_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aencoders_8h_html_a79ca8add080b997fcc869ca3b887102f"><div class="ttname"><a href="encoders_8h.html#a79ca8add080b997fcc869ca3b887102f">encoders_init</a></div><div class="ttdeci">static void encoders_init()</div><div class="ttdoc">Inicializa los encoders.</div><div class="ttdef"><b>Definition</b> encoders.h:32</div></div>
 <div class="ttc" id="aencoders_8h_html_ab41cbb7d72557170661cb8ad864399f3"><div class="ttname"><a href="encoders_8h.html#ab41cbb7d72557170661cb8ad864399f3">encoder_get_speed</a></div><div class="ttdeci">uint16_t encoder_get_speed(uint8_t encoder)</div><div class="ttdoc">Calcula la velocidad de una rueda.</div><div class="ttdef"><b>Definition</b> encoders.c:22</div></div>
 <div class="ttc" id="aencoders_8h_html_adcf815c8865b4d103d6612728fb6adf1"><div class="ttname"><a href="encoders_8h.html#adcf815c8865b4d103d6612728fb6adf1">encoder_reset</a></div><div class="ttdeci">void encoder_reset(uint8_t encoder)</div><div class="ttdoc">Reinicia el contador de pulsos de un encoder.</div><div class="ttdef"><b>Definition</b> encoders.c:30</div></div>
-<div class="ttc" id="agpio_8h_html_a55f8fd7cdccc215ef4f78bd08a1ff3d6"><div class="ttname"><a href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a></div><div class="ttdeci">static void GPIO_Pullup(volatile uint8_t *port, uint8_t pin, uint8_t state)</div><div class="ttdoc">Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada.</div><div class="ttdef"><b>Definition</b> gpio.h:144</div></div>
-<div class="ttc" id="agpio_8h_html_a892ce642edd8a73d11d47e88aa7a11c5"><div class="ttname"><a href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a></div><div class="ttdeci">static void GPIO_Interrupt_Init(uint8_t int_num, uint8_t mode)</div><div class="ttdoc">Configura una interrupción externa (INT2 o INT3) en el ATmega32U4.</div><div class="ttdef"><b>Definition</b> gpio.h:165</div></div>
-<div class="ttc" id="agpio_8h_html_acd3b9eadc6166ce42eaa2dba50fcb157"><div class="ttname"><a href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a></div><div class="ttdeci">static void GPIO_Init(volatile uint8_t *ddr, uint8_t pin, uint8_t direction)</div><div class="ttdoc">Configura la dirección de un pin (entrada o salida).</div><div class="ttdef"><b>Definition</b> gpio.h:98</div></div>
+<div class="ttc" id="aencoders_8h_html_adec755c88ca58258cd791c2d8c024e67"><div class="ttname"><a href="encoders_8h.html#adec755c88ca58258cd791c2d8c024e67">encoder_read</a></div><div class="ttdeci">uint16_t encoder_read(uint8_t encoder)</div><div class="ttdoc">Lee los pulsos acumulados de un encoder.</div><div class="ttdef"><b>Definition</b> encoders.c:14</div></div>
+<div class="ttc" id="agpio_8h_html_a55f8fd7cdccc215ef4f78bd08a1ff3d6"><div class="ttname"><a href="gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6">GPIO_Pullup</a></div><div class="ttdeci">static void GPIO_Pullup(volatile uint8_t *port, uint8_t pin, uint8_t state)</div><div class="ttdoc">Habilita o deshabilita la resistencia pull-up interna para un pin configurado como entrada.</div><div class="ttdef"><b>Definition</b> gpio.h:120</div></div>
+<div class="ttc" id="agpio_8h_html_a892ce642edd8a73d11d47e88aa7a11c5"><div class="ttname"><a href="gpio_8h.html#a892ce642edd8a73d11d47e88aa7a11c5">GPIO_Interrupt_Init</a></div><div class="ttdeci">static void GPIO_Interrupt_Init(uint8_t int_num, uint8_t mode)</div><div class="ttdoc">Configura una interrupción externa (INT2 o INT3) en el ATmega32U4.</div><div class="ttdef"><b>Definition</b> gpio.h:141</div></div>
+<div class="ttc" id="agpio_8h_html_acd3b9eadc6166ce42eaa2dba50fcb157"><div class="ttname"><a href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a></div><div class="ttdeci">static void GPIO_Init(volatile uint8_t *ddr, uint8_t pin, uint8_t direction)</div><div class="ttdoc">Configura la dirección de un pin (entrada o salida).</div><div class="ttdef"><b>Definition</b> gpio.h:60</div></div>
 <div class="ttc" id="atmr3_8h_html_a6d1e7b4239da20f2c1610ea1e80fd9e6"><div class="ttname"><a href="tmr3_8h.html#a6d1e7b4239da20f2c1610ea1e80fd9e6">TMR3_CTC_Start</a></div><div class="ttdeci">static void TMR3_CTC_Start(uint8_t divClock)</div><div class="ttdoc">Inicia el Timer 3 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr3.h:62</div></div>
 <div class="ttc" id="atmr3_8h_html_aa49ffead1915b4f4fda600da6cd418ec"><div class="ttname"><a href="tmr3_8h.html#aa49ffead1915b4f4fda600da6cd418ec">TMR3_CTC_enaInterrupt</a></div><div class="ttdeci">static void TMR3_CTC_enaInterrupt()</div><div class="ttdoc">Activa las interrupciones del Timer 3 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr3.h:43</div></div>
 <div class="ttc" id="atmr3_8h_html_aaf83f5a1f949df52892ea9d7ab23363d"><div class="ttname"><a href="tmr3_8h.html#aaf83f5a1f949df52892ea9d7ab23363d">TMR3_CTC_Set</a></div><div class="ttdeci">static void TMR3_CTC_Set(uint16_t valueCounterA)</div><div class="ttdoc">Establece el valor de contador del Timer 3 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr3.h:86</div></div>

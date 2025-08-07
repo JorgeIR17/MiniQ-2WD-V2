@@ -93,32 +93,37 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;../Peripherals/tmr1.h&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;../Peripherals/gpio.h&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">   27</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a>()</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;BUZZER_DDR, BUZZER_PIN, OUTPUT);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="tmr0_8h.html#ad6a1e5a0b4df67f77c57b07dcd1b0747">TMR0_CTC_Init</a>();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="tmr0_8h.html#ada30b7671b9dd1fd51a96a4d72e78c72">TMR0_CTC_enaInterrupt</a>();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_function" href="tmr1_8h.html#a32598aaecf9349e41e2c859f154d1e90">TMR1_CTC_Init</a>();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="tmr1_8h.html#adf0927c676b3111888fc119507196d4f">TMR1_CTC_enaInterrupt</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// Pin del zumbador</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define BUZZER_DDR      DDRB</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define BUZZER_PORT     PORTB</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define BUZZER_PIN      DDB2  </span><span class="comment">// PB2</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">   32</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a>(&amp;BUZZER_DDR, BUZZER_PIN, OUTPUT);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    sei();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="tmr0_8h.html#ad6a1e5a0b4df67f77c57b07dcd1b0747">TMR0_CTC_Init</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="tmr0_8h.html#ada30b7671b9dd1fd51a96a4d72e78c72">TMR0_CTC_enaInterrupt</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="tmr1_8h.html#a32598aaecf9349e41e2c859f154d1e90">TMR1_CTC_Init</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_function" href="tmr1_8h.html#adf0927c676b3111888fc119507196d4f">TMR1_CTC_enaInterrupt</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    sei();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#a0056d5e2023ae5bce0d38dbf1480ac84">zumbador_tone</a>(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#ad0774a3ca3081a9068979b62fddd4d4f">zumbador_stop</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agpio_8h_html_acd3b9eadc6166ce42eaa2dba50fcb157"><div class="ttname"><a href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a></div><div class="ttdeci">static void GPIO_Init(volatile uint8_t *ddr, uint8_t pin, uint8_t direction)</div><div class="ttdoc">Configura la dirección de un pin (entrada o salida).</div><div class="ttdef"><b>Definition</b> gpio.h:98</div></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#a0056d5e2023ae5bce0d38dbf1480ac84">zumbador_tone</a>(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">void</span> <a class="code hl_function" href="zumbador_8h.html#ad0774a3ca3081a9068979b62fddd4d4f">zumbador_stop</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agpio_8h_html_acd3b9eadc6166ce42eaa2dba50fcb157"><div class="ttname"><a href="gpio_8h.html#acd3b9eadc6166ce42eaa2dba50fcb157">GPIO_Init</a></div><div class="ttdeci">static void GPIO_Init(volatile uint8_t *ddr, uint8_t pin, uint8_t direction)</div><div class="ttdoc">Configura la dirección de un pin (entrada o salida).</div><div class="ttdef"><b>Definition</b> gpio.h:60</div></div>
 <div class="ttc" id="atmr0_8h_html_ad6a1e5a0b4df67f77c57b07dcd1b0747"><div class="ttname"><a href="tmr0_8h.html#ad6a1e5a0b4df67f77c57b07dcd1b0747">TMR0_CTC_Init</a></div><div class="ttdeci">static void TMR0_CTC_Init()</div><div class="ttdoc">Inicializa el Timer 0 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr0.h:30</div></div>
 <div class="ttc" id="atmr0_8h_html_ada30b7671b9dd1fd51a96a4d72e78c72"><div class="ttname"><a href="tmr0_8h.html#ada30b7671b9dd1fd51a96a4d72e78c72">TMR0_CTC_enaInterrupt</a></div><div class="ttdeci">static void TMR0_CTC_enaInterrupt()</div><div class="ttdoc">Activa las interrupciones del Timer 0 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr0.h:42</div></div>
 <div class="ttc" id="atmr1_8h_html_a32598aaecf9349e41e2c859f154d1e90"><div class="ttname"><a href="tmr1_8h.html#a32598aaecf9349e41e2c859f154d1e90">TMR1_CTC_Init</a></div><div class="ttdeci">static void TMR1_CTC_Init()</div><div class="ttdoc">Inicializa el Timer 1 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr1.h:31</div></div>
 <div class="ttc" id="atmr1_8h_html_adf0927c676b3111888fc119507196d4f"><div class="ttname"><a href="tmr1_8h.html#adf0927c676b3111888fc119507196d4f">TMR1_CTC_enaInterrupt</a></div><div class="ttdeci">static void TMR1_CTC_enaInterrupt()</div><div class="ttdoc">Activa las interrupciones del Timer 1 en modo CTC.</div><div class="ttdef"><b>Definition</b> tmr1.h:44</div></div>
 <div class="ttc" id="azumbador_8h_html_a0056d5e2023ae5bce0d38dbf1480ac84"><div class="ttname"><a href="zumbador_8h.html#a0056d5e2023ae5bce0d38dbf1480ac84">zumbador_tone</a></div><div class="ttdeci">void zumbador_tone(uint8_t nTicks_beepFreq, uint16_t nTicks_beepDuration)</div><div class="ttdoc">Emite un sonido dadas una frecuencia y una duración.</div><div class="ttdef"><b>Definition</b> zumbador.c:15</div></div>
-<div class="ttc" id="azumbador_8h_html_acd5c3e26deddfaeb9505c420e74bb4a6"><div class="ttname"><a href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a></div><div class="ttdeci">static void zumbador_init()</div><div class="ttdoc">Inicializa el zumbador.</div><div class="ttdef"><b>Definition</b> zumbador.h:27</div></div>
+<div class="ttc" id="azumbador_8h_html_acd5c3e26deddfaeb9505c420e74bb4a6"><div class="ttname"><a href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a></div><div class="ttdeci">static void zumbador_init()</div><div class="ttdoc">Inicializa el zumbador.</div><div class="ttdef"><b>Definition</b> zumbador.h:32</div></div>
 <div class="ttc" id="azumbador_8h_html_ad0774a3ca3081a9068979b62fddd4d4f"><div class="ttname"><a href="zumbador_8h.html#ad0774a3ca3081a9068979b62fddd4d4f">zumbador_stop</a></div><div class="ttdeci">void zumbador_stop()</div><div class="ttdoc">Detiene cualquier sonido emitido por el zumbador.</div><div class="ttdef"><b>Definition</b> zumbador.c:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

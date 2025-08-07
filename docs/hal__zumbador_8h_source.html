@@ -143,7 +143,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#define Bb5 32</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#define B5  30  </span></div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">// Definicion de notas musicales en espanol</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">// Definicion de notas musicales en español</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#define DO3   C3</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#define DOs3  Cs3</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#define REb3  Db3</span></div>
@@ -198,40 +198,41 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#define SIb5  Bb5</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#define SI5   B5    </span></div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#define STARTING_SOUND B4</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#define STARTING_SOUND_DURATION 1000</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#define MATCH_SOUND G5</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#define MATCH_SOUND_DURATION 500</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#define FAIL_SOUND B3</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#define FAIL_SOUND_DURATION 1000</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// Tipos de alertas</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#define INICIO 1</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#define ACIERTO 2</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#define ERROR 3</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">  148</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">HAL_zumbador_init</a>()</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_function" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a>();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">// Frecuencia y duracion de alertas</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#define STARTING_SOUND B4</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#define STARTING_SOUND_DURATION 1000</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#define MATCH_SOUND G5</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#define MATCH_SOUND_DURATION 500</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#define FAIL_SOUND B3</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#define FAIL_SOUND_DURATION 1000</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">// Tipos de alertas</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#define INICIO 1</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#define ACIERTO 2</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#define ERROR 3</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">  149</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">HAL_zumbador_init</a>()</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>{</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_function" href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
 </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a4130a064ac575bae2c57a63c782307c3">HAL_zumbador_alerta</a>(uint8_t tipo);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a4130a064ac575bae2c57a63c782307c3">HAL_zumbador_alerta</a>(uint8_t tipo);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a4ad3fef7df97758c8c3adc6f953ce917">HAL_zumbador_nota</a>(uint8_t nota, uint16_t duracion);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#af45abc97d7de831a455e4cfaab6d1bb3">HAL_zumbador_detener</a>();</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_ZUMBADOR_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#a4ad3fef7df97758c8c3adc6f953ce917">HAL_zumbador_nota</a>(uint8_t nota, uint16_t duracion);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keywordtype">void</span> <a class="code hl_function" href="hal__zumbador_8h.html#af45abc97d7de831a455e4cfaab6d1bb3">HAL_zumbador_detener</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif </span><span class="comment">/* HAL_ZUMBADOR_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="ahal__zumbador_8h_html_a4130a064ac575bae2c57a63c782307c3"><div class="ttname"><a href="hal__zumbador_8h.html#a4130a064ac575bae2c57a63c782307c3">HAL_zumbador_alerta</a></div><div class="ttdeci">void HAL_zumbador_alerta(uint8_t tipo)</div><div class="ttdoc">Emite una alerta por el zumbador.</div><div class="ttdef"><b>Definition</b> hal_zumbador.c:15</div></div>
 <div class="ttc" id="ahal__zumbador_8h_html_a4ad3fef7df97758c8c3adc6f953ce917"><div class="ttname"><a href="hal__zumbador_8h.html#a4ad3fef7df97758c8c3adc6f953ce917">HAL_zumbador_nota</a></div><div class="ttdeci">void HAL_zumbador_nota(uint8_t nota, uint16_t duracion)</div><div class="ttdoc">Emite el sonido de una nota.</div><div class="ttdef"><b>Definition</b> hal_zumbador.c:25</div></div>
-<div class="ttc" id="ahal__zumbador_8h_html_a67f2940361aae4b5ecc1c86fe9d2d7b9"><div class="ttname"><a href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">HAL_zumbador_init</a></div><div class="ttdeci">static void HAL_zumbador_init()</div><div class="ttdoc">Inicialización del zumbador.</div><div class="ttdef"><b>Definition</b> hal_zumbador.h:148</div></div>
+<div class="ttc" id="ahal__zumbador_8h_html_a67f2940361aae4b5ecc1c86fe9d2d7b9"><div class="ttname"><a href="hal__zumbador_8h.html#a67f2940361aae4b5ecc1c86fe9d2d7b9">HAL_zumbador_init</a></div><div class="ttdeci">static void HAL_zumbador_init()</div><div class="ttdoc">Inicialización del zumbador.</div><div class="ttdef"><b>Definition</b> hal_zumbador.h:149</div></div>
 <div class="ttc" id="ahal__zumbador_8h_html_af45abc97d7de831a455e4cfaab6d1bb3"><div class="ttname"><a href="hal__zumbador_8h.html#af45abc97d7de831a455e4cfaab6d1bb3">HAL_zumbador_detener</a></div><div class="ttdeci">void HAL_zumbador_detener()</div><div class="ttdoc">Detiene el funcionamiento del zumbador.</div><div class="ttdef"><b>Definition</b> hal_zumbador.c:30</div></div>
-<div class="ttc" id="azumbador_8h_html_acd5c3e26deddfaeb9505c420e74bb4a6"><div class="ttname"><a href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a></div><div class="ttdeci">static void zumbador_init()</div><div class="ttdoc">Inicializa el zumbador.</div><div class="ttdef"><b>Definition</b> zumbador.h:27</div></div>
+<div class="ttc" id="azumbador_8h_html_acd5c3e26deddfaeb9505c420e74bb4a6"><div class="ttname"><a href="zumbador_8h.html#acd5c3e26deddfaeb9505c420e74bb4a6">zumbador_init</a></div><div class="ttdeci">static void zumbador_init()</div><div class="ttdoc">Inicializa el zumbador.</div><div class="ttdef"><b>Definition</b> zumbador.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -2,7 +2,7 @@
  * @file hal_zumbador.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso del zumbador.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-04
  * 
  * @copyright Copyright (c) 2025

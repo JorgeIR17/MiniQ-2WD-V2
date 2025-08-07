@@ -34,7 +34,6 @@ var menudata={children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"b",url:"globals_b.html#index_b"},
 {text:"c",url:"globals_c.html#index_c"},
-{text:"d",url:"globals_d.html#index_d"},
 {text:"e",url:"globals_e.html#index_e"},
 {text:"f",url:"globals_f.html#index_f"},
 {text:"g",url:"globals_g.html#index_g"},
@@ -46,7 +45,6 @@ var menudata={children:[
 {text:"r",url:"globals_r.html#index_r"},
 {text:"s",url:"globals_s.html#index_s"},
 {text:"t",url:"globals_t.html#index_t"},
-{text:"v",url:"globals_v.html#index_v"},
 {text:"z",url:"globals_z.html#index_z"}]},
 {text:"Funciones",url:"globals_func.html",children:[
 {text:"a",url:"globals_func.html#index_a"},
@@ -63,5 +61,4 @@ var menudata={children:[
 {text:"r",url:"globals_func_r.html#index_r"},
 {text:"s",url:"globals_func_s.html#index_s"},
 {text:"t",url:"globals_func_t.html#index_t"},
-{text:"z",url:"globals_func_z.html#index_z"}]},
-{text:"defines",url:"globals_defs.html"}]}]}]}
+{text:"z",url:"globals_func_z.html#index_z"}]}]}]}]}

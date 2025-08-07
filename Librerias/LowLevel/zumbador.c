@@ -2,7 +2,7 @@
  * @file zumbador.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del zumbador.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025

@@ -2,7 +2,7 @@
  * @file menus.h
  * @author Jorge Ibáñez
  * @brief Declaración de las funciones del menú de pruebas del DFRobot MiniQ 2WD
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-09
  * 
  * @copyright Copyright (c) 2025

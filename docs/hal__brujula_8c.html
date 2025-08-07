@@ -85,9 +85,9 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
-<tr class="memitem:aa3873d82e4a798eb8d2e813994ecb5eb" id="r_aa3873d82e4a798eb8d2e813994ecb5eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#aa3873d82e4a798eb8d2e813994ecb5eb">HAL_brujula_leer_ejes</a> (int16_t *x, int16_t *y, int16_t *z)</td></tr>
-<tr class="memdesc:aa3873d82e4a798eb8d2e813994ecb5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los valores de los tres ejes del magnetómetro HMC5883L.  <br /></td></tr>
-<tr class="separator:aa3873d82e4a798eb8d2e813994ecb5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8013ca360bc6f4e17db04b86f6bc80" id="r_a7d8013ca360bc6f4e17db04b86f6bc80"><td class="memItemLeft" align="right" valign="top"><a id="a7d8013ca360bc6f4e17db04b86f6bc80" name="a7d8013ca360bc6f4e17db04b86f6bc80"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>HAL_brujula_read_ejes</b> (int16_t *x, int16_t *y, int16_t *z)</td></tr>
+<tr class="separator:a7d8013ca360bc6f4e17db04b86f6bc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e6047b81b78d98db7bfb399b9c4ad2" id="r_a20e6047b81b78d98db7bfb399b9c4ad2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__brujula_8c.html#a20e6047b81b78d98db7bfb399b9c4ad2">HAL_brujula_calibrar</a> (int16_t *offset_x, int16_t *offset_y)</td></tr>
 <tr class="memdesc:a20e6047b81b78d98db7bfb399b9c4ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una calibración básica de la brújula.  <br /></td></tr>
 <tr class="separator:a20e6047b81b78d98db7bfb399b9c4ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,7 +104,7 @@ Funciones</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Definición de la capa HAL para el uso de la brujula HMC5883L. </p>
 <dl class="section author"><dt>Autor</dt><dd>Jorge Ibáñez </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-05-03</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Documentación de funciones</h2>
@@ -220,50 +220,6 @@ Funciones</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>float Ángulo en grados, de 0 a 360 </dd></dl>
-
-</div>
-</div>
-<a id="aa3873d82e4a798eb8d2e813994ecb5eb" name="aa3873d82e4a798eb8d2e813994ecb5eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3873d82e4a798eb8d2e813994ecb5eb">&#9670;&#160;</a></span>HAL_brujula_leer_ejes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_brujula_leer_ejes </td>
-          <td>(</td>
-          <td class="paramtype">int16_t *&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t *&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int16_t *&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Lee los valores de los tres ejes del magnetómetro HMC5883L. </p>
-<dl class="params"><dt>Parámetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>Puntero donde se guardará el valor del eje X </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>Puntero donde se guardará el valor del eje Y </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">z</td><td>Puntero donde se guardará el valor del eje Z </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

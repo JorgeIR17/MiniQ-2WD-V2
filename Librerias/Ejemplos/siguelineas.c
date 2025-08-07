@@ -2,7 +2,7 @@
  * @file siguelineas.c
  * @author Jorge Ibáñez
  * @brief Ejemplo de uso del MiniQ 2WD como robot siguelíneas
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
@@ -23,16 +23,16 @@
 
 typedef enum 
 {
-	STATE_INIT,
-	STATE_WAIT_BLACK,
-	STATE_FOLLOW_LINE,
-	STATE_STOP
-} States_t;
+	INIT,
+	ESPERA_NEGRO,
+	SIGUE_LINEA,
+	STOP
+} Estado;
 
 
 int main(void)
 {	
-	int8_t posicion = 0;
+	int8_t posicion = LINEA_CENTRO;
 	
 	// Inicializamos los componentes
 	HAL_zumbador_init();
@@ -42,61 +42,61 @@ int main(void)
 	HAL_bateria_init();
 	
 	
-	States_t currentState = STATE_INIT;
-	States_t nextState = STATE_INIT;
+	Estado estadoActual = INIT;
+	Estado estadoSiguiente = INIT;
 		
 	
     while (1) 
     {
 		
 		HAL_bateria_mostrar_nivel();
-		switch(currentState)
+		switch(estadoActual)
 		{
-			case STATE_INIT:
+			case INIT:
 				HAL_zumbador_alerta(INICIO);
 				_delay_ms(1000);
-				nextState = STATE_WAIT_BLACK;
+				estadoSiguiente = ESPERA_NEGRO;
 				break;
 				
-			case STATE_WAIT_BLACK:
+			case ESPERA_NEGRO:
 				posicion = HAL_sensores_obtener_posicion();
-				if (posicion == 0)
-					nextState = STATE_FOLLOW_LINE;
+				if (posicion == LINEA_CENTRO)
+					estadoSiguiente = SIGUE_LINEA;
 				break;
 				
-			case STATE_FOLLOW_LINE:
+			case SIGUE_LINEA:
 				posicion = HAL_sensores_obtener_posicion();
-				if (posicion == 0) // Robot centrado
+				if (posicion == LINEA_CENTRO) // Robot centrado
 					HAL_motores_avanzar(40); 
-				if (posicion == 1) // Robot un poco a la derecha
+				if (posicion == LINEA_DERECHA_CENTRO) // Robot un poco a la derecha
 				HAL_motores_girar(0, 30);
-				if (posicion == -1) // Robot un poco a la izquierda
+				if (posicion == LINEA_IZQUIERDA_CENTRO) // Robot un poco a la izquierda
 				HAL_motores_girar(30, 0);
-				if (posicion == 2) // Robot muy a la derecha
+				if (posicion == LINEA_DERECHA) // Robot muy a la derecha
 					HAL_motores_girar(0, 60); 
-				if (posicion == -2) // Robot muy a la izquierda
+				if (posicion == LINEA_IZQUIERDA) // Robot muy a la izquierda
 					HAL_motores_girar(60, 0);
 				
 				if (posicion == ERROR_LINEA)
-					nextState = STATE_STOP;
+					estadoSiguiente = STOP;
 					
 				_delay_ms(5);
 				break;
 				
-			case STATE_STOP:
+			case STOP:
 				HAL_motores_detener();
 				HAL_zumbador_alerta(ERROR);
 				_delay_ms(1000);
-				nextState = STATE_WAIT_BLACK;
+				estadoSiguiente = ESPERA_NEGRO;
 				break;
 				
-			default: // STATE_WAIT_BLACK
+			default: // ESPERA_NEGRO
 				posicion = HAL_sensores_obtener_posicion();
-				if (posicion == 0)
-					nextState = STATE_FOLLOW_LINE;
+				if (posicion == LINEA_CENTRO)
+					estadoSiguiente = SIGUE_LINEA;
 				break;	
 		}
 		
-		currentState = nextState;
+		estadoActual = estadoSiguiente;
     }
 }

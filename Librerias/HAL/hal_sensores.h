@@ -2,7 +2,7 @@
  * @file hal_sensores.h
  * @author Jorge Ibáñez
  * @brief Declaración de la capa HAL para el uso de los sensores IR
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025
@@ -15,11 +15,13 @@
 #include <avr/io.h>
 #include "../LowLevel/sensores.h"
 
-/**
- * @brief No se detecta la línea por ninguno de los sensores.
- * 
- *
- */
+
+// Macros para detectar la posicion de la linea
+#define LINEA_IZQUIERDA 0
+#define LINEA_IZQUIERDA_CENTRO 1
+#define LINEA_CENTRO 2
+#define LINEA_DERECHA_CENTRO 3
+#define LINEA_DERECHA 4
 #define ERROR_LINEA 10
 #define NADA 20
 
@@ -32,7 +34,7 @@
 static inline void HAL_sensores_init()
 {
     sensores_init();
-	sensores_calibrar();
+	sensores_calibrate();
 }
 
 
@@ -41,7 +43,7 @@ static inline void HAL_sensores_init()
  * 
  * @return int8_t Posición del robot. Indica si se encuentra a la izquierda, derecha, centrado o no se detecta la línea.
  */
-int8_t HAL_sensores_obtener_posicion();
+uint8_t HAL_sensores_obtener_posicion();
 
 
 /**

@@ -6,5 +6,6 @@ var searchData=
   ['gpio_5fpcinterrupt_5fenable_3',['GPIO_PCInterrupt_Enable',['../gpio_8h.html#abc68600958efc8156b1ddca9bc4ff2b3',1,'gpio.h']]],
   ['gpio_5fpullup_4',['GPIO_Pullup',['../gpio_8h.html#a55f8fd7cdccc215ef4f78bd08a1ff3d6',1,'gpio.h']]],
   ['gpio_5fread_5',['GPIO_Read',['../gpio_8h.html#ab36c0cb8a481e89d700eda8973b1545d',1,'gpio.h']]],
-  ['gpio_5fwrite_6',['GPIO_Write',['../gpio_8h.html#a72bef811f8b6ee233a691183085aedf7',1,'gpio.h']]]
+  ['gpio_5ftoggle_6',['GPIO_Toggle',['../gpio_8h.html#a416bc3c79f8c3988b4030179e9f60358',1,'gpio.h']]],
+  ['gpio_5fwrite_7',['GPIO_Write',['../gpio_8h.html#a72bef811f8b6ee233a691183085aedf7',1,'gpio.h']]]
 ];

@@ -2,7 +2,7 @@
  * @file sensores.c
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso de los sensores infrarrojos.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -11,7 +11,7 @@
 
 #include "sensores.h"
 
-uint16_t sensores_leer(uint8_t sensor)
+uint16_t sensores_read(uint8_t sensor)
 {
     switch (sensor)
     {
@@ -37,7 +37,7 @@ uint16_t sensores_leer(uint8_t sensor)
 
 }
 
-void sensores_calibrar()
+void sensores_calibrate()
 {
 	uint16_t valor_min = 1023;
 	uint16_t valor_max = 0;
@@ -47,7 +47,7 @@ void sensores_calibrar()
 	{
 		for(uint8_t i = IZQUIERDA_CENTRO; i < DERECHA_CENTRO; i++)
 		{
-			lectura = sensores_leer(i);
+			lectura = sensores_read(i);
 			if(lectura > valor_max) valor_max = lectura; // Almacena el valor leido mas alto (blanco)
 			if(lectura < valor_min) valor_min = lectura; // Almacena el valor leido mas bajo (negro)
 		}

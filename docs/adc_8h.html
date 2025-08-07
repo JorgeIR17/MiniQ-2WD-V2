@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Declaración de los drivers de bajo nivel para el uso del ADC.  
+<p>Definición de los drivers de bajo nivel para el uso del ADC.  
 <a href="#details">Más...</a></p>
 <div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
 </div>
@@ -88,6 +88,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 defines</h2></td></tr>
+<tr class="memitem:a43bafb28b29491ec7f871319b5a3b2f8" id="r_a43bafb28b29491ec7f871319b5a3b2f8"><td class="memItemLeft" align="right" valign="top"><a id="a43bafb28b29491ec7f871319b5a3b2f8" name="a43bafb28b29491ec7f871319b5a3b2f8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>F_CPU</b>&#160;&#160;&#160;16000000UL</td></tr>
+<tr class="separator:a43bafb28b29491ec7f871319b5a3b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81592bb36513786401847e105e8f9c4c" id="r_a81592bb36513786401847e105e8f9c4c"><td class="memItemLeft" align="right" valign="top"><a id="a81592bb36513786401847e105e8f9c4c" name="a81592bb36513786401847e105e8f9c4c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>AVCC</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a81592bb36513786401847e105e8f9c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,28 +137,31 @@ Funciones</h2></td></tr>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_Init</b> ()</td></tr>
 <tr class="memdesc:ab3f7e3afc0b46ed3410f806805b2328e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el ADC. <br /></td></tr>
 <tr class="separator:ab3f7e3afc0b46ed3410f806805b2328e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2f55ab0899d05059a09997e60882468" id="r_ac2f55ab0899d05059a09997e60882468"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8h.html#ac2f55ab0899d05059a09997e60882468">ADC_Read_Single_Poll</a> (uint8_t channel)</td></tr>
-<tr class="memdesc:ac2f55ab0899d05059a09997e60882468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una lectura de un canal ADC mediante polling.  <br /></td></tr>
-<tr class="separator:ac2f55ab0899d05059a09997e60882468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2694f7dfa754e53ba9697410f351c484" id="r_a2694f7dfa754e53ba9697410f351c484"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8h.html#a2694f7dfa754e53ba9697410f351c484">ADC_Read_Multiple_Poll</a> (uint8_t channel, uint8_t times)</td></tr>
-<tr class="memdesc:a2694f7dfa754e53ba9697410f351c484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza múltiples lecturas determinadas de un canal de un canal ADC mediante polling.  <br /></td></tr>
-<tr class="separator:a2694f7dfa754e53ba9697410f351c484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb653ab8bcb6e668dd27e47b4c0fd675" id="r_abb653ab8bcb6e668dd27e47b4c0fd675"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8h.html#abb653ab8bcb6e668dd27e47b4c0fd675">ADC_Read_Single_Poll</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:abb653ab8bcb6e668dd27e47b4c0fd675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza una lectura de un canal ADC mediante polling.  <br /></td></tr>
+<tr class="separator:abb653ab8bcb6e668dd27e47b4c0fd675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c19d2d17bb0d61447fd1c9ecbbfc16d" id="r_a6c19d2d17bb0d61447fd1c9ecbbfc16d"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8h.html#a6c19d2d17bb0d61447fd1c9ecbbfc16d">ADC_Read_Multiple_Poll</a> (uint8_t channel, uint8_t times)</td></tr>
+<tr class="memdesc:a6c19d2d17bb0d61447fd1c9ecbbfc16d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza múltiples lecturas determinadas de un canal de un canal ADC mediante polling.  <br /></td></tr>
+<tr class="separator:a6c19d2d17bb0d61447fd1c9ecbbfc16d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Declaración de los drivers de bajo nivel para el uso del ADC. </p>
+<div class="textblock"><p>Definición de los drivers de bajo nivel para el uso del ADC. </p>
 <dl class="section author"><dt>Autor</dt><dd>Jorge Ibáñez </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-05-14</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Documentación de funciones</h2>
-<a id="a2694f7dfa754e53ba9697410f351c484" name="a2694f7dfa754e53ba9697410f351c484"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2694f7dfa754e53ba9697410f351c484">&#9670;&#160;</a></span>ADC_Read_Multiple_Poll()</h2>
+<a id="a6c19d2d17bb0d61447fd1c9ecbbfc16d" name="a6c19d2d17bb0d61447fd1c9ecbbfc16d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c19d2d17bb0d61447fd1c9ecbbfc16d">&#9670;&#160;</a></span>ADC_Read_Multiple_Poll()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t ADC_Read_Multiple_Poll </td>
+          <td class="memname">static uint16_t ADC_Read_Multiple_Poll </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em>, </td>
@@ -172,6 +178,11 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_Init</b> (
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Realiza múltiples lecturas determinadas de un canal de un canal ADC mediante polling. </p>
@@ -186,20 +197,28 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>ADC_Init</b> (
 
 </div>
 </div>
-<a id="ac2f55ab0899d05059a09997e60882468" name="ac2f55ab0899d05059a09997e60882468"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2f55ab0899d05059a09997e60882468">&#9670;&#160;</a></span>ADC_Read_Single_Poll()</h2>
+<a id="abb653ab8bcb6e668dd27e47b4c0fd675" name="abb653ab8bcb6e668dd27e47b4c0fd675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb653ab8bcb6e668dd27e47b4c0fd675">&#9670;&#160;</a></span>ADC_Read_Single_Poll()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t ADC_Read_Single_Poll </td>
+          <td class="memname">static uint16_t ADC_Read_Single_Poll </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>channel</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Realiza una lectura de un canal ADC mediante polling. </p>

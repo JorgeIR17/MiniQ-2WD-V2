@@ -87,29 +87,37 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../Peripherals/adc.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="bateria_8h.html#a3be0db38f35febf791b42c29d293fe09">   21</a></span><span class="preprocessor">#define BATTERY_CHANNEL ADC12</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//Canal de ADC del medidor de batería.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define BATTERY_CHANNEL ADC12</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//Voltaje de referencia</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define VREF 5.0</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="bateria_8h.html#a2c9e85d22a9ba37ea589b1747af46307">   27</a></span><span class="preprocessor">#define VREF 5.0</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="bateria_8h.html#a6c0af78b486056704c7ac6b3a85ea742">   32</a></span><span class="preprocessor">#define DIVISOR_RATIO (3.0 / 2.0)</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="bateria_8h.html#ad1cc5f0ce9cd8cdc55c634127e92ec45">   37</a></span><span class="preprocessor">#define BATTERY_MAX 6.0</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="bateria_8h.html#a947c0b4c1947192c03212f2d9be3d27c">   42</a></span><span class="preprocessor">#define BATTERY_MIN 4.4</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">   48</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">bateria_init</a>()</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//Relación del divisor resistivo.</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define DIVISOR_RATIO (3.0 / 2.0)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//Valor máximo de batería.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define BATTERY_MAX 6.0</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Valor mínimo de batería.</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define BATTERY_MIN 4.4</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">   36</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">bateria_init</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">float</span> <a class="code hl_function" href="bateria_8h.html#a81a49571678d9dfe9b9157db7e1df832">bateria_get_voltage</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">float</span> <a class="code hl_function" href="bateria_8h.html#a6ccc1a2107fe83038e1ffc8012eb6509">bateria_get_percentage</a>();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">/* BATERIA_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:37</div></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">float</span> <a class="code hl_function" href="bateria_8h.html#a81a49571678d9dfe9b9157db7e1df832">bateria_get_voltage</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">float</span> <a class="code hl_function" href="bateria_8h.html#a6ccc1a2107fe83038e1ffc8012eb6509">bateria_get_percentage</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">/* BATERIA_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:38</div></div>
 <div class="ttc" id="abateria_8h_html_a6ccc1a2107fe83038e1ffc8012eb6509"><div class="ttname"><a href="bateria_8h.html#a6ccc1a2107fe83038e1ffc8012eb6509">bateria_get_percentage</a></div><div class="ttdeci">float bateria_get_percentage()</div><div class="ttdoc">Calcula el porcentaje de batería restante.</div><div class="ttdef"><b>Definition</b> bateria.c:23</div></div>
 <div class="ttc" id="abateria_8h_html_a81a49571678d9dfe9b9157db7e1df832"><div class="ttname"><a href="bateria_8h.html#a81a49571678d9dfe9b9157db7e1df832">bateria_get_voltage</a></div><div class="ttdeci">float bateria_get_voltage()</div><div class="ttdoc">Calcula el valor de voltaje leído por el medidor de batería.</div><div class="ttdef"><b>Definition</b> bateria.c:14</div></div>
-<div class="ttc" id="abateria_8h_html_a8c3c99baeb70d516e84d463b505c4942"><div class="ttname"><a href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">bateria_init</a></div><div class="ttdeci">static void bateria_init()</div><div class="ttdoc">Inicializa el medidor de batería.</div><div class="ttdef"><b>Definition</b> bateria.h:48</div></div>
+<div class="ttc" id="abateria_8h_html_a8c3c99baeb70d516e84d463b505c4942"><div class="ttname"><a href="bateria_8h.html#a8c3c99baeb70d516e84d463b505c4942">bateria_init</a></div><div class="ttdeci">static void bateria_init()</div><div class="ttdoc">Inicializa el medidor de batería.</div><div class="ttdef"><b>Definition</b> bateria.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

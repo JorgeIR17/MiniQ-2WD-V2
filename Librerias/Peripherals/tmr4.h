@@ -2,7 +2,7 @@
  * @file tmr4.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 4 del ATMega32U4.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-14
  * 
  * @copyright Copyright (c) 2025
@@ -31,19 +31,12 @@
 #define TMR4_PWM_DIV_CLK_8192   14
 #define TMR4_PWM_DIV_CLK_16384  15
 
-// Sentido de las ruedas
-#define FORWARD 0
-#define BACKWARD 1
-
 /**
  * @brief Inicializa el Timer 4 en modo PWM.
  * 
  */
 static inline void TMR4_PWM_Init()
 {
-	DDRC |= (1<<DDC6); // Set OC4A (PC6) as output
-	DDRD |= (1<<DDD7); // Set OC4D (PD7) as output
-
 	//Set PWM Phase Correct Mode
 	TCCR4A |= (1<<COM4A0) | (1<<PWM4A);
 	TCCR4A &= ~(1<<COM4A1);
@@ -68,43 +61,18 @@ inline void TMR4_PWM_Start(uint8_t divClock)
 	TCCR4B |= (divClock<<CS40); // Set prescaler
 }
 
-
 /**
  * @brief Ajusta el ciclo de trabajo del PWM.
  * 
- * @param motor Motor izquierdo o derecho. 
+ * @param pwm PWM a configurar. Si es 0 será PWM1 (!OC4A) y si es 1 será PWM2 (OC4D) 
  * @param value Valor de ciclo de trabajo.
  */
-inline void TMR4_PWM_set_duty_cycle(uint8_t motor, uint8_t value)
+inline void TMR4_PWM_set_duty_cycle(uint8_t pwm, uint8_t value)
 {
-	if(motor == 0) 	// Motor izquierdo
+	if(pwm == 0) 	// PWM1
 		OCR4A = ~(value);
-	else 			// Motor derecho
+	if(pwm == 1) 	// PWM2
 		OCR4D = value;
-}
-
-/**
- * @brief Establece la dirección de movimiento de una rueda determinada.
- * 
- * @param motor Motor izquierdo o derecho
- * @param direction Sentido de la rueda. Es necesario hacer uso de las macros proporcionadas.
- */
-inline void TMR4_PWM_set_direction(uint8_t motor, uint8_t direction)
-{
-	if(motor == 0) // Motor izquierdo
-	{
-		if(direction == FORWARD)
-			PORTD &= ~(1<<MOTOR_EN1_PIN);
-		if(direction == BACKWARD)
-			PORTD |= (1<<MOTOR_EN1_PIN);
-	}
-	if (motor == 1) // Motor derecho
-	{	
-		if(direction == FORWARD)
-			PORTE &= ~(1<<MOTOR_EN2_PIN);
-		if(direction == BACKWARD)
-			PORTE |= (1<<MOTOR_EN2_PIN);
-	}
 }
 
 /**

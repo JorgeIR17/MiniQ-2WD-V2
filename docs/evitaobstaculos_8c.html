@@ -75,6 +75,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">defines</a> &#124;
+<a href="#enum-members">Enumeraciones</a> &#124;
 <a href="#func-members">Funciones</a>  </div>
   <div class="headertitle"><div class="title">Referencia del archivo evitaobstaculos.c</div></div>
 </div><!--header-->
@@ -94,6 +95,15 @@ defines</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>F_CPU</b>&#160;&#160;&#160;16000000UL</td></tr>
 <tr class="separator:a43bafb28b29491ec7f871319b5a3b2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a9d4630b1e0c310d9b8c562abd8114c49" id="r_a9d4630b1e0c310d9b8c562abd8114c49"><td class="memItemLeft" align="right" valign="top"><a id="a9d4630b1e0c310d9b8c562abd8114c49" name="a9d4630b1e0c310d9b8c562abd8114c49"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Estado</b> { <b>SIN_OBSTACULO</b>
+, <b>OBSTACULO_DERECHA</b>
+, <b>OBSTACULO_IZQUIERDA</b>
+, <b>OBSTACULO_DELANTE</b>
+ }</td></tr>
+<tr class="separator:a9d4630b1e0c310d9b8c562abd8114c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
@@ -103,7 +113,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Ejemplo de uso del MiniQ 2WD como robot evita-obstáculos. </p>
 <dl class="section author"><dt>Autor</dt><dd>Jorge Ibáñez </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-06-26</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025</dd></dl>
 <p>En este programa el robot se desplazará hacia adelante hasta que detecte un obstáculo cercano. En tal caso, se detendrá, se desplazará marcha atrás y girará hacia otra dirección para continuar el desplazamiento. El estado se mostrará mediante el color del led RGB.</p>

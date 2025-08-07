@@ -2,7 +2,7 @@
  * @file tmr1.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 1 del ATMega32U4.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-14
  * 
  * @copyright Copyright (c) 2025

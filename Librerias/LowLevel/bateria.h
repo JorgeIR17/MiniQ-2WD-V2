@@ -2,7 +2,7 @@
  * @file bateria.h
  * @author Jorge Ibáñez
  * @brief Declaración de los drivers de bajo nivel para el uso del medidor de batería.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-06
  * 
  * @copyright Copyright (c) 2025
@@ -14,31 +14,19 @@
 
 #include "../Peripherals/adc.h"
 
-/**
- * @brief Canal de ADC del medidor de batería.
- * 
- */
+//Canal de ADC del medidor de batería.
 #define BATTERY_CHANNEL ADC12
 
-/**
- * @brief Voltaje de referencia
- * 
- */
+//Voltaje de referencia
 #define VREF 5.0
-/**
- * @brief Relación del divisor resistivo.
- * 
- */
+
+//Relación del divisor resistivo.
 #define DIVISOR_RATIO (3.0 / 2.0)
-/**
- * @brief Valor máximo de batería.
- * 
- */
+
+//Valor máximo de batería.
 #define BATTERY_MAX 6.0
-/**
- * @brief Valor mínimo de batería.
- * 
- */
+
+// Valor mínimo de batería.
 #define BATTERY_MIN 4.4
 
 /**

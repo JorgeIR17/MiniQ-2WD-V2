@@ -2,7 +2,7 @@
  * @file hal_brujula.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso de la brujula HMC5883L
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025
@@ -11,9 +11,9 @@
 
 #include "hal_brujula.h"
 
-void HAL_brujula_leer_ejes(int16_t* x, int16_t* y, int16_t* z)
+void HAL_brujula_read_ejes(int16_t* x, int16_t* y, int16_t* z)
 {
-    brujula_leer(x, y, z);
+    brujula_read(x, y, z);
 }
 
 
@@ -27,7 +27,7 @@ void HAL_brujula_calibrar(int16_t* offset_x, int16_t* offset_y)
 
     for (uint16_t i = 0; i < 500; i++) // 500 muestras (~5 segundos a 10ms)
     {
-        brujula_leer(&x, &y, &z);
+        brujula_read(&x, &y, &z);
 
         if (x < x_min) x_min = x;
         if (x > x_max) x_max = x;
@@ -47,7 +47,7 @@ void HAL_brujula_calibrar(int16_t* offset_x, int16_t* offset_y)
 float HAL_brujula_get_heading_calibrado(int16_t offset_x, int16_t offset_y)
 {
 	int16_t x, y, z;
-	brujula_leer(&x, &y, &z);
+	brujula_read(&x, &y, &z);
 
 	int16_t x_corr = x - offset_x;
 	int16_t y_corr = y - offset_y;

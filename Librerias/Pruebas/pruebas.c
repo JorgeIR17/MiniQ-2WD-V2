@@ -2,7 +2,7 @@
  * @file pruebas.c
  * @author Jorge Ibáñez
  * @brief Definición de las funciones de las pruebas del DFRobot MiniQ 2WD
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-09
  * 
  * @copyright Copyright (c) 2025
@@ -51,7 +51,7 @@ void prueba_brujula()
 
 	while (!m_usb_rx_available())
 	{
-		brujula_leer(&x, &y, &z);
+		brujula_read(&x, &y, &z);
 
 		// Limpiar línea anterior
 		m_usb_tx_string("\r                                                              \r");
@@ -90,20 +90,20 @@ void prueba_encoders()
 	encoder_reset(ENCODER_DERECHO);
 
 	m_usb_tx_string("Pulsa cualquier tecla para mostrar RPM...\n");
-	motor_girar(100, 100);
+	motores_spin(100, 100);
 
 	while (!m_usb_rx_available())
 	{
 		m_usb_tx_string("\rPulsos IZQ: ");
-		m_usb_tx_uint(encoder_leer(ENCODER_IZQUIERDO));
+		m_usb_tx_uint(encoder_read(ENCODER_IZQUIERDO));
 		m_usb_tx_string(" | Pulsos DER: ");
-		m_usb_tx_uint(encoder_leer(ENCODER_DERECHO));
+		m_usb_tx_uint(encoder_read(ENCODER_DERECHO));
 		m_usb_tx_string("   ");
 		_delay_ms(200);
 	}
 	m_usb_rx_char();
 
-	motor_stop();
+	motores_stop();
 
 	// Control de velocidad con teclado
 	encoder_reset(ENCODER_IZQUIERDO);
@@ -127,7 +127,7 @@ void prueba_encoders()
 		m_usb_tx_uint(encoder_get_speed(ENCODER_DERECHO));
 		m_usb_tx_string("   ");
 
-		motor_girar(vel_izq, vel_der);
+		motores_spin(vel_izq, vel_der);
 
 		if (m_usb_rx_available())
 		{
@@ -146,7 +146,7 @@ void prueba_encoders()
 		_delay_ms(200);
 	}
 
-	motor_stop();
+	motores_stop();
 	m_usb_tx_string("\nPrueba finalizada. Motores detenidos.\n");
 }
 
@@ -165,13 +165,12 @@ void prueba_fotodiodos()
 
 	while (!m_usb_rx_available())
 	{
-		luz_actual = fotodiodos_obtener_posicion();
+		luz_actual = fotodiodos_position();
 
 		if (luz_actual != luz_anterior)
 		{
 			luz_anterior = luz_actual;
 
-			// Borrar línea anterior: retorno de carro + espacios + retorno de carro
 			m_usb_tx_string("\r                            \r");
 			m_usb_tx_string("Luz detectada: ");
 
@@ -233,15 +232,14 @@ void prueba_ledrgb()
                 case 's': if (g > 0)   g--; break;
                 case 'e': if (b < 255) b++; break;
                 case 'd': if (b > 0)   b--; break;
-                case 'x': r = g = b = 0; led_rgb_apagar(); continue;
+                case 'x': r = g = b = 0; led_rgb_off(); continue;
                 case '0': salir = true; continue;
                 default: continue;
             }
 
             // Enviar color actualizado
-            led_rgb_enviar_color(r, g, b);
+            led_rgb_send_color(r, g, b);
 
-            // Mostrar valores actuales por pantalla (con \r para sobrescribir la línea)
             m_usb_tx_string("\rRGB = (");
             m_usb_tx_uint(r);
             m_usb_tx_string(", ");
@@ -252,7 +250,7 @@ void prueba_ledrgb()
         }
     }
 
-    led_rgb_apagar();
+    led_rgb_off();
     m_usb_tx_string("\n\nLED apagado. Fin de la prueba.\n");
 }
 
@@ -298,9 +296,9 @@ void prueba_motores()
                 case 'e':
                     motores_activos = !motores_activos;
                     if (motores_activos)
-                        motor_girar(vel_izq, vel_der);
+                        motores_spin(vel_izq, vel_der);
                     else
-                        motor_stop();
+                        motores_stop();
                     break;
 
                 case '0':
@@ -312,13 +310,13 @@ void prueba_motores()
         if (motores_activos)
         {
             // En caso de que se haya cambiado la velocidad
-            motor_girar(vel_izq, vel_der);
+            motores_spin(vel_izq, vel_der);
         }
 
         _delay_ms(100);
     }
 
-    motor_stop();
+    motores_stop();
     m_usb_tx_string("\nPrueba de motores finalizada.\n");
 }
 
@@ -334,15 +332,15 @@ void prueba_pulsadores()
     {
         m_usb_tx_string("\rPulsador presionado: ");
 
-        if (pulsadores_leer() == 1) 
+        if (pulsadores_read() == 1) 
         {
             m_usb_tx_string("KEY 1              ");
         } 
-        else if (pulsadores_leer() == 2) 
+        else if (pulsadores_read() == 2) 
         {
             m_usb_tx_string("KEY 2              ");
         } 
-        else if (pulsadores_leer() == 3) 
+        else if (pulsadores_read() == 3) 
         {
             m_usb_tx_string("KEY 3              ");
         } 
@@ -378,10 +376,10 @@ void prueba_receptor()
 			switch (tecla)
 			{
 				case 'i':
-					receptor_enviar_pulso(TRANSMISOR_IZQUIERDO);
+					receptor_send_pulse(TRANSMISOR_IZQUIERDO);
 					break;
 				case 'd':
-					receptor_enviar_pulso(TRANSMISOR_DERECHO);
+					receptor_send_pulse(TRANSMISOR_DERECHO);
 					break;
 				case 'r':
 					cont_obs = 0;
@@ -394,11 +392,11 @@ void prueba_receptor()
 			}
 		}
 
-		// Mostrar solo el valor actual en una línea
 		m_usb_tx_string("\rContador de pulsos: ");
-		m_usb_tx_uint(cont_obs);
+        m_usb_tx_uint(cont_obs);
+		
 		m_usb_tx_string("   "); // limpiar residuos
-		_delay_ms(100); // actualización periódica
+		_delay_ms(100);
 	}
 
 	m_usb_tx_string("\nFin de prueba receptor.\n");
@@ -423,13 +421,12 @@ void prueba_sensores()
 				salir = true;
 		}
 
-		lectura_izq    = sensores_leer(IZQUIERDA);
-		lectura_izq_c  = sensores_leer(IZQUIERDA_CENTRO);
-		lectura_c      = sensores_leer(CENTRO);
-		lectura_der_c  = sensores_leer(DERECHA_CENTRO);
-		lectura_der    = sensores_leer(DERECHA);
+		lectura_izq    = sensores_read(IZQUIERDA);
+		lectura_izq_c  = sensores_read(IZQUIERDA_CENTRO);
+		lectura_c      = sensores_read(CENTRO);
+		lectura_der_c  = sensores_read(DERECHA_CENTRO);
+		lectura_der    = sensores_read(DERECHA);
 
-		// Mostrar todos los valores en una sola línea (con \r al principio)
 		m_usb_tx_string("\rIR IZQ: ");
 		m_usb_tx_uint(lectura_izq);
 		m_usb_tx_string(" | IZQ-C: ");
@@ -442,12 +439,12 @@ void prueba_sensores()
 		m_usb_tx_uint(lectura_der);
 		m_usb_tx_string("        "); // limpia texto previo si hay valores más largos
 
-		_delay_ms(100); // refresco cada 100 ms
+		_delay_ms(100);
 	}
 
 	// Calibración al terminar
 	m_usb_tx_string("\n\nIniciando calibración de sensores...\n");
-	sensores_calibrar();
+	sensores_calibrate();
 
 	m_usb_tx_string("Calibración completada.\n");
 	m_usb_tx_string("Valor negro: ");
@@ -462,7 +459,7 @@ void prueba_sensores()
 
 void prueba_zumbador()
 {
-    uint8_t freq = 50;         // Valor inicial de frecuencia (nTicks_beepFreq)
+    uint8_t freq = 50;         // Valor inicial de frecuencia
     uint16_t dur = 500;        // Duración inicial en ms
     bool salir = false;
 
@@ -511,7 +508,6 @@ void prueba_zumbador()
 			    continue;
 		    }
 
-		    // Mostrar solo el valor actual en una sola línea
 		    m_usb_tx_string("\rFrecuencia: ");
 		    m_usb_tx_uint(freq);
 		    m_usb_tx_string(" ticks | Duración: ");
@@ -521,15 +517,12 @@ void prueba_zumbador()
     }
 
     m_usb_tx_string("\nFin de la prueba del zumbador.\n");
-    }
-
-
+}
 
 
 
 
 /*-----------------PRUEBAS HAL------------------*/
-
 
 
 
@@ -621,8 +614,8 @@ void prueba_HAL_encoders()
     while (!m_usb_rx_available());
     m_usb_rx_char();
 
-    HAL_encoders_reset(ENCODER_IZQUIERDO);
-    HAL_encoders_reset(ENCODER_DERECHO);
+    HAL_encoders_reiniciar(ENCODER_IZQUIERDO);
+    HAL_encoders_reiniciar(ENCODER_DERECHO);
 
     m_usb_tx_string("Usa teclas para controlar velocidad:\n");
     m_usb_tx_string("Presiona '0' para salir.\n");
@@ -631,10 +624,10 @@ void prueba_HAL_encoders()
     while (!salir)
     {
         // Leer valores actuales
-        uint16_t rpm_izq = HAL_encoders_get_speed(ENCODER_IZQUIERDO);
-        uint16_t rpm_der = HAL_encoders_get_speed(ENCODER_DERECHO);
-        uint16_t dist_izq = HAL_encoders_get_distance(ENCODER_IZQUIERDO);
-        uint16_t dist_der = HAL_encoders_get_distance(ENCODER_DERECHO);
+        uint16_t rpm_izq = HAL_encoders_obtener_velocidad(ENCODER_IZQUIERDO);
+        uint16_t rpm_der = HAL_encoders_obtener_velocidad(ENCODER_DERECHO);
+        uint16_t dist_izq = HAL_encoders_obtener_distancia(ENCODER_IZQUIERDO);
+        uint16_t dist_der = HAL_encoders_obtener_distancia(ENCODER_DERECHO);
 
         // Mostrar en terminal
         m_usb_tx_string("\rVel: ");
@@ -661,8 +654,8 @@ void prueba_HAL_encoders()
                 case 'i': if (velocidad < 255) velocidad += 10; break;
                 case 'k': if (velocidad > -255) velocidad -= 10; break;
                 case 'r':
-                    HAL_encoders_reset(ENCODER_IZQUIERDO);
-                    HAL_encoders_reset(ENCODER_DERECHO);
+                    HAL_encoders_reiniciar(ENCODER_IZQUIERDO);
+                    HAL_encoders_reiniciar(ENCODER_DERECHO);
                     m_usb_tx_string("\nDistancias reiniciadas.\n");
                     break;
                 case '0': salir = true; break;
@@ -695,7 +688,6 @@ void prueba_HAL_fotodiodos()
 		{
 			luz_anterior = luz_actual;
 
-			// Borrar línea anterior: retorno de carro + espacios + retorno de carro
 			m_usb_tx_string("\r                            \r");
 			m_usb_tx_string("Luz detectada: ");
 
@@ -917,19 +909,19 @@ void prueba_HAL_sensores()
 
         switch (posicion) 
         {
-            case -2:
+            case LINEA_IZQUIERDA:
                 m_usb_tx_string("Muy a la izquierda       ");
                 break;
-            case -1:
+            case LINEA_IZQUIERDA_CENTRO:
                 m_usb_tx_string("Un poco a la izquierda   ");
                 break;
-            case 0:
+            case LINEA_CENTRO:
                 m_usb_tx_string("Centrado                 ");
                 break;
-            case 1:
+            case LINEA_DERECHA_CENTRO:
                 m_usb_tx_string("Un poco a la derecha     ");
                 break;
-            case 2:
+            case LINEA_DERECHA:
                 m_usb_tx_string("Muy a la derecha         ");
                 break;
             case ERROR_LINEA:

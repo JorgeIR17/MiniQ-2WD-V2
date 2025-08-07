@@ -89,48 +89,45 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;util/delay.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;../Peripherals/adc.h&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Definición canales sensores</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="sensores_8h.html#acbde681c731ebedb97a4d04a52f41407">   25</a></span><span class="preprocessor">#define IR0 ADC7</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="sensores_8h.html#a7b2b32709f9770a283701ffcf3723497">   30</a></span><span class="preprocessor">#define IR1 ADC6</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="sensores_8h.html#a5a08e4f5cb3582e623cc14a6c92d48de">   35</a></span><span class="preprocessor">#define IR2 ADC5</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="sensores_8h.html#a26c72d21cca0ec21af4bd9b20ba3ad51">   40</a></span><span class="preprocessor">#define IR3 ADC4</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="sensores_8h.html#a20f2f5908baa0eeba04b9ceaf718cea0">   45</a></span><span class="preprocessor">#define IR4 ADC1</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// Definicion posicion sensores</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define IZQUIERDA 0</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define IZQUIERDA_CENTRO 1</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define CENTRO 2</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define DERECHA_CENTRO 3</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define DERECHA 4</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Definicion de valores base de blanco y negro</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#define WHITE_SENSOR 900</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define BLACK_SENSOR 600</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">volatile</span> uint16_t blanco;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">volatile</span> uint16_t negro;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">   67</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">sensores_init</a>()</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    blanco = WHITE_SENSOR; <span class="comment">// Valor base de blanco</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    negro = BLACK_SENSOR; <span class="comment">// Valor base de negro</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Canales ADC de los sensores</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define IR0 ADC7</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define IR1 ADC6</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define IR2 ADC5</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define IR3 ADC4</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define IR4 ADC1</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Definicion posicion sensores</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define IZQUIERDA 0</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define IZQUIERDA_CENTRO 1</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define CENTRO 2</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define DERECHA_CENTRO 3</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define DERECHA 4</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Definicion de valores base de blanco y negro</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define WHITE_SENSOR 900</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define BLACK_SENSOR 600</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">volatile</span> uint16_t blanco;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">volatile</span> uint16_t negro;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">   44</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">sensores_init</a>()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    blanco = WHITE_SENSOR; <span class="comment">// Valor base de blanco</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    negro = BLACK_SENSOR; <span class="comment">// Valor base de negro</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>uint16_t <a class="code hl_function" href="sensores_8h.html#a7dc5c5602efe5ce14c898558ee0685e5">sensores_leer</a>(uint8_t sensor);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">void</span> <a class="code hl_function" href="sensores_8h.html#a980c044a8788a768df3da7f9658f72b1">sensores_calibrar</a>();</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif </span><span class="comment">/* SENSORES_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:37</div></div>
-<div class="ttc" id="asensores_8h_html_a1776fb13ae10e796373e1dd2f0589dd6"><div class="ttname"><a href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">sensores_init</a></div><div class="ttdeci">static void sensores_init()</div><div class="ttdoc">Inicializa los sensores IR.</div><div class="ttdef"><b>Definition</b> sensores.h:67</div></div>
-<div class="ttc" id="asensores_8h_html_a7dc5c5602efe5ce14c898558ee0685e5"><div class="ttname"><a href="sensores_8h.html#a7dc5c5602efe5ce14c898558ee0685e5">sensores_leer</a></div><div class="ttdeci">uint16_t sensores_leer(uint8_t sensor)</div><div class="ttdoc">Realiza una lectura de un sensor.</div><div class="ttdef"><b>Definition</b> sensores.c:14</div></div>
-<div class="ttc" id="asensores_8h_html_a980c044a8788a768df3da7f9658f72b1"><div class="ttname"><a href="sensores_8h.html#a980c044a8788a768df3da7f9658f72b1">sensores_calibrar</a></div><div class="ttdeci">void sensores_calibrar()</div><div class="ttdoc">Realiza una calibración de los sensores.</div><div class="ttdef"><b>Definition</b> sensores.c:40</div></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>uint16_t <a class="code hl_function" href="sensores_8h.html#aa7068bc72fa098529b11606a2c3dd33f">sensores_read</a>(uint8_t sensor);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="sensores_8h.html#ae2cb10679c54d297e3d76ff963d33c00">sensores_calibrate</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">/* SENSORES_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:38</div></div>
+<div class="ttc" id="asensores_8h_html_a1776fb13ae10e796373e1dd2f0589dd6"><div class="ttname"><a href="sensores_8h.html#a1776fb13ae10e796373e1dd2f0589dd6">sensores_init</a></div><div class="ttdeci">static void sensores_init()</div><div class="ttdoc">Inicializa los sensores IR.</div><div class="ttdef"><b>Definition</b> sensores.h:44</div></div>
+<div class="ttc" id="asensores_8h_html_aa7068bc72fa098529b11606a2c3dd33f"><div class="ttname"><a href="sensores_8h.html#aa7068bc72fa098529b11606a2c3dd33f">sensores_read</a></div><div class="ttdeci">uint16_t sensores_read(uint8_t sensor)</div><div class="ttdoc">Realiza una lectura de un sensor.</div><div class="ttdef"><b>Definition</b> sensores.c:14</div></div>
+<div class="ttc" id="asensores_8h_html_ae2cb10679c54d297e3d76ff963d33c00"><div class="ttname"><a href="sensores_8h.html#ae2cb10679c54d297e3d76ff963d33c00">sensores_calibrate</a></div><div class="ttdeci">void sensores_calibrate()</div><div class="ttdoc">Realiza una calibración de los sensores.</div><div class="ttdef"><b>Definition</b> sensores.c:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

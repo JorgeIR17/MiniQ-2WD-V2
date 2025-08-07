@@ -2,7 +2,7 @@
  * @file tmr3.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del Timer 3 del ATMega32U4.
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-14
  * 
  * @copyright Copyright (c) 2025
@@ -85,7 +85,7 @@ static inline void TMR3_CTC_Stop()
  */
 static inline void TMR3_CTC_Set(uint16_t valueCounterA)
 {
-    OCR3A = valueCounterA; //15624 para 100 ms con prescaler 64
+    OCR3A = valueCounterA;
 }
 
 #endif /* TMR3_H_ */

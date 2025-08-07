@@ -2,7 +2,7 @@
  * @file botonesled.c
  * @author Jorge Ibáñez
  * @brief Ejemplo de uso del MiniQ 2WD mediante muestra de efectos del led RGB con activación a través de los pulsadores
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
@@ -22,6 +22,7 @@
 
 int main(void)
 {
+	// Inicializamos los componentes
 	HAL_ledrgb_init();
 	HAL_pulsadores_init();
 	

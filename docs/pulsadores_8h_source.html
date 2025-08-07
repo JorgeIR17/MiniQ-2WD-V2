@@ -87,19 +87,22 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../Peripherals/adc.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">   21</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">pulsadores_init</a>()</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Canal ADC de los pulsadores</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define BUTTON_CHANNEL ADC8</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">   24</a></span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">pulsadores_init</a>()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>uint16_t <a class="code hl_function" href="pulsadores_8h.html#aeda17a3b6c10ab5b774763b3b5a1b270">pulsadores_leer</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">/* PULSADORES_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:37</div></div>
-<div class="ttc" id="apulsadores_8h_html_a0361a1efe94e9444957d3c996c85b80d"><div class="ttname"><a href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">pulsadores_init</a></div><div class="ttdeci">static void pulsadores_init()</div><div class="ttdoc">Inicializa los pulsadores.</div><div class="ttdef"><b>Definition</b> pulsadores.h:21</div></div>
-<div class="ttc" id="apulsadores_8h_html_aeda17a3b6c10ab5b774763b3b5a1b270"><div class="ttname"><a href="pulsadores_8h.html#aeda17a3b6c10ab5b774763b3b5a1b270">pulsadores_leer</a></div><div class="ttdeci">uint16_t pulsadores_leer()</div><div class="ttdoc">Realiza una lectura de los pulsadores.</div><div class="ttdef"><b>Definition</b> pulsadores.c:14</div></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>uint16_t <a class="code hl_function" href="pulsadores_8h.html#aada2814ae6699a855e8bd74ef42e7768">pulsadores_read</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">/* PULSADORES_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadc_8h_html_ab3f7e3afc0b46ed3410f806805b2328e"><div class="ttname"><a href="adc_8h.html#ab3f7e3afc0b46ed3410f806805b2328e">ADC_Init</a></div><div class="ttdeci">static void ADC_Init()</div><div class="ttdoc">Inicializa el ADC.</div><div class="ttdef"><b>Definition</b> adc.h:38</div></div>
+<div class="ttc" id="apulsadores_8h_html_a0361a1efe94e9444957d3c996c85b80d"><div class="ttname"><a href="pulsadores_8h.html#a0361a1efe94e9444957d3c996c85b80d">pulsadores_init</a></div><div class="ttdeci">static void pulsadores_init()</div><div class="ttdoc">Inicializa los pulsadores.</div><div class="ttdef"><b>Definition</b> pulsadores.h:24</div></div>
+<div class="ttc" id="apulsadores_8h_html_aada2814ae6699a855e8bd74ef42e7768"><div class="ttname"><a href="pulsadores_8h.html#aada2814ae6699a855e8bd74ef42e7768">pulsadores_read</a></div><div class="ttdeci">uint16_t pulsadores_read()</div><div class="ttdoc">Realiza una lectura de los pulsadores.</div><div class="ttdef"><b>Definition</b> pulsadores.c:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

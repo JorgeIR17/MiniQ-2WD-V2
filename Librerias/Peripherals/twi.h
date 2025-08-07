@@ -2,7 +2,7 @@
  * @file twi.h
  * @author Jorge Ibáñez
  * @brief Definición de los drivers de bajo nivel para el uso del protocolo TWI (I2C) del ATMega32U4.
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-05
  * 
  * @copyright Copyright (c) 2025
@@ -16,24 +16,21 @@
 #include <avr/io.h>
 
 /**
- * @brief Inicializa el hardware TWI (I2C) del ATmega32U4 a ~100?kHz.
- *
- * Esta función configura el registro TWBR y prescaler para obtener una frecuencia
- * de comunicación compatible con sensores como el HMC5883L.
+ * @brief Inicializa el hardware TWI (I2C) del ATmega32U4 a ~100 kHz.
  *
  * Fórmula: SCL_freq = F_CPU / (16 + 2 * TWBR * prescaler)
  */
 static inline void TWI_Init()
 {
     TWSR = 0x00;      // Prescaler = 1 (TWPS = 00)
-    TWBR = 72;        // TWBR = 72 ? ~100 kHz a 16 MHz
+    TWBR = 72;        // ~100 kHz a 16 MHz
 }
 
 
 /**
- * @brief Inicia una condición START en el bus I2C.
+ * @brief Inicia una condicion START en el bus I2C.
  *
- * Espera hasta que se complete el bit TWINT para asegurar que la condición START fue enviada.
+ * Espera hasta que se complete el bit TWINT para asegurar que la condicion START fue enviada.
  */
 static inline void TWI_Start()
 {
@@ -43,9 +40,9 @@ static inline void TWI_Start()
 
 
 /**
- * @brief Envía una condición STOP en el bus I2C.
+ * @brief Envia una condicion STOP en el bus I2C.
  *
- * Libera el bus y espera a que el bit TWSTO se borre automáticamente.
+ * Libera el bus y espera a que el bit TWSTO se borre automaticamente.
  */
 static inline void TWI_Stop()
 {
@@ -55,40 +52,40 @@ static inline void TWI_Stop()
 
 
 /**
- * @brief Escribe un byte en el bus I2C y espera la confirmación.
+ * @brief Escribe un byte en el bus I2C y espera la confirmacion.
  *
  * @param data Byte a transmitir
  */
 static inline void TWI_Write(uint8_t data)
 {
     TWDR = data;                         // Carga el dato en el registro
-    TWCR = (1 << TWEN) | (1 << TWINT);   // Inicia transmisión
+    TWCR = (1 << TWEN) | (1 << TWINT);   // Inicia transmision
     while (!(TWCR & (1 << TWINT)));      // Espera a que se complete
 }
 
 /**
- * @brief Lee un byte del bus I2C y envía ACK al esclavo.
+ * @brief Lee un byte del bus I2C y envia ACK al esclavo.
  *
  * @return Byte recibido
  */
 static inline uint8_t TWI_Read_ACK()
 {
-    TWCR = (1 << TWEN) | (1 << TWINT) | (1 << TWEA);  // Habilita recepción + ACK
+    TWCR = (1 << TWEN) | (1 << TWINT) | (1 << TWEA);  // Habilita recepcion + ACK
     while (!(TWCR & (1 << TWINT)));                  // Espera al dato
     return TWDR;                                     // Devuelve el byte recibido
 }
 
 
 /**
- * @brief Lee el último byte del bus I2C sin enviar ACK.
+ * @brief Lee el ultimo byte del bus I2C sin enviar ACK.
  *
- * Usado típicamente para el último byte de una transmisión de lectura.
+ * Usado para el ultimo byte de una transmision de lectura.
  *
  * @return Byte recibido
  */
 static inline uint8_t TWI_Read_NACK()
 {
-    TWCR = (1 << TWEN) | (1 << TWINT);   // Habilita recepci�n sin ACK
+    TWCR = (1 << TWEN) | (1 << TWINT);   // Habilita recepcion sin ACK
     while (!(TWCR & (1 << TWINT)));      // Espera al dato
     return TWDR;
 }

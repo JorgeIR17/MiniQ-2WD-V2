@@ -90,6 +90,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 defines</h2></td></tr>
+<tr class="memitem:a0ac9dc54aff7e3a16dedd403a866814e" id="r_a0ac9dc54aff7e3a16dedd403a866814e"><td class="memItemLeft" align="right" valign="top"><a id="a0ac9dc54aff7e3a16dedd403a866814e" name="a0ac9dc54aff7e3a16dedd403a866814e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER_DDR</b>&#160;&#160;&#160;DDRD</td></tr>
+<tr class="separator:a0ac9dc54aff7e3a16dedd403a866814e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15b4a04943a47be37b1ed8a7c0204bf4" id="r_a15b4a04943a47be37b1ed8a7c0204bf4"><td class="memItemLeft" align="right" valign="top"><a id="a15b4a04943a47be37b1ed8a7c0204bf4" name="a15b4a04943a47be37b1ed8a7c0204bf4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER_PORT</b>&#160;&#160;&#160;PORTD</td></tr>
+<tr class="separator:a15b4a04943a47be37b1ed8a7c0204bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8487d5416cdbcd45d66d8cfd6a62df78" id="r_a8487d5416cdbcd45d66d8cfd6a62df78"><td class="memItemLeft" align="right" valign="top"><a id="a8487d5416cdbcd45d66d8cfd6a62df78" name="a8487d5416cdbcd45d66d8cfd6a62df78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER1_PIN</b>&#160;&#160;&#160;DDD2</td></tr>
+<tr class="separator:a8487d5416cdbcd45d66d8cfd6a62df78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92771b46b59d4f902e68a9149937cd7" id="r_ab92771b46b59d4f902e68a9149937cd7"><td class="memItemLeft" align="right" valign="top"><a id="ab92771b46b59d4f902e68a9149937cd7" name="ab92771b46b59d4f902e68a9149937cd7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER2_PIN</b>&#160;&#160;&#160;DDD3</td></tr>
+<tr class="separator:ab92771b46b59d4f902e68a9149937cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a88ca720bf0faf07657cf51aceaa3c" id="r_a35a88ca720bf0faf07657cf51aceaa3c"><td class="memItemLeft" align="right" valign="top"><a id="a35a88ca720bf0faf07657cf51aceaa3c" name="a35a88ca720bf0faf07657cf51aceaa3c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ENCODER_IZQUIERDO</b>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a35a88ca720bf0faf07657cf51aceaa3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,9 +115,9 @@ Funciones</h2></td></tr>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>encoders_init</b> ()</td></tr>
 <tr class="memdesc:a79ca8add080b997fcc869ca3b887102f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa los encoders. <br /></td></tr>
 <tr class="separator:a79ca8add080b997fcc869ca3b887102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66712066f669e2403331c0b0553f3280" id="r_a66712066f669e2403331c0b0553f3280"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoders_8h.html#a66712066f669e2403331c0b0553f3280">encoder_leer</a> (uint8_t encoder)</td></tr>
-<tr class="memdesc:a66712066f669e2403331c0b0553f3280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los pulsos acumulados de un encoder.  <br /></td></tr>
-<tr class="separator:a66712066f669e2403331c0b0553f3280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec755c88ca58258cd791c2d8c024e67" id="r_adec755c88ca58258cd791c2d8c024e67"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoders_8h.html#adec755c88ca58258cd791c2d8c024e67">encoder_read</a> (uint8_t encoder)</td></tr>
+<tr class="memdesc:adec755c88ca58258cd791c2d8c024e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee los pulsos acumulados de un encoder.  <br /></td></tr>
+<tr class="separator:adec755c88ca58258cd791c2d8c024e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab41cbb7d72557170661cb8ad864399f3" id="r_ab41cbb7d72557170661cb8ad864399f3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="encoders_8h.html#ab41cbb7d72557170661cb8ad864399f3">encoder_get_speed</a> (uint8_t encoder)</td></tr>
 <tr class="memdesc:ab41cbb7d72557170661cb8ad864399f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula la velocidad de una rueda.  <br /></td></tr>
 <tr class="separator:ab41cbb7d72557170661cb8ad864399f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,7 +128,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>encoders_init<
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Declaración de los drivers de bajo nivel para el uso de los encoders. </p>
 <dl class="section author"><dt>Autor</dt><dd>Jorge Ibáñez </dd></dl>
-<dl class="section version"><dt>Versión</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Versión</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Fecha</dt><dd>2025-05-06</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 </dd></dl>
 </div><h2 class="groupheader">Documentación de funciones</h2>
@@ -147,14 +159,14 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>encoders_init<
 
 </div>
 </div>
-<a id="a66712066f669e2403331c0b0553f3280" name="a66712066f669e2403331c0b0553f3280"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66712066f669e2403331c0b0553f3280">&#9670;&#160;</a></span>encoder_leer()</h2>
+<a id="adec755c88ca58258cd791c2d8c024e67" name="adec755c88ca58258cd791c2d8c024e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec755c88ca58258cd791c2d8c024e67">&#9670;&#160;</a></span>encoder_read()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t encoder_leer </td>
+          <td class="memname">uint16_t encoder_read </td>
           <td>(</td>
           <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>encoder</em></td><td>)</td>

@@ -2,7 +2,7 @@
  * @file hal_ledrgb.c
  * @author Jorge Ibáñez
  * @brief Definición de la capa HAL para el uso del led RGB
- * @version 0.1
+ * @version 1.0
  * @date 2025-05-03
  * 
  * @copyright Copyright (c) 2025
@@ -17,70 +17,70 @@ void HAL_ledrgb_color(uint8_t color)
 	switch(color) // Envia el codigo RGB segun el color
 	{
 		case WHITE:
-			led_rgb_enviar_color(255, 255, 255);
+			led_rgb_send_color(255, 255, 255);
 			break;
 		case RED:
-			led_rgb_enviar_color(255, 0, 0);
+			led_rgb_send_color(255, 0, 0);
 			break;
 		case GREEN:
-			led_rgb_enviar_color(0, 255, 0);
+			led_rgb_send_color(0, 255, 0);
 			break;
 		case BLUE:
-			led_rgb_enviar_color(0, 0, 255);
+			led_rgb_send_color(0, 0, 255);
 			break;
 		case YELLOW:
-			led_rgb_enviar_color(255, 255, 0);
+			led_rgb_send_color(255, 255, 0);
 			break;
 		case MAGENTA:
-			led_rgb_enviar_color(255, 0, 255);
+			led_rgb_send_color(255, 0, 255);
 			break;
 		case CYAN:
-			led_rgb_enviar_color(0, 255, 255);
+			led_rgb_send_color(0, 255, 255);
 			break;
 		case ORANGE:
-			led_rgb_enviar_color(255, 165, 0);
+			led_rgb_send_color(255, 165, 0);
 			break;
 		case VIOLET:
-			led_rgb_enviar_color(128, 0, 255);
+			led_rgb_send_color(128, 0, 255);
 			break;
 		case PINK:
-			led_rgb_enviar_color(255, 192, 203);
+			led_rgb_send_color(255, 192, 203);
 			break;
 		case TURQUOISE:
-			led_rgb_enviar_color(93, 193, 185);
+			led_rgb_send_color(93, 193, 185);
 			break;
 		case AMBER:
-			led_rgb_enviar_color(255, 191, 0);
+			led_rgb_send_color(255, 191, 0);
 			break;
 		case EMERALD:
-			led_rgb_enviar_color(0, 157, 113);
+			led_rgb_send_color(0, 157, 113);
 			break;
 		case MAROON:
-			led_rgb_enviar_color(128, 0, 0);
+			led_rgb_send_color(128, 0, 0);
 			break;
 		case SKYBLUE:
-			led_rgb_enviar_color(128, 191, 255);
+			led_rgb_send_color(128, 191, 255);
 			break;
 		case BROWN:
-			led_rgb_enviar_color(128, 64, 0);
+			led_rgb_send_color(128, 64, 0);
 			break;
 		case PURPLE:
-			led_rgb_enviar_color(128, 0, 128);
+			led_rgb_send_color(128, 0, 128);
 			break;
 		case LIME:
-			led_rgb_enviar_color(191, 255, 0);
+			led_rgb_send_color(191, 255, 0);
 			break;
 		case FUCHSIA:
-			led_rgb_enviar_color(255, 0, 128);
+			led_rgb_send_color(255, 0, 128);
 			break;
 		case INDIGO:
-			led_rgb_enviar_color(28, 76, 150);
+			led_rgb_send_color(28, 76, 150);
 			break;
 		case GRAY:
-			led_rgb_enviar_color(128, 128, 128);
+			led_rgb_send_color(128, 128, 128);
 			break;
 		default: // si no se especifica un color existente se apaga el led
-			led_rgb_apagar();
+			led_rgb_off();
 			break;
 	}
 	
@@ -96,9 +96,9 @@ void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion)
 		if(blink != 0)
 			HAL_ledrgb_color(color);
 		else
-			led_rgb_apagar();
+			led_rgb_off();
 	}
-	led_rgb_apagar(); // Asegurar apagar el led al terminar
+	led_rgb_off(); // Asegurar apagar el led al terminar
 }
 
 
@@ -132,7 +132,7 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 		case FUCHSIA:   r_base = 255; g_base = 0;   b_base = 128; break;
 		case INDIGO:    r_base = 28;  g_base = 76;  b_base = 150; break;
 		case GRAY:      r_base = 128; g_base = 128; b_base = 128; break;
-		default:        led_rgb_apagar(); return;
+		default:        led_rgb_off(); return;
 	}
 
 	while (tiempo < duracion) 
@@ -144,7 +144,7 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 			r = (uint8_t)(r_base * intensidad);
 			g = (uint8_t)(g_base * intensidad);
 			b = (uint8_t)(b_base * intensidad);
-			led_rgb_enviar_color(r, g, b);
+			led_rgb_send_color(r, g, b);
 			_delay_ms(20);
 			tiempo += 20;
 		}
@@ -156,7 +156,7 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 			r = (uint8_t)(r_base * intensidad);
 			g = (uint8_t)(g_base * intensidad);
 			b = (uint8_t)(b_base * intensidad);
-			led_rgb_enviar_color(r, g, b);
+			led_rgb_send_color(r, g, b);
 			_delay_ms(20);
 			tiempo += 20;
 		}
@@ -216,7 +216,7 @@ void HAL_ledrgb_efecto_arcoiris(uint16_t duracion)
 	while (tiempo < duracion)
 	{
 		hal_ledrgb_hue_a_rgb(hue++, &r, &g, &b); // Convierte el matiz actual a RGB y envia el color al LED
-		led_rgb_enviar_color(r, g, b);
+		led_rgb_send_color(r, g, b);
 		_delay_ms(20);
 		tiempo += 20;
 	}
@@ -225,5 +225,5 @@ void HAL_ledrgb_efecto_arcoiris(uint16_t duracion)
 
 void HAL_ledrgb_apagar()
 {
-	led_rgb_apagar();
+	led_rgb_off();
 }

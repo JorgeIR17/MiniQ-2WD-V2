@@ -2,7 +2,7 @@
  * @file cuadrado.c
  * @author Jorge Ibáñez
  * @brief Ejemplo de uso del MiniQ 2WD mediante recorrido en forma de cuadrado
- * @version 0.1
+ * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
@@ -48,14 +48,14 @@ int main(void)
 		for (uint8_t i = 0; i < total; i++)
 		{
 			// ---- Avanzar distancia lado ----
-			HAL_encoders_reset(ENCODER_IZQUIERDO);
-			HAL_encoders_reset(ENCODER_DERECHO);
+			HAL_encoders_reiniciar(ENCODER_IZQUIERDO);
+			HAL_encoders_reiniciar(ENCODER_DERECHO);
 
 			HAL_motores_avanzar(50);  // velocidad fija
 
 			while (
-			HAL_encoders_get_distance(ENCODER_IZQUIERDO) < lado &&
-			HAL_encoders_get_distance(ENCODER_DERECHO)  < lado)
+			HAL_encoders_obtener_distancia(ENCODER_IZQUIERDO) < lado &&
+			HAL_encoders_obtener_distancia(ENCODER_DERECHO)  < lado)
 			{
 				_delay_ms(10);
 			}

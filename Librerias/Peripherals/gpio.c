@@ -1,8 +1,8 @@
 /**
- * @file gpio.h
+ * @file gpio.c
  * @author Jorge Ibáñez
- * @brief Definición de las interrupciones de cambio de pin (PCINT) del ATMega32U4.
- * @version 0.1
+ * @brief Definición de las interrupciones externas y de cambio de pin (PCINT) del ATMega32U4.
+ * @version 1.0
  * @date 2025-06-01
  * 
  * @copyright Copyright (c) 2025
