@@ -1,7 +1,7 @@
 /**
  * @file hal_ledrgb.h
  * @author Jorge Ibáñez
- * @brief Declaración de la capa HAL para el uso del led RGB
+ * @brief Declaración de la capa HAL para el uso del LED RGB
  * @version 1.0
  * @date 2025-05-03
  * 
@@ -59,7 +59,7 @@
 #define GRIS GRAY
 
 /**
- * @brief Inicializa el led RGB.
+ * @brief Inicializa el LED RGB.
  * 
  */
 static inline void HAL_ledrgb_init()
@@ -68,24 +68,24 @@ static inline void HAL_ledrgb_init()
 }
 
 /**
- * @brief Ilumina el led RGB con el color indicado.
+ * @brief Ilumina el LED RGB con el color indicado.
  * 
- * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ * @param color Color del LED. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
  */
 void HAL_ledrgb_color(uint8_t color);
 
 /**
- * @brief Realiza un efecto de parpadeo del led de un color durante un tiempo dado.
+ * @brief Realiza un efecto de parpadeo del LED de un color durante un tiempo dado.
  * 
- * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ * @param color Color del LED. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
  * @param duracion Duración en milisegundos.
  */
 void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion);
 
 /**
- * @brief Realiza un efecto de respiración del led de un color durante un tiempo dado.
+ * @brief Realiza un efecto de respiración del LED de un color durante un tiempo dado.
  * 
- * @param color Color del led. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
+ * @param color Color del LED. Es necesario hacer uso de las macros proporcionadas. Los nombres de los colores se encuentran disponibles en Español y en Inglés.
  * @param pasos Indica el número de pasos del efecto. A mayor número de pasos, la intensidad aumentará de forma más progresiva.
  * @param duracion Duración en milisegundos.
  */
@@ -106,14 +106,14 @@ void HAL_ledrgb_efecto_breathing(uint8_t color, uint16_t pasos, uint16_t duracio
 void hal_ledrgb_hue_a_rgb(uint8_t hue, uint8_t* r, uint8_t* g, uint8_t* b);
 
 /**
- * @brief Realiza un efecto de arcoiris del led durante un tiempo dado.
+ * @brief Realiza un efecto de arcoiris del LED durante un tiempo dado.
  * 
  * @param duracion Duración en milisegundos.
  */
 void HAL_ledrgb_efecto_arcoiris(uint16_t duracion);
 
 /**
- * @brief Apaga el led.
+ * @brief Apaga el LED.
  * 
  */
 void HAL_ledrgb_apagar();

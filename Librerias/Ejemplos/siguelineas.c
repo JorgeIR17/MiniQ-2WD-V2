@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2025
  * 
  * En este programa el robot se encargará de seguir una línea negra sobre fondo blanco. Si el robot se encuentra en estado de inicio o error,
- * se emitirá el sonido correspondiente. El led RGB mostrará el valor de batería restante del robot.
+ * se emitirá el sonido correspondiente. El LED RGB mostrará el valor de batería restante del robot.
  * 
  */
 

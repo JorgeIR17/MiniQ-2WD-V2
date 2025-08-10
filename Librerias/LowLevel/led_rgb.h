@@ -1,7 +1,7 @@
 /**
  * @file led_rgb.h
  * @author Jorge Ibáñez
- * @brief Declaración de los drivers de bajo nivel para el uso del led RGB.
+ * @brief Declaración de los drivers de bajo nivel para el uso del LED RGB.
  * @version 1.0
  * @date 2025-05-06
  * 
@@ -24,7 +24,7 @@
 #define RGB_PIN         DDB6
 
 /**
- * @brief Inicializa el led RGB.
+ * @brief Inicializa el LED RGB.
  * 
  */
 static inline void led_rgb_init()
@@ -43,21 +43,21 @@ static inline void led_rgb_init()
 }
 
 /**
- * @brief Envia un bit al led.
+ * @brief Envia un bit al LED.
  * 
  * @param bit Valor del bit.
  */
 void led_rgb_send_bit(uint8_t bit);
 
 /**
- * @brief Envia un byte al led.
+ * @brief Envia un byte al LED.
  * 
  * @param byte Valor del byte.
  */
 void led_rgb_send_byte(uint8_t byte);
 
 /**
- * @brief Envía un color al led según su código RGB.
+ * @brief Envía un color al LED según su código RGB.
  * 
  * @param red Valor del componente R.
  * @param green Valor del componente G.
@@ -66,7 +66,10 @@ void led_rgb_send_byte(uint8_t byte);
 void led_rgb_send_color(uint8_t red, uint8_t green, uint8_t blue);
 
 
-
+/**
+ * @brief Apaga el LED RGB.
+ * 
+ */
 void led_rgb_off();
 
 #endif /* LED_RGB_H_ */

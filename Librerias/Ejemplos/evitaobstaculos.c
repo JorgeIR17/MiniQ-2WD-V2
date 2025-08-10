@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2025
  * 
  * En este programa el robot se desplazará hacia adelante hasta que detecte un obstáculo cercano. En tal caso, se detendrá, se desplazará marcha atrás
- * y girará hacia otra dirección para continuar el desplazamiento. El estado se mostrará mediante el color del led RGB.
+ * y girará hacia otra dirección para continuar el desplazamiento. El estado se mostrará mediante el color del LED RGB.
  * 
  * - Blanco: No hay obstáculo.
  * - Rojo: Obstáculo delante.

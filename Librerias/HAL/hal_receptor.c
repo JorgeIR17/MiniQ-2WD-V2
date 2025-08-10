@@ -15,29 +15,34 @@ uint8_t HAL_receptor_detectar_obstaculo(uint8_t* contR, uint8_t* contL)
 {
 	uint8_t obs = OBS_NADA;
 	uint8_t i;
+	uint8_t cont = 0;
 	
-	cont_obs = 0; // Reinicia el contador para contar pulsos del transmisor derecho
+	receptor_reset(); // Reinicia el contador para contar pulsos del transmisor derecho
 	for (i = 0; i < 20; i++) // Envia 20 pulsos por el transmisor derecho
 	{
 		receptor_send_pulse(TRANSMISOR_DERECHO);
 		_delay_us(600);
 	}
 	
-	if(cont_obs >= 20) // Si recibe suficientes pulsos se marca el obstáculo a la derecha
+	cont = receptor_get_pulses(); // Obtenemos los pulsos recibidos
+
+	if(cont >= 20) // Si recibe suficientes pulsos se marca el obstáculo a la derecha
 		obs = OBS_DERECHA;
 	if(contR != NULL) // Si no es nulo, se almacena el valor obtenido
-		*contR = cont_obs;
+		*contR = receptor_get_pulses();
 		
 	_delay_ms(50);
 	
-	cont_obs = 0; // Reinicia el contador para contar pulsos del transmisor izquierdo
+	receptor_reset(); // Reinicia el contador para contar pulsos del transmisor izquierdo
 	for (i = 0; i < 20; i++) // Envia 20 pulsos por el transmisor izquierdo
 	{
 		receptor_send_pulse(TRANSMISOR_IZQUIERDO);
 		_delay_us(600);
 	}
+
+	cont = receptor_get_pulses(); // Obtenemos los pulsos recibidos
 	
-	if(cont_obs >= 20) // Si recibe suficientes pulsos
+	if(cont >= 20) // Si recibe suficientes pulsos
 	{
 		if(obs == OBS_DERECHA) // Si se detectó obstáculo a la derecha, se marca como delante
 			obs = OBS_DELANTE;

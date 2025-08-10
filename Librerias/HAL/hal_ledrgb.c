@@ -1,7 +1,7 @@
 /**
  * @file hal_ledrgb.c
  * @author Jorge Ibáñez
- * @brief Definición de la capa HAL para el uso del led RGB
+ * @brief Definición de la capa HAL para el uso del LED RGB
  * @version 1.0
  * @date 2025-05-03
  * 
@@ -79,7 +79,7 @@ void HAL_ledrgb_color(uint8_t color)
 		case GRAY:
 			led_rgb_send_color(128, 128, 128);
 			break;
-		default: // si no se especifica un color existente se apaga el led
+		default: // si no se especifica un color existente se apaga el LED
 			led_rgb_off();
 			break;
 	}
@@ -98,7 +98,7 @@ void HAL_ledrgb_parpadeo(uint8_t color, uint16_t duracion)
 		else
 			led_rgb_off();
 	}
-	led_rgb_off(); // Asegurar apagar el led al terminar
+	led_rgb_off(); // Asegurar apagar el LED al terminar
 }
 
 

@@ -1,7 +1,7 @@
 /**
  * @file adc.h
  * @author Jorge Ibáñez
- * @brief Definición de los drivers de bajo nivel para el uso del ADC.
+ * @brief Definición de los drivers de bajo nivel para el uso del ADC del ATMega32U4.
  * @version 1.0
  * @date 2025-05-14
  * 

@@ -88,9 +88,9 @@ void prueba_fotodiodos();
 
 
 /**
- * @brief Realiza una prueba de las funciones de bajo nivel del led RGB.
+ * @brief Realiza una prueba de las funciones de bajo nivel del LED RGB.
  * 
- * En la prueba se permite, mediante el uso de teclas, modificar los valores del código RGB enviado al led.
+ * En la prueba se permite, mediante el uso de teclas, modificar los valores del código RGB enviado al LED.
  * 
  */
 void prueba_ledrgb();
@@ -139,7 +139,7 @@ void prueba_zumbador();
 /**
  * @brief Realiza una prueba de las funciones de la capa HAL del medidor de batería.
  * 
- * En la prueba se muestra el valor de porcentaje restante de batería, y se muestra el estado mediante el led RGB.
+ * En la prueba se muestra el valor de porcentaje restante de batería, y se muestra el estado mediante el LED RGB.
  * 
  */
 void prueba_HAL_bateria();
@@ -170,15 +170,15 @@ void prueba_HAL_encoders();
 void prueba_HAL_fotodiodos();
 
 /**
- * @brief Realiza una prueba de las funciones de la capa HAL del led RGB.
+ * @brief Realiza una prueba de las funciones de la capa HAL del LED RGB.
  * 
- * En la prueba se puede cambiar manualmente el color del led, así como apagarlo. Posteriormente, se muestra una prueba de parpadeo y de efectos de respiración y arcoíris.
+ * En la prueba se puede cambiar manualmente el color del LED, así como apagarlo. Posteriormente, se muestra una prueba de parpadeo y de efectos de respiración y arcoíris.
  * 
  */
 void prueba_HAL_ledrgb();
 
 /**
- * @brief Realiza una prueba de las funciones de la capa HAL del led RGB.
+ * @brief Realiza una prueba de las funciones de la capa HAL de los motores.
  * 
  * En la prueba se realiza automáticamente un avance y retroceso de ambas ruedas a velocidad constante, así como un giro.
  * 
@@ -194,7 +194,7 @@ void prueba_HAL_motores();
 void prueba_HAL_pulsadores();
 
 /**
- * @brief Realiza una prueba de las funciones de la capa HAL del led RGB.
+ * @brief Realiza una prueba de las funciones de la capa HAL del receptor IR.
  * 
  * En la prueba se muestra en qué posición se encuentra un obstáculo con respecto al robot.
  * 
@@ -210,7 +210,7 @@ void prueba_HAL_receptor();
 void prueba_HAL_sensores();
 
 /**
- * @brief Realiza una prueba de las funciones de la capa HAL del led RGB.
+ * @brief Realiza una prueba de las funciones de la capa HAL del zumbador.
  * 
  * En la prueba se reproducen mediante el zumbador las escalas musicales de Do mayor y Mi menor.
  * 

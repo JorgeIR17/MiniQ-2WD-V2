@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2025
  * 
  * En este programa el robot se comportará como un seguidor de luz, avanzando hacia la dirección en la que se encuentre. En caso de no detectar ningún haz
- * de luz, el robot se detendrá. El estado se representará mediante el color del led RGB.
+ * de luz, el robot se detendrá. El estado se representará mediante el color del LED RGB.
  * 
  * - Verde: Luz delante.
  * - Azul: Luz a la derecha.

@@ -1,7 +1,7 @@
 /**
  * @file led_rgb.c
  * @author Jorge Ibáñez
- * @brief Definición de los drivers de bajo nivel para el uso del led RGB.
+ * @brief Definición de los drivers de bajo nivel para el uso del LED RGB.
  * @version 1.0
  * @date 2025-05-06
  * 

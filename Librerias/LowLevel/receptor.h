@@ -57,4 +57,19 @@ static inline void receptor_init()
 void receptor_send_pulse(uint8_t transmisor);
 
 
+/**
+ * @brief Devuelve el valor de pulsos acumulados por el receptor IR.
+ * 
+ * @return uint8_t Número de pulsos acumulados
+ */
+uint8_t receptor_get_pulses();
+
+
+/**
+ * @brief Reinicia el contador de pulsos recibidos por el receptor IR. 
+ * 
+ */
+void receptor_reset();
+
+
 #endif /* RECEPTOR_H_ */

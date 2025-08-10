@@ -1,13 +1,13 @@
 /**
  * @file botonesled.c
  * @author Jorge Ibáñez
- * @brief Ejemplo de uso del MiniQ 2WD mediante muestra de efectos del led RGB con activación a través de los pulsadores
+ * @brief Ejemplo de uso del MiniQ 2WD mediante muestra de efectos del LED RGB con activación a través de los pulsadores
  * @version 1.0
  * @date 2025-06-26
  * 
  * @copyright Copyright (c) 2025
  * 
- * En este programa se muestran los distintos efectos del led RGB según el pulsador presionado
+ * En este programa se muestran los distintos efectos del LED RGB según el pulsador presionado
  * - KEY1: Efecto arcoiris
  * - KEY2: Efecto breathing (respiración) en color rojo
  * - KEY3: Efecto de parpadeo en color amarillo

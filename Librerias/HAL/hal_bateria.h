@@ -34,8 +34,10 @@ float HAL_bateria_porcentaje();
 /**
  * @brief Muestra el valor del porcentaje de batería.
  * 
- * Esta función hace uso del led RGB para mostrar mediante colores la batería restante. Si se encuentra sobre el 40%, mostrará el color verde. 
+ * Esta función hace uso del LED RGB para mostrar mediante colores la batería restante. Si se encuentra sobre el 40%, mostrará el color verde. 
  * Si se encuentra entre el 40% y el 15%, mostrará el color amarillo. Si el nivel se encuentra por debajo del 15%, el led parpadeará en color rojo.
+ * 
+ * Nota: Es ncesario primero inicializar el LED RGB (HAL_ledrgb_init()) antes de usar esta funcion
  * 
  */
 void HAL_bateria_mostrar_nivel();

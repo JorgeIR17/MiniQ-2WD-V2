@@ -366,6 +366,8 @@ void prueba_receptor()
 	m_usb_tx_string("r: Reiniciar contador\n");
 	m_usb_tx_string("0: Salir\n");
 
+    uint8_t cont = 0;
+
 	bool salir = false;
 
 	while (!salir)
@@ -382,7 +384,7 @@ void prueba_receptor()
 					receptor_send_pulse(TRANSMISOR_DERECHO);
 					break;
 				case 'r':
-					cont_obs = 0;
+					receptor_reset();
 					break;
 				case '0':
 					salir = true;
@@ -392,8 +394,9 @@ void prueba_receptor()
 			}
 		}
 
+        cont = receptor_get_pulses();
 		m_usb_tx_string("\rContador de pulsos: ");
-        m_usb_tx_uint(cont_obs);
+        m_usb_tx_uint(cont);
 		
 		m_usb_tx_string("   "); // limpiar residuos
 		_delay_ms(100);
